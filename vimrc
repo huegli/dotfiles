@@ -5,7 +5,7 @@ filetype off		" required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" let Vundle managa Vundle, required
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
@@ -35,17 +35,25 @@ colorscheme solarized
 set wildmenu
 
 " this converts help files to full-screen tabs
-augroup HelpInTabs
-	autocmd!
-	autocmd BufEnter *.txt call HelpInNewTab()
-augroup END
+" augroup HelpInTabs
+" 	autocmd!
+" 	autocmd BufEnter *.txt call HelpInNewTab()
+" augroup END
 
-function! HelpInNewTab ()
-	if &buftype == 'help'
-		"Convert to help windo to a tab...
-		execute "normal \<C-W>T"
-	endif
-endfunction
+" function! HelpInNewTab ()
+" 	if &buftype == 'help'
+" 		"Convert to help windo to a tab...
+" 		execute "normal \<C-W>T"
+" 	endif
+" endfunction
 
 " fix backspace behavior
 set backspace=start,indent,eol
+
+" some configurations for NERDTree
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeWinSize=40
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeChDirMode=2
