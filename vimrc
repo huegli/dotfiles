@@ -9,6 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
+Plugin 'matchit.zip'
+Plugin 'voithos/vim-python-matchit'
 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
@@ -27,9 +29,6 @@ set nowrap
 syntax enable
 set background=dark
 colorscheme solarized
-
-" Need this for Nerdtree
-" let g:NERDTreeDirArrows=0
 
 " helps discover completions
 set wildmenu
