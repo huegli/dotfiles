@@ -11,6 +11,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'matchit.zip'
 Plugin 'voithos/vim-python-matchit'
+Plugin 'nachumk/systemverilog.vim'
+Plugin 'tpope/vim-surround'
 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
