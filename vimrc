@@ -8,7 +8,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'matchit.zip'
 Plugin 'voithos/vim-python-matchit'
 Plugin 'cazador481/vim-systemverilog'
@@ -72,5 +72,9 @@ set expandtab
 " enable syntax highlighting and proper color scheme
 filetype detect
 syntax enable
-set background=light
+if $HOSTNAME == "NIKOLAI" 
+   set background=light
+else
+    set background=dark
+endif
 colorscheme solarized
