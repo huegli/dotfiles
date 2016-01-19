@@ -15,6 +15,7 @@ Plugin 'cazador481/vim-systemverilog'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'bling/vim-airline'
+Plugin 'tmux-plugins/vim-tmux'
 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
@@ -71,5 +72,5 @@ set expandtab
 " enable syntax highlighting and proper color scheme
 filetype detect
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
