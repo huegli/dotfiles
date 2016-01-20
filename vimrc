@@ -15,7 +15,11 @@ Plugin 'cazador481/vim-systemverilog'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'bling/vim-airline'
+" Plugin 'itchyny/lightline.vim'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'chrisbra/csv.vim'
 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
@@ -72,9 +76,14 @@ set expandtab
 " enable syntax highlighting and proper color scheme
 filetype detect
 syntax enable
-if $HOSTNAME == "NIKOLAI" 
+if $HOSTNAME == "NIKOLAI"
    set background=light
 else
     set background=dark
 endif
 colorscheme solarized
+
+set laststatus=2
+let g:airline_powerline_fonts = 0
+let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_c = '%t'
