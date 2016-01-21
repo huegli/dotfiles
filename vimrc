@@ -99,15 +99,13 @@ colorscheme solarized
 
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_section_b = '%{getcwd()}'
-let g:airline_section_c = '%t'
+" let g:airline_section_b = '%{getcwd()}'
+" let g:airline_section_c = '%t'
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
-      \ },
-      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-      \ }
-
+let g:ctrlp_max_depth = 5
+let g:ctrlp_max_files = 500
+let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_follow_symlinks = 0
+let g:ctrlp_default_input = 1
+let g:ctrlp_use_caching = 0
