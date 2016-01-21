@@ -33,7 +33,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
