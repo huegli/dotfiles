@@ -27,8 +27,8 @@ Plugin 'voithos/vim-python-matchit'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'bling/vim-airline'
-" Plugin 'itchyny/lightline.vim'
+" Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edkolev/tmuxline.vim'
@@ -70,12 +70,12 @@ set wildmenu
 set backspace=start,indent,eol
 
 " some configurations for NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeWinSize=40
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeChDirMode=2
+"map <C-n> :NERDTreeToggle<CR>
+"let g:NERDTreeQuitOnOpen=1
+"let g:NERDTreeShowBookmarks=1
+"let g:NERDTreeWinSize=40
+"let g:NERDTreeMinimalUI=1
+"let g:NERDTreeChDirMode=2
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -90,6 +90,9 @@ set expandtab
 " enable syntax highlighting and proper color scheme
 filetype detect
 syntax enable
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_visibility="high"
 if $HOSTNAME == "NIKOLAI"
    set background=light
 else
