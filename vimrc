@@ -89,7 +89,12 @@ set expandtab
 
 " enable syntax highlighting and proper color scheme
 let g:lightline = {
-     \ 'colorscheme': 'solarized'
+     \ 'colorscheme': 'solarized',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"x":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
      \ }
 set laststatus=2
 
