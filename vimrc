@@ -88,6 +88,11 @@ set expandtab
 " runtime macros/matchit.vim
 
 " enable syntax highlighting and proper color scheme
+let g:lightline = {
+     \ 'colorscheme': 'solarized'
+     \ }
+set laststatus=2
+
 filetype detect
 syntax enable
 let g:solarized_termcolors=256
@@ -100,8 +105,7 @@ else
 endif
 colorscheme solarized
 
-set laststatus=2
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 " let g:airline_section_b = '%{getcwd()}'
 " let g:airline_section_c = '%t'
 
