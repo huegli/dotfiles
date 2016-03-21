@@ -124,6 +124,8 @@ let g:solarized_termtrans=1
 let g:solarized_visibility="high"
 if $HOSTNAME == "NIKOLAI"
    set background=light
+elseif $HOSTNAME == "localhost"
+   set background=light
 else
     set background=dark
 endif
