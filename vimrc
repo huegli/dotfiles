@@ -89,24 +89,29 @@ set expandtab
 " runtime macros/matchit.vim
 
 " enable syntax highlighting and proper color scheme
+" let g:lightline = {
+"      \ 'colorscheme': 'solarized',
+"       \ 'component': {
+"       \   'readonly': '%{&readonly?"x":""}',
+"       \ },
+"       \ 'separator': { 'left': '', 'right': '' },
+"       \ 'subseparator': { 'left': '|', 'right': '|' }
+"      \ }
 let g:lightline = {
-     \ 'colorscheme': 'solarized',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"x":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-     \ }
+      \ 'colorscheme': 'solarized',
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+      \ }
 set laststatus=2
 
 " For tmuxline
-let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '>',
-    \ 'right' : '',
-    \ 'right_alt' : '<',
-    \ 'space' : ' '}
-
+" let g:tmuxline_separators = {
+"     \ 'left' : '',
+"     \ 'left_alt': '>',
+"     \ 'right' : '',
+"     \ 'right_alt' : '<',
+"     \ 'space' : ' '}
+" 
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'b'    : '#W',
@@ -138,7 +143,7 @@ colorscheme solarized
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
 let g:ctrlp_cmd = 'CtrlPLastMode'
-let g:ctrlp_working_path_mode = 'c'
+" let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_default_input = 1
 let g:ctrlp_use_caching = 0
