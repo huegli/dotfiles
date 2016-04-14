@@ -124,7 +124,7 @@ let g:tmuxline_preset = {
 
 filetype detect
 syntax enable
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_visibility="high"
 if $HOSTNAME == "NIKOLAI"
@@ -143,7 +143,7 @@ colorscheme solarized
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
 let g:ctrlp_cmd = 'CtrlPLastMode'
-" let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_default_input = 1
 let g:ctrlp_use_caching = 0
