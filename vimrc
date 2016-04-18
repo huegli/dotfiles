@@ -124,9 +124,11 @@ let g:tmuxline_preset = {
 
 filetype detect
 syntax enable
-" let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_visibility="high"
+if $USER == "nitrous"
+    let g:solarized_termcolors=256
+    let g:solarized_termtrans=1
+    let g:solarized_visibility="high"
+endif
 if $HOSTNAME == "NIKOLAI"
    set background=light
 elseif $HOSTNAME == "localhost"
