@@ -20,6 +20,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'summerfruit256.vim'
 " Plugin 'scrooloose/nerdtree'
 Plugin 'matchit.zip'
 Plugin 'voithos/vim-python-matchit'
@@ -102,7 +104,10 @@ set expandtab
 "       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
 "       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
 "       \ }
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 set laststatus=2
 
 " For tmuxline
@@ -137,7 +142,7 @@ elseif $HOSTNAME == "localhost"
 else
     set background=dark
 endif
-colorscheme solarized
+colorscheme summerfruit256
 
 " let g:airline_powerline_fonts = 1
 " let g:airline_section_b = '%{getcwd()}'
