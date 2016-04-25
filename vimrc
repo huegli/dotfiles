@@ -28,7 +28,7 @@ Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 " Plugin 'bling/vim-airline'
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
 " Plugin 'pearofducks/vim-quack-lightline'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -97,11 +97,12 @@ set expandtab
 "       \ 'separator': { 'left': '', 'right': '' },
 "       \ 'subseparator': { 'left': '|', 'right': '|' }
 "      \ }
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'solarized',
+"       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+"       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+"       \ }
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 
 " For tmuxline
