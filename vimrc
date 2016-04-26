@@ -19,22 +19,23 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'endel/vim-github-colorscheme'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'endel/vim-github-colorscheme'
+" Plugin 'tomasr/molokai'
 Plugin 'summerfruit256.vim'
 " Plugin 'scrooloose/nerdtree'
 Plugin 'matchit.zip'
 Plugin 'voithos/vim-python-matchit'
 " Plugin 'cazador481/vim-systemverilog'
-Plugin 'vhda/verilog_systemverilog.vim'
+" Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 " Plugin 'bling/vim-airline'
 " Plugin 'itchyny/lightline.vim'
 " Plugin 'pearofducks/vim-quack-lightline'
-Plugin 'tmux-plugins/vim-tmux'
+" Plugin 'tmux-plugins/vim-tmux'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'edkolev/tmuxline.vim'
+" Plugin 'edkolev/tmuxline.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -107,7 +108,7 @@ set expandtab
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-
+" set t_Co=256
 set laststatus=2
 
 " For tmuxline
@@ -130,18 +131,18 @@ let g:tmuxline_preset = {
 
 filetype detect
 syntax enable
-if $USER == "nitrous"
-    let g:solarized_termcolors=256
-    let g:solarized_termtrans=1
-    let g:solarized_visibility="high"
-endif
-if $HOSTNAME == "NIKOLAI"
-   set background=light
-elseif $HOSTNAME == "localhost"
-   set background=light
-else
-    set background=dark
-endif
+" if $USER == "nitrous"
+"     let g:solarized_termcolors=256
+"     let g:solarized_termtrans=1
+"     let g:solarized_visibility="high"
+" endif
+" if $HOSTNAME == "NIKOLAI"
+"    set background=light
+" elseif $HOSTNAME == "localhost"
+"    set background=light
+" else
+"     set background=dark
+" endif
 colorscheme summerfruit256
 
 " let g:airline_powerline_fonts = 1
