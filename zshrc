@@ -56,7 +56,7 @@ plugins=(git)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -83,4 +83,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 powerline-daemon -q
-. /usr/share/powerline/bindings/zsh/powerline.zsh
+. /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
