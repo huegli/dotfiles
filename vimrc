@@ -19,7 +19,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 " Plugin 'endel/vim-github-colorscheme'
 " Plugin 'tomasr/molokai'
 Plugin 'summerfruit256.vim'
@@ -143,7 +143,8 @@ syntax enable
 " else
 "     set background=dark
 " endif
-colorscheme summerfruit256
+set background=dark
+colorscheme solarized
 
 " let g:airline_powerline_fonts = 1
 " let g:airline_section_b = '%{getcwd()}'
