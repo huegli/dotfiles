@@ -75,14 +75,20 @@ set shiftwidth=4
 set expandtab
 
 " load lightline
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
+if $USER == "nitrous"
+    let g:lightline = {
+          \ 'colorscheme': 'powerline'
+          \ }
+else
+    let g:lightline = {
+          \ 'colorscheme': 'solarized',
+          \ 'component': {
+          \   'readonly': '%{&readonly?"":""}',
+          \ },
+          \ 'separator': { 'left': '', 'right': '' },
+          \ 'subseparator': { 'left': '', 'right': '' }
+          \ }
+endif
 set laststatus=2
 
 filetype detect
