@@ -82,5 +82,3 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-powerline-daemon -q
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh

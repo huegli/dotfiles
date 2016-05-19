@@ -74,10 +74,7 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" load powerline
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
+" load lightline
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'component': {
@@ -102,7 +99,7 @@ syntax enable
 " else
 "     set background=dark
 " endif
-if $HOSTNAME == "vl-nikolai-ice"
+if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-nikolai-ice"
     colorscheme solarized
     set background=dark
 else 
