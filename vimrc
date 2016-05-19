@@ -99,7 +99,7 @@ syntax enable
 " else
 "     set background=dark
 " endif
-if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-nikolai-ice"
+if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-nikolai-ice" || hostname() == "Nikolais_NAS"
     colorscheme solarized
     set background=dark
 else 
