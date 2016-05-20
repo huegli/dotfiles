@@ -30,6 +30,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/landscape.vim'
 Plugin 'edkolev/tmuxline.vim'
 
 " All your Plugins must be added before the following line
@@ -77,7 +78,7 @@ set expandtab
 " load lightline
 if $USER == "nitrous"
     let g:lightline = {
-          \ 'colorscheme': 'powerline'
+          \ 'colorscheme': 'landscape'
           \ }
 else
     let g:lightline = {
@@ -109,7 +110,7 @@ if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-
     colorscheme solarized
     set background=dark
 else 
-    colorscheme summerfruit256
+    colorscheme landscape
 endif
 
 let g:ctrlp_max_depth = 5
