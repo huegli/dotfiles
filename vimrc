@@ -32,7 +32,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'itchyny/landscape.vim'
 Plugin 'edkolev/tmuxline.vim'
-
+Plugin 'NLKNguyen/papercolor-theme'
+:
 " All your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -80,6 +81,15 @@ if $USER == "nitrous"
     let g:lightline = {
           \ 'colorscheme': 'landscape'
           \ }
+elseif hostname() == "chrx"
+    let g:lightline = {
+          \ 'colorscheme': 'PaperColor_light',
+          \ 'component': {
+          \   'readonly': '%{&readonly?"":""}',
+          \ },
+          \ 'separator': { 'left': '', 'right': '' },
+          \ 'subseparator': { 'left': '', 'right': '' }
+          \ }
 else
     let g:lightline = {
           \ 'colorscheme': 'solarized',
@@ -94,22 +104,14 @@ set laststatus=2
 
 filetype detect
 syntax enable
-" if $USER == "nitrous"
-"     let g:solarized_termcolors=256
-"     let g:solarized_termtrans=1
-"     let g:solarized_visibility="high"
-" endif
-" if $HOSTNAME == "NIKOLAI"
-"    set background=light
-" elseif $HOSTNAME == "localhost"
-"    set background=light
-" else
-"     set background=dark
-" endif
+
+" host-specific colorscheme
 if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-nikolai-ice" || hostname() == "Nikolais_NAS"
     colorscheme solarized
     set background=dark
-else 
+elseif hostname() == "chrx" 
+    colorscheme PaperColor
+else
     colorscheme landscape
 endif
 
