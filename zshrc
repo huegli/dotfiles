@@ -82,3 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Nikolai's stuff
+export WORKON_HOME=$HOME/Envs
+source $VIRTUALENVWRAPPER_SCRIPT
