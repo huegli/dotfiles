@@ -85,4 +85,4 @@ source $ZSH/oh-my-zsh.sh
 #
 # Nikolai's stuff
 export WORKON_HOME=$HOME/Envs
-source $VIRTUALENVWRAPPER_SCRIPT
+source /usr/local/bin/virtualenvwrapper.sh 
