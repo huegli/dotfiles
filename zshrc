@@ -86,3 +86,37 @@ source $ZSH/oh-my-zsh.sh
 # Nikolai's stuff
 export WORKON_HOME=$HOME/Envs
 source /usr/local/bin/virtualenvwrapper.sh 
+
+# fix terminal colors
+if [ "$TERM" = "xterm" ] ; then
+    if [ -z "$COLORTERM" ] ; then
+        if [ -z "$XTERM_VERSION" ] ; then
+            echo "Warning: Terminal wrongly calling itself 'xterm'."
+        else
+            case "$XTERM_VERSION" in
+                "XTerm(256)") TERM="xterm-256color" ;;
+                "XTerm(88)") TERM="xterm-88color" ;;
+                "XTerm") ;;
+                *)
+                    echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION"
+                    ;;
+                esac
+             fi
+         else
+     case "$COLORTERM" in
+         gnome-terminal)
+             # Those crafty Gnome folks require you to check COLORTERM,
+             # but don't allow you to just *favor* the setting over TERM.
+             # Instead you need to compare it and perform some guesses
+             # based upon the value. This is, perhaps, too simplistic.
+             TERM="gnome-256color"
+             ;;
+          xfce4-terminal)
+              TERM="gnome-256color"
+              ;;
+          *)
+              echo "Warning: Unrecognized COLORTERM: $COLORTERM"
+              ;;
+          esac
+      fi
+ fi
