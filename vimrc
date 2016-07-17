@@ -76,6 +76,11 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" Font for GVIM
+if has('gui_running')
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+endif
+
 " load lightline
 if $USER == "nitrous"
     let g:lightline = {
