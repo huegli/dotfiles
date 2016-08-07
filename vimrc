@@ -78,7 +78,7 @@ set expandtab
 
 " Font for GVIM
 if has('gui_running')
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 11
 endif
 
 " load lightline
