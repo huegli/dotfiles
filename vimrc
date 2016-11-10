@@ -68,6 +68,11 @@ set wildmenu
 " fix backspace behavior
 set backspace=start,indent,eol
 
+" This is needed only for Cmder/cygwin TERM
+if hostname() == "NIKOLAI"
+    inoremap <Char-0x07f> <BS>
+endif
+
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -108,12 +113,18 @@ syntax enable
 " host-specific colorscheme
 if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
     colorscheme solarized
-    set background=dark
+elseif hostname() == "NIKOLAI"
+    set term=pcansi
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let $t_AF="\e[38;5;%dm"
+    colorscheme gruvbox
 else
     colorscheme gruvbox
-    set background=dark
     highlight normal ctermbg=none
 endif
+
+set background=dark
 
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
