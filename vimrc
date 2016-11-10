@@ -20,7 +20,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'summerfruit256.vim'
 Plugin 'matchit.zip'
 Plugin 'cazador481/vim-systemverilog'
 Plugin 'tpope/vim-surround'
@@ -30,10 +29,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'itchyny/landscape.vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'NLKNguyen/papercolor-theme'
-:
+Plugin 'morhetz/gruvbox'
+Plugin 'shinchu/lightline-gruvbox.vim'
+ 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -82,13 +81,9 @@ if has('gui_running')
 endif
 
 " load lightline
-if $USER == "nitrous"
+if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
     let g:lightline = {
-          \ 'colorscheme': 'landscape'
-          \ }
-elseif hostname() == "chrx"
-    let g:lightline = {
-          \ 'colorscheme': 'PaperColor_light',
+          \ 'colorscheme': 'solarized',
           \ 'component': {
           \   'readonly': '%{&readonly?"":""}',
           \ },
@@ -97,7 +92,7 @@ elseif hostname() == "chrx"
           \ }
 else
     let g:lightline = {
-          \ 'colorscheme': 'solarized',
+          \ 'colorscheme': 'gruvbox',
           \ 'component': {
           \   'readonly': '%{&readonly?"":""}',
           \ },
@@ -111,13 +106,13 @@ filetype detect
 syntax enable
 
 " host-specific colorscheme
-if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-nikolai-ice" || hostname() == "Nikolais_NAS"
+if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
     colorscheme solarized
     set background=dark
-elseif hostname() == "chrx" 
-    colorscheme PaperColor
 else
-    colorscheme landscape
+    colorscheme gruvbox
+    set background=dark
+    highlight normal ctermbg=none
 endif
 
 let g:ctrlp_max_depth = 5
