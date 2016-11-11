@@ -111,6 +111,7 @@ filetype detect
 syntax enable
 
 " host-specific colorscheme
+set background=dark
 if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
     colorscheme solarized
 elseif hostname() == "NIKOLAI"
@@ -123,8 +124,6 @@ else
     colorscheme gruvbox
     highlight normal ctermbg=none
 endif
-
-set background=dark
 
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
