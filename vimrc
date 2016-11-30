@@ -87,7 +87,7 @@ if has('gui_running')
 endif
 
 " load lightline
-if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
+if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl" || hostname() == "bast-wdc-ah-01" 
     let g:lightline = {
           \ 'colorscheme': 'solarized',
           \ 'component': {
@@ -113,7 +113,7 @@ syntax enable
 
 " host-specific colorscheme
 set background=dark
-if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
+if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl" || hostname() == "bast-wdc-ah-01"
     colorscheme solarized
 elseif hostname() == "NIKOLAI"
     set term=pcansi
