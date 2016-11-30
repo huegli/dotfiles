@@ -20,7 +20,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'summerfruit256.vim'
 Plugin 'matchit.zip'
 Plugin 'cazador481/vim-systemverilog'
 Plugin 'tpope/vim-surround'
@@ -30,10 +29,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'itchyny/landscape.vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'NLKNguyen/papercolor-theme'
-:
+Plugin 'morhetz/gruvbox'
+Plugin 'shinchu/lightline-gruvbox.vim'
+Plugin 'arrufat/vala.vim'
+
 " All your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -69,6 +69,11 @@ set wildmenu
 " fix backspace behavior
 set backspace=start,indent,eol
 
+" This is needed only for Cmder/cygwin TERM
+if hostname() == "NIKOLAI"
+    inoremap <Char-0x07f> <BS>
+endif
+
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
@@ -82,13 +87,9 @@ if has('gui_running')
 endif
 
 " load lightline
-if $USER == "nitrous"
+if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
     let g:lightline = {
-          \ 'colorscheme': 'landscape'
-          \ }
-elseif hostname() == "chrx"
-    let g:lightline = {
-          \ 'colorscheme': 'PaperColor_light',
+          \ 'colorscheme': 'solarized',
           \ 'component': {
           \   'readonly': '%{&readonly?"":""}',
           \ },
@@ -97,7 +98,7 @@ elseif hostname() == "chrx"
           \ }
 else
     let g:lightline = {
-          \ 'colorscheme': 'solarized',
+          \ 'colorscheme': 'gruvbox',
           \ 'component': {
           \   'readonly': '%{&readonly?"":""}',
           \ },
@@ -111,13 +112,18 @@ filetype detect
 syntax enable
 
 " host-specific colorscheme
-if hostname() == "wifi-raspi" || hostname() == "wan-raspi" || hostname() == "vl-nikolai-ice" || hostname() == "Nikolais_NAS"
+set background=dark
+if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl"
     colorscheme solarized
-    set background=dark
-elseif hostname() == "chrx" 
-    colorscheme PaperColor
+elseif hostname() == "NIKOLAI"
+    set term=pcansi
+    set t_Co=256
+    let &t_AB="\e[48;5;%dm"
+    let $t_AF="\e[38;5;%dm"
+    colorscheme gruvbox
 else
-    colorscheme landscape
+    colorscheme gruvbox
+    highlight normal ctermbg=none
 endif
 
 let g:ctrlp_max_depth = 5
@@ -127,3 +133,21 @@ let g:ctrlp_working_path_mode = 'c'
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_default_input = 1
 let g:ctrlp_use_caching = 0
+
+" Disable valadoc syntax highlight
+let vala_ignore_valadoc = 1
+
+" Enable comment strings
+let vala_comment_strings = 1
+
+" Highlight space errors
+let vala_space_errors = 1
+
+" Disable trailing space errors
+"let vala_no_trail_space_error = 1
+" Disable space-tab-space errors
+let vala_no_tab_space_error = 1
+
+" Minimum lines used for comment syncing (default 50)
+"let vala_minlines = 120
+
