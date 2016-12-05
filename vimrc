@@ -21,7 +21,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'matchit.zip'
-Plugin 'cazador481/vim-systemverilog'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tmux-plugins/vim-tmux'
@@ -33,6 +32,8 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'shinchu/lightline-gruvbox.vim'
 Plugin 'arrufat/vala.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'vhda/verilog_systemverilog.vim'
 
 " All your Plugins must be added before the following line
 call vundle#end()		" required
