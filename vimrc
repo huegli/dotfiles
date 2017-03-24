@@ -34,7 +34,10 @@ Plugin 'shinchu/lightline-gruvbox.vim'
 Plugin 'arrufat/vala.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vhda/verilog_systemverilog.vim'
-
+Plugin 'tmhedberg/SimpylFold' 
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
 " All your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -111,6 +114,7 @@ set laststatus=2
 
 filetype detect
 syntax enable
+let python_highlight_all=1
 
 " host-specific colorscheme
 set background=dark
@@ -151,4 +155,19 @@ let vala_no_tab_space_error = 1
 
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
+
+" Some configurations for Python / program editing in general
+noremap <space> za
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
