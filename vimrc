@@ -114,7 +114,6 @@ set laststatus=2
 
 filetype detect
 syntax enable
-let python_highlight_all=1
 
 " host-specific colorscheme
 set background=dark
@@ -160,14 +159,21 @@ let vala_no_tab_space_error = 1
 noremap <space> za
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
+    \ set softtabstop=4
     \ textwidth=79
-    \ expandtab
     \ autoindent
     \ fileformat=unix
 
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let python_highlight_all=1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
