@@ -122,7 +122,7 @@ syntax enable
 set background=dark
 if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl" || hostname() == "bast-wdc-ah-01"
     colorscheme solarized
-elseif hostname() == "NIKOLAI"
+elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
     set term=pcansi
     set t_Co=256
     let &t_AB="\e[48;5;%dm"
