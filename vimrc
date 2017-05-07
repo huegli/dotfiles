@@ -38,6 +38,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+" Plugin 'Valloric/YouCompleteMe'
+
 " All your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
@@ -56,6 +58,7 @@ set nowrap
 
 " helps discover completions
 set wildmenu
+set wildmode=longest,list,full
 
 " this converts help files to full-screen tabs
 " augroup HelpInTabs
@@ -176,4 +179,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+let g:syntastic_cpp_compiler_options = "-std=c++11"
