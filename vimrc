@@ -3,9 +3,9 @@ filetype off		" required
 
 " fix unicode
 if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
+"  if &termencoding == ""
+"    let &termencoding = &encoding
+"  endif
   set encoding=utf-8
   scriptencoding utf-8
   setglobal fileencoding=utf-8
@@ -19,19 +19,20 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'matchit.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'tmux-plugins/vim-tmux'
+"Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'itchyny/lightline.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'shinchu/lightline-gruvbox.vim'
-Plugin 'arrufat/vala.vim'
+" Plugin 'shinchu/lightline-gruvbox.vim'
+" Plugin 'arrufat/vala.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'tmhedberg/SimpylFold' 
@@ -50,7 +51,7 @@ filetype plugin indent on	" required
 
 " Show line numbers & ruler
 set number
-set relativenumber
+" set relativenumber
 set ruler
 
 " No wrapping of lines
@@ -77,9 +78,9 @@ set wildmode=longest,list,full
 set backspace=start,indent,eol
 
 " This is needed only for Cmder/cygwin TERM
-if hostname() == "NIKOLAI"
-    inoremap <Char-0x07f> <BS>
-endif
+" if hostname() == "NIKOLAI"
+"     inoremap <Char-0x07f> <BS>
+" endif
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -93,26 +94,34 @@ if has('gui_running')
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 11
 endif
 
+" let g:airline_theme='gruvbox'
+" let g:airline_powerline_fonts = 1
+
 " load lightline
-if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl" || hostname() == "bast-wdc-ah-01" 
-    let g:lightline = {
-          \ 'colorscheme': 'solarized',
-          \ 'component': {
-          \   'readonly': '%{&readonly?"":""}',
-          \ },
-          \ 'separator': { 'left': '', 'right': '' },
-          \ 'subseparator': { 'left': '', 'right': '' }
-          \ }
-else
-    let g:lightline = {
-          \ 'colorscheme': 'gruvbox',
-          \ 'component': {
-          \   'readonly': '%{&readonly?"":""}',
-          \ },
-          \ 'separator': { 'left': '', 'right': '' },
-          \ 'subseparator': { 'left': '', 'right': '' }
-          \ }
-endif
+" if hostname() == "scv-nschlegel01.csg.apple.com"  
+"     let g:lightline = {
+"           \ 'colorscheme': 'solarized',
+"           \ 'component': {
+"           \   'readonly': '%{&readonly?"":""}',
+"           \ },
+"           \ 'separator': { 'left': '', 'right': '' },
+"           \ 'subseparator': { 'left': '', 'right': '' }
+"           \ }
+" else
+"     let g:lightline = {
+"           \ 'colorscheme': 'gruvbox',
+"           \ 'component': {
+"           \   'readonly': '%{&readonly?"":""}',
+"           \ },
+"           \ 'separator': { 'left': '', 'right': '' },
+"           \ 'subseparator': { 'left': '', 'right': '' }
+"           \ }
+" endif
+let g:lightline = {
+        \ 'colorscheme': 'gruvbox'
+        \ }
+let g:tmuxline_powerline_separators = 0
+
 set laststatus=2
 
 filetype detect
@@ -120,18 +129,18 @@ syntax enable
 
 " host-specific colorscheme
 set background=dark
-if hostname() == "vl-nikolai-ice" || hostname() == "vl-nikolai-scl" || hostname() == "bast-wdc-ah-01"
-    colorscheme solarized
-elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
-    set term=pcansi
-    set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let $t_AF="\e[38;5;%dm"
-    colorscheme gruvbox
-else
+" if hostname() == "scv-nschlegel01.csg.apple.com"
+"     colorscheme solarized
+" elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
+"    set term=pcansi
+"    set t_Co=256
+"    let &t_AB="\e[48;5;%dm"
+"    let $t_AF="\e[38;5;%dm"
+"    colorscheme gruvbox
+"else
     colorscheme gruvbox
     highlight normal ctermbg=none
-endif
+"endif
 
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
