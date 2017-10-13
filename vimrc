@@ -23,7 +23,7 @@ Plugin 'matchit.zip'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 "Plugin 'tmux-plugins/vim-tmux'
-"Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chrisbra/csv.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-airline/vim-airline'
@@ -34,6 +34,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized.git'
 " Plugin 'shinchu/lightline-gruvbox.vim'
 " Plugin 'arrufat/vala.vim'
+Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'majutsushi/tagbar'
 Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'tmhedberg/SimpylFold' 
@@ -197,3 +198,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = "-std=c++11"
+
+" Apple CE uses the older Exuberant ctags, this overrides it with my own
+" version
+if hostname() == "scv-nschlegel01.csg.apple.com"
+    let g:tagbar_ctags_bin = '$HOME/.local/bin/ctags'
+endif
