@@ -31,6 +31,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized.git'
 " Plugin 'shinchu/lightline-gruvbox.vim'
 " Plugin 'arrufat/vala.vim'
 Plugin 'majutsushi/tagbar'
@@ -128,19 +129,26 @@ filetype detect
 syntax enable
 
 " host-specific colorscheme
-set background=dark
-" if hostname() == "scv-nschlegel01.csg.apple.com"
-"     colorscheme solarized
+if hostname() == "Nikolais-MacBook-Pro.local"
+     set background=light
+     colorscheme solarized
+    let g:lightline = {
+        \ 'colorscheme': 'solarized'
+        \ }
 " elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
 "    set term=pcansi
 "    set t_Co=256
 "    let &t_AB="\e[48;5;%dm"
 "    let $t_AF="\e[38;5;%dm"
 "    colorscheme gruvbox
-"else
+else
+    set background=dark
     colorscheme gruvbox
     highlight normal ctermbg=none
-"endif
+    let g:lightline = {
+        \ 'colorscheme': 'gruvbox'
+         \ }
+endif
 
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
