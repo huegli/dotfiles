@@ -160,18 +160,18 @@ let g:ctrlp_default_input = 1
 let g:ctrlp_use_caching = 0
 
 " Disable valadoc syntax highlight
-let vala_ignore_valadoc = 1
+" let vala_ignore_valadoc = 1
 
 " Enable comment strings
-let vala_comment_strings = 1
+" let vala_comment_strings = 1
 
 " Highlight space errors
-let vala_space_errors = 1
+" let vala_space_errors = 1
 
 " Disable trailing space errors
 "let vala_no_trail_space_error = 1
 " Disable space-tab-space errors
-let vala_no_tab_space_error = 1
+" let vala_no_tab_space_error = 1
 
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
@@ -204,3 +204,13 @@ let g:syntastic_cpp_compiler_options = "-std=c++11"
 if hostname() == "scv-nschlegel01.csg.apple.com"
     let g:tagbar_ctags_bin = '$HOME/.local/bin/ctags'
 endif
+
+" Leader Key mappings
+let g:minimap_show='<leader>ms'
+let g:minimap_update='<leader>mu'
+let g:minimap_close='<leader>gc'
+let g:minimap_toggle='<leader>gt'
+
+" Tagbar stuff
+nmap <F8> :TagbarToggle<CR>
+
