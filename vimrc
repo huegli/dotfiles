@@ -41,6 +41,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+Bundle 'nfvs/vim-perforce'
 " Plugin 'Valloric/YouCompleteMe'
 
 " All your Plugins must be added before the following line
@@ -119,10 +120,8 @@ endif
 "           \ 'subseparator': { 'left': '', 'right': '' }
 "           \ }
 " endif
-let g:lightline = {
-        \ 'colorscheme': 'gruvbox'
-        \ }
 let g:tmuxline_powerline_separators = 0
+set noshowmode
 
 set laststatus=2
 
@@ -131,7 +130,7 @@ syntax enable
 
 " host-specific colorscheme
 if hostname() == "Nikolais-MacBook-Pro.local"
-     set background=light
+     set background=dark
      colorscheme solarized
     let g:lightline = {
         \ 'colorscheme': 'solarized'
