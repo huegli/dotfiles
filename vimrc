@@ -120,7 +120,7 @@ endif
 "           \ 'subseparator': { 'left': '', 'right': '' }
 "           \ }
 " endif
-let g:tmuxline_powerline_separators = 0
+"let g:tmuxline_powerline_separators = 0
 set noshowmode
 
 set laststatus=2
@@ -132,9 +132,14 @@ syntax enable
 if hostname() == "Nikolais-MacBook-Pro.local"
      set background=dark
      colorscheme solarized
-    let g:lightline = {
-        \ 'colorscheme': 'solarized'
-        \ }
+     let g:lightline = {
+          \ 'colorscheme': 'solarized',
+          \ 'component': {
+          \   'readonly': '%{&readonly?"":""}',
+          \ },
+          \ 'separator': { 'left': '', 'right': '' },
+          \ 'subseparator': { 'left': '', 'right': '' }
+          \ }
 " elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
 "    set term=pcansi
 "    set t_Co=256
@@ -147,7 +152,12 @@ else
     highlight normal ctermbg=none
     let g:lightline = {
         \ 'colorscheme': 'gruvbox'
-         \ }
+        \ 'component': {
+        \   'readonly': '%{&readonly?"":""}',
+        \ },
+        \ 'separator': { 'left': '', 'right': '' },
+        \ 'subseparator': { 'left': '', 'right': '' }
+        \ }
 endif
 
 let g:ctrlp_max_depth = 5
@@ -213,3 +223,5 @@ let g:minimap_toggle='<leader>gt'
 " Tagbar stuff
 nmap <F8> :TagbarToggle<CR>
 
+" Perforce stuff
+let g:perforce_open_on_change = 1
