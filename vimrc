@@ -151,7 +151,7 @@ else
     colorscheme gruvbox
     highlight normal ctermbg=none
     let g:lightline = {
-        \ 'colorscheme': 'gruvbox'
+        \ 'colorscheme': 'gruvbox',
         \ 'component': {
         \   'readonly': '%{&readonly?"":""}',
         \ },
