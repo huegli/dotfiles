@@ -120,7 +120,7 @@ endif
 "           \ 'subseparator': { 'left': '', 'right': '' }
 "           \ }
 " endif
-"let g:tmuxline_powerline_separators = 0
+let g:tmuxline_powerline_separators = 0
 set noshowmode
 
 set laststatus=2
@@ -133,13 +133,16 @@ if hostname() == "Nikolais-MacBook-Pro.local"
      set background=dark
      colorscheme solarized
      let g:lightline = {
-          \ 'colorscheme': 'solarized',
-          \ 'component': {
-          \   'readonly': '%{&readonly?"":""}',
-          \ },
-          \ 'separator': { 'left': '', 'right': '' },
-          \ 'subseparator': { 'left': '', 'right': '' }
+          \ 'colorscheme': 'solarized'
           \ }
+"     let g:lightline = {
+"          \ 'colorscheme': 'solarized',
+"          \ 'component': {
+"          \   'readonly': '%{&readonly?"":""}',
+"          \ },
+"          \ 'separator': { 'left': '', 'right': '' },
+"          \ 'subseparator': { 'left': '', 'right': '' }
+"          \ }
 " elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
 "    set term=pcansi
 "    set t_Co=256
@@ -151,13 +154,16 @@ else
     colorscheme gruvbox
     highlight normal ctermbg=none
     let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
-        \ 'component': {
-        \   'readonly': '%{&readonly?"":""}',
-        \ },
-        \ 'separator': { 'left': '', 'right': '' },
-        \ 'subseparator': { 'left': '', 'right': '' }
+        \ 'colorscheme': 'gruvbox'
         \ }
+"     let g:lightline = {
+"         \ 'colorscheme': 'gruvbox',
+"         \ 'component': {
+"         \   'readonly': '%{&readonly?"":""}',
+"         \ },
+"         \ 'separator': { 'left': '', 'right': '' },
+"         \ 'subseparator': { 'left': '', 'right': '' }
+"         \ }
 endif
 
 let g:ctrlp_max_depth = 5
