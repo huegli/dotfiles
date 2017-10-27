@@ -1,17 +1,6 @@
-set nocompatible	" be iMproved, required
-filetype off		" required
-
-" fix unicode
-if has("multi_byte")
-"  if &termencoding == ""
-"    let &termencoding = &encoding
-"  endif
-  set encoding=utf-8
-  scriptencoding utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
+" Vundle {{{
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,22 +36,158 @@ Bundle 'nfvs/vim-perforce'
 " All your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
+" }}}
+
+" Settings {{{
+" Switch syntax highlighting on, when the terminal has colors
+" verilog_systemverilog plugin does not like this to be on, but syntax
+" highlighting works anyway
+" syntax on
+
+" Use vim, not vi api
+set nocompatible
+
+" No backup files
+set nobackup
+
+" No write backup
+set nowritebackup
+
+" No swap file
+set noswapfile
+
+" Command history
+set history=100
+
+" Always show cursor
+set ruler
+
+" Show incomplete commands
+set showcmd
+
+" Incremental searching (search as you type)
+" set incsearch
+
+" Highlight search matches
+set hlsearch
+
+" Ignore case in search
+set smartcase
+
+" Make sure any searches /searchPhrase doesn't need the \c escape character
+set ignorecase
+
+" A buffer is marked as ‘hidden’ if it has unsaved changes, and it is not currently loaded in a window
+" if you try and quit Vim while there are hidden buffers, you will raise an error:
+" E162: No write since last change for buffer “a.txt”
+set hidden
+
+" Turn word wrap off
+set nowrap
+
+" Allow backspace to delete end of line, indent and start of line characters
+set backspace=indent,eol,start
+
+" Convert tabs to spaces
+set expandtab
+
+" Set tab size in spaces (this is for manual indenting)
+set tabstop=4
+
+" The number of spaces inserted for a tab (used for auto indenting)
+set shiftwidth=4
+
+" Turn on line numbers
+set number
+
+" Highlight tailing whitespace
+" See issue: https://github.com/Integralist/ProVim/issues/4
+set list listchars=tab:\ \ ,trail:·
+
+" Get rid of the delay when pressing O (for example)
+" http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
+set timeout timeoutlen=1000 ttimeoutlen=100
+
+" Always show status bar
+set laststatus=2
+
+" Hide the toolbar
+set guioptions-=T
+
+" UTF encoding
+set encoding=utf-8
+
+" Autoload files that have changed outside of vim
+set autoread
+
+" Use system clipboard
+" http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
+set clipboard+=unnamed
+
+" Don't show intro
+set shortmess+=I
+
+" Better splits (new windows appear below and to the right)
+set splitbelow
+set splitright
+
+" Highlight the current line
+set cursorline
+
+" Ensure Vim doesn't beep at you every time you make a mistype
+set visualbell
+
+" Visual autocomplete for command menu (e.g. :e ~/path/to/file)
+set wildmenu
+
+" redraw only when we need to (i.e. don't redraw when executing a macro)
+set lazyredraw
+
+" highlight a matching [{()}] when cursor is placed on start/end character
+set showmatch
+
+" Set built-in file system explorer to use layout similar to the NERDTree plugin
+let g:netrw_liststyle=3
+
+" Always highlight column 80 so it's easier to see where
+" cutoff appears on longer screens
+" autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+" set colorcolumn=80
+
+" Disable mode indication in last line
+set noshowmode
+
+" }}}
+
+" Commands {{{
+" specify syntax highlighting for specific files
+autocmd Bufread,BufNewFile *.src set filetype=verilog-mode " vexpand source files
+autocmd Bufread,BufNewFile *.ivg set filetype=verilog-mode " ivg files
+autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
+" }}}
+
+" fix unicode
+" if has("multi_byte")
+" "  if &termencoding == ""
+" "    let &termencoding = &encoding
+" "  endif
+"   set encoding=utf-8
+"   scriptencoding utf-8
+"   setglobal fileencoding=utf-8
+"   "setglobal bomb
+"   set fileencodings=ucs-bom,utf-8,latin1
+" endif
 
 
 " ============================= Nikolai's stuff goes here ==================
 
 
 " Show line numbers & ruler
-set number
 " set relativenumber
-set ruler
 
-" No wrapping of lines
-set nowrap
 
 " helps discover completions
-set wildmenu
-set wildmode=longest,list,full
+" set wildmode=longest,list,full
 
 " this converts help files to full-screen tabs
 " augroup HelpInTabs
@@ -77,20 +202,11 @@ set wildmode=longest,list,full
 " 	endif
 " endfunction
 
-" fix backspace behavior
-set backspace=start,indent,eol
-
 " This is needed only for Cmder/cygwin TERM
 " if hostname() == "NIKOLAI"
 "     inoremap <Char-0x07f> <BS>
 " endif
 
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
 
 " Font for GVIM
 if has('gui_running')
@@ -121,12 +237,11 @@ endif
 "           \ }
 " endif
 " let g:tmuxline_powerline_separators = 0
-set noshowmode
+" set noshowmode
 
-set laststatus=2
+" set laststatus=2
 
 filetype detect
-syntax enable
 
 " host-specific colorscheme
 if hostname() == "Nikolais-MacBook-Pro.local"
@@ -200,7 +315,7 @@ au BufNewFile,BufRead *.py
     \ autoindent
     \ fileformat=unix
 
-highlight BadWhitespace ctermbg=red guibg=red
+" highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 
@@ -231,3 +346,4 @@ nmap <F8> :TagbarToggle<CR>
 
 " Perforce stuff
 let g:perforce_open_on_change = 1
+
