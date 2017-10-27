@@ -40,7 +40,9 @@ filetype plugin indent on	" required
 
 " Settings {{{
 " Switch syntax highlighting on, when the terminal has colors
-syntax on
+" verilog_systemverilog plugin does not like this to be on, but syntax
+" highlighting works anyway
+" syntax on
 
 " Use vim, not vi api
 set nocompatible
