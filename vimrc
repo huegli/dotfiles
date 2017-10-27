@@ -64,7 +64,7 @@ set ruler
 set showcmd
 
 " Incremental searching (search as you type)
-set incsearch
+" set incsearch
 
 " Highlight search matches
 set hlsearch
@@ -149,10 +149,20 @@ let g:netrw_liststyle=3
 
 " Always highlight column 80 so it's easier to see where
 " cutoff appears on longer screens
-autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
-set colorcolumn=80
+" autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+" set colorcolumn=80
+
+" Disable mode indication in last line
+set noshowmode
+
 " }}}
 
+" Commands {{{
+" specify syntax highlighting for specific files
+autocmd Bufread,BufNewFile *.src set filetype=verilog-mode " vexpand source files
+autocmd Bufread,BufNewFile *.ivg set filetype=verilog-mode " ivg files
+autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
+" }}}
 
 " fix unicode
 " if has("multi_byte")
@@ -175,7 +185,7 @@ set colorcolumn=80
 
 
 " helps discover completions
-set wildmode=longest,list,full
+" set wildmode=longest,list,full
 
 " this converts help files to full-screen tabs
 " augroup HelpInTabs
@@ -225,9 +235,9 @@ endif
 "           \ }
 " endif
 " let g:tmuxline_powerline_separators = 0
-set noshowmode
+" set noshowmode
 
-set laststatus=2
+" set laststatus=2
 
 filetype detect
 
@@ -303,7 +313,7 @@ au BufNewFile,BufRead *.py
     \ autoindent
     \ fileformat=unix
 
-highlight BadWhitespace ctermbg=red guibg=red
+" highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 
