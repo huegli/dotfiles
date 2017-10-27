@@ -241,7 +241,10 @@ endif
 
 " set laststatus=2
 
+" ------------------- FIGURE OUT WHY THIS NEEDS TO BE HERE ------
 filetype detect
+syntax enable
+" -------------------------------------------
 
 " host-specific colorscheme
 if hostname() == "Nikolais-MacBook-Pro.local"
