@@ -161,8 +161,9 @@ set noshowmode
 
 " Commands {{{
 " specify syntax highlighting for specific files
-autocmd Bufread,BufNewFile *.src set filetype=verilog-mode " vexpand source files
-autocmd Bufread,BufNewFile *.ivg set filetype=verilog-mode " ivg files
+autocmd Bufread,BufNewFile *.src set filetype=verilog_systemverilog " vexpand source files
+autocmd Bufread,BufNewFile *.ivg set filetype=verilog_systemverilog " ivg files
+autocmd Bufread,BufNewFile *.f set filetype=text " Don't interpret filelist files as Fortran
 autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
 " }}}
 
