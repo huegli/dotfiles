@@ -248,27 +248,27 @@ syntax enable
 " -------------------------------------------
 
 " host-specific colorscheme
-if hostname() == "Nikolais-MacBook-Pro.local"
-     set background=dark
-     colorscheme solarized
+" if hostname() == "Nikolais-MacBook-Pro.local"
+"      set background=dark
+"      colorscheme solarized
 "     let g:lightline = {
 "          \ 'colorscheme': 'solarized'
 "          \ }
-     let g:lightline = {
-          \ 'colorscheme': 'solarized',
-          \ 'component': {
-          \   'readonly': '%{&readonly?"":""}',
-          \ },
-          \ 'separator': { 'left': '', 'right': '' },
-          \ 'subseparator': { 'left': '', 'right': '' }
-          \ }
+"      let g:lightline = {
+"           \ 'colorscheme': 'solarized',
+"           \ 'component': {
+"           \   'readonly': '%{&readonly?"":""}',
+"           \ },
+"           \ 'separator': { 'left': '', 'right': '' },
+"           \ 'subseparator': { 'left': '', 'right': '' }
+"           \ }
 " elseif hostname() == "NIKOLAI" || hostname() == "NIKOLAIS_CINTIQ"
 "    set term=pcansi
 "    set t_Co=256
 "    let &t_AB="\e[48;5;%dm"
 "    let $t_AF="\e[38;5;%dm"
 "    colorscheme gruvbox
-else
+"else
     set background=dark
     colorscheme gruvbox
     highlight normal ctermbg=none
@@ -283,7 +283,7 @@ else
         \ 'separator': { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
         \ }
-endif
+" endif
 
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
