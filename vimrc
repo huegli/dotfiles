@@ -320,7 +320,7 @@ au BufNewFile,BufRead *.py
     \ fileformat=unix
 
 " highlight BadWhitespace ctermbg=red guibg=red
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 
 set statusline+=%#warningmsg#
