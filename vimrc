@@ -20,7 +20,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'altercation/vim-colors-solarized.git'
+" Plugin 'altercation/vim-colors-solarized.git'
 " Plugin 'shinchu/lightline-gruvbox.vim'
 " Plugin 'arrufat/vala.vim'
 Plugin 'severin-lemaignan/vim-minimap'
@@ -29,6 +29,7 @@ Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'tmhedberg/SimpylFold' 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'nvie/vim-flake8'
 Bundle 'nfvs/vim-perforce'
 " Plugin 'Valloric/YouCompleteMe'
@@ -351,3 +352,7 @@ nmap <F8> :TagbarToggle<CR>
 " Perforce stuff
 let g:perforce_open_on_change = 1
 
+" NERDCommenter
+let g:NERDSpaceDelims=1
+let g:NERDCommentEmptyLines=1
+let g:NERDTrimTrailingWhiteSpace=1
