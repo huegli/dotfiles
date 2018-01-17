@@ -288,12 +288,13 @@ syntax enable
 
 let g:ctrlp_max_depth = 5
 let g:ctrlp_max_files = 500
-let g:ctrlp_cmd = 'CtrlPLastMode'
-let g:ctrlp_working_path_mode = 'c'
+" let g:ctrlp_cmd = 'CtrlPLastMode'
+" let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_follow_symlinks = 0
-let g:ctrlp_default_input = 1
-let g:ctrlp_use_caching = 0
-
+" let g:ctrlp_default_input = 1
+let g:ctrlp_use_caching = 1
+let g:ctrlp_root_markers = ['design', 'trunk']
 " Disable valadoc syntax highlight
 " let vala_ignore_valadoc = 1
 
@@ -356,3 +357,8 @@ let g:perforce_open_on_change = 1
 let g:NERDSpaceDelims=1
 let g:NERDCommentEmptyLines=1
 let g:NERDTrimTrailingWhiteSpace=1
+
+" Verilog Mode
+nnoremap <leader>i :VerilogFollowInstance<CR>
+nnoremap <leader>I :VerilogFollowPort<CR>
+nnoremap <leader>u :VerilogGotoInstanceStart<CR>
