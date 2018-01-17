@@ -362,3 +362,9 @@ let g:NERDTrimTrailingWhiteSpace=1
 nnoremap <leader>i :VerilogFollowInstance<CR>
 nnoremap <leader>I :VerilogFollowPort<CR>
 nnoremap <leader>u :VerilogGotoInstanceStart<CR>
+
+autocmd BufRead *.v 
+    \ setlocal foldmethod=marker
+    \ set softabstop=3
+    \ set shiftwidth=3
+autocmd BufRead *.v normal zM
