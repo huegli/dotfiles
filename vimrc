@@ -363,8 +363,8 @@ nnoremap <leader>i :VerilogFollowInstance<CR>
 nnoremap <leader>I :VerilogFollowPort<CR>
 nnoremap <leader>u :VerilogGotoInstanceStart<CR>
 
-autocmd BufRead *.v 
+au BufRead,BufNewFile *.v,*.src 
     \ setlocal foldmethod=marker
-    \ set softabstop=3
-    \ set shiftwidth=3
-autocmd BufRead *.v normal zM
+    \ softtabstop=3
+    \ shiftwidth=3
+autocmd BufRead *.v,*.src normal zM
