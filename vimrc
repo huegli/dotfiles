@@ -31,7 +31,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'nvie/vim-flake8'
-Bundle 'nfvs/vim-perforce'
+Plugin 'nfvs/vim-perforce'
+Plugin 'godlygeek/tabular.git'
 " Plugin 'Valloric/YouCompleteMe'
 
 " All your Plugins must be added before the following line
