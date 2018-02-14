@@ -185,30 +185,6 @@ autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'm
 " ============================= Nikolai's stuff goes here ==================
 
 
-" Show line numbers & ruler
-" set relativenumber
-
-
-" helps discover completions
-" set wildmode=longest,list,full
-
-" this converts help files to full-screen tabs
-" augroup HelpInTabs
-" 	autocmd!
-" 	autocmd BufEnter *.txt call HelpInNewTab()
-" augroup END
-
-" function! HelpInNewTab ()
-" 	if &buftype == 'help'
-" 		"Convert to help windo to a tab...
-" 		execute "normal \<C-W>T"
-" 	endif
-" endfunction
-
-" This is needed only for Cmder/cygwin TERM
-" if hostname() == "NIKOLAI"
-"     inoremap <Char-0x07f> <BS>
-" endif
 
 
 " Font for GVIM
@@ -369,3 +345,30 @@ au BufRead,BufNewFile *.v,*.src
     \ softtabstop=3
     \ shiftwidth=3
 autocmd BufRead *.v,*.src normal zM
+
+" Junkyard {{{
+" Show line numbers & ruler
+" set relativenumber
+
+
+" helps discover completions
+" set wildmode=longest,list,full
+
+" this converts help files to full-screen tabs
+" augroup HelpInTabs
+" 	autocmd!
+" 	autocmd BufEnter *.txt call HelpInNewTab()
+" augroup END
+
+" function! HelpInNewTab ()
+" 	if &buftype == 'help'
+" 		"Convert to help windo to a tab...
+" 		execute "normal \<C-W>T"
+" 	endif
+" endfunction
+
+" This is needed only for Cmder/cygwin TERM
+" if hostname() == "NIKOLAI"
+"     inoremap <Char-0x07f> <BS>
+" endif
+" }}}
