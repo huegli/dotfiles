@@ -104,7 +104,7 @@ set number
 
 " Highlight tailing whitespace
 " See issue: https://github.com/Integralist/ProVim/issues/4
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:▸\ ,eol:¬
 
 " Get rid of the delay when pressing O (for example)
 " http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
