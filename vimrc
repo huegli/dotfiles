@@ -312,7 +312,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = "-std=c++11"
 
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['flake8']
 
 " Apple CE uses the older Exuberant ctags, this overrides it with my own
 " version
