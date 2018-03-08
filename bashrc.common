@@ -12,6 +12,8 @@ alias ll="ls -lhA"
 alias dir="ls -l"
 alias v="vim"
 alias gitssh="eval \`ssh-agent -s\`; ssh-add ~/.ssh/git_id_rsa"
+alias h="history +20"
+alias lh="history +50"
 
 #############
 # Other Stuff
