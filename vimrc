@@ -33,6 +33,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'nvie/vim-flake8'
 Plugin 'nfvs/vim-perforce'
 Plugin 'godlygeek/tabular.git'
+Plugin 'python-mode/python-mode.git'
 " Plugin 'Valloric/YouCompleteMe'
 
 " All your Plugins must be added before the following line
@@ -221,7 +222,7 @@ endif
 " set laststatus=2
 
 " ------------------- FIGURE OUT WHY THIS NEEDS TO BE HERE ------
-filetype detect
+" filetype detect
 syntax enable
 " -------------------------------------------
 
