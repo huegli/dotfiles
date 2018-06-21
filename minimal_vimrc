@@ -139,7 +139,11 @@ filetype plugin indent on
 syntax enable
 "colorscheme pablo
 " THIS REQUIRES gruvbox to be installed
-" colorscheme gruvbox
+try
+  colorscheme gruvbox
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+endtry
 " }}}
 "     
 "     " fix unicode
