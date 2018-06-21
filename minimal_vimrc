@@ -107,14 +107,20 @@ set showmatch
 "     
 " Always highlight column 80 so it's easier to see where
 " cutoff appears on longer screens
-autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
-set colorcolumn=80
+" THIS REQUIRES VIM > 7.2
+if version >= 704
+"  autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+"  set colorcolumn=80
+endif
 
 " Disable mode indication in last line
 set noshowmode
 
 " Enable True Color support
-set termguicolors
+" THIS REQUIRES VIM > 7.2
+if version >= 704
+"  set termguicolors
+endif
 
 " Always dark
 set background=dark
@@ -131,8 +137,9 @@ autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'm
 
 filetype plugin indent on
 syntax enable
-" colorscheme industry
-colorscheme gruvbox
+"colorscheme pablo
+" THIS REQUIRES gruvbox to be installed
+" colorscheme gruvbox
 " }}}
 "     
 "     " fix unicode
