@@ -1,0 +1,273 @@
+" Settings {{{
+
+" Use vim, not vi api
+set nocompatible
+
+" No backup files
+set nobackup
+
+" No write backup
+set nowritebackup
+
+" No swap file
+set noswapfile
+
+" Command history
+set history=100
+
+" Always show cursor
+set ruler
+
+" Show incomplete commands
+set showcmd
+
+" Incremental searching (search as you type)
+" set incsearch
+
+" Highlight search matches
+set hlsearch
+
+" Ignore case in search
+set smartcase
+
+" Make sure any searches /searchPhrase doesn't need the \c escape character
+set ignorecase
+
+" A buffer is marked as ‘hidden’ if it has unsaved changes, and it is not currently loaded in a window
+" if you try and quit Vim while there are hidden buffers, you will raise an error:
+" E162: No write since last change for buffer “a.txt”
+set hidden
+
+" Turn word wrap off
+set nowrap
+
+" Allow backspace to delete end of line, indent and start of line characters
+set backspace=indent,eol,start
+
+" Convert tabs to spaces
+set expandtab
+
+" Set tab size in spaces (this is for manual indenting)
+set tabstop=4
+
+" The number of spaces inserted for a tab (used for auto indenting)
+set shiftwidth=4
+
+" Turn on line numbers
+set number
+
+" Highlight tailing whitespace
+" See issue: https://github.com/Integralist/ProVim/issues/4
+set list listchars=tab:▸\ ,eol:¬
+
+" Get rid of the delay when pressing O (for example)
+" http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
+set timeout timeoutlen=1000 ttimeoutlen=100
+
+" Always show status bar
+set laststatus=2
+
+" Hide the toolbar
+set guioptions-=T
+
+" UTF encoding
+set encoding=utf-8
+
+" Autoload files that have changed outside of vim
+set autoread
+
+" Use system clipboard
+" http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
+set clipboard+=unnamed
+
+" Don't show intro
+set shortmess+=I
+
+" Better splits (new windows appear below and to the right)
+set splitbelow
+set splitright
+
+" Highlight the current line
+set cursorline
+
+" Ensure Vim doesn't beep at you every time you make a mistype
+set visualbell
+
+" Visual autocomplete for command menu (e.g. :e ~/path/to/file)
+set wildmenu
+
+" redraw only when we need to (i.e. don't redraw when executing a macro)
+set lazyredraw
+
+" highlight a matching [{()}] when cursor is placed on start/end character
+set showmatch
+
+" Set built-in file system explorer to use layout similar to the NERDTree plugin
+"     let g:netrw_liststyle=3
+"     
+" Always highlight column 80 so it's easier to see where
+" cutoff appears on longer screens
+autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+set colorcolumn=80
+
+" Disable mode indication in last line
+set noshowmode
+
+" Enable True Color support
+set termguicolors
+
+" Always dark
+set background=dark
+
+" }}}
+
+" Commands {{{
+
+" specify syntax highlighting for specific files
+autocmd Bufread,BufNewFile *.src set filetype=verilog_systemverilog " vexpand source files
+autocmd Bufread,BufNewFile *.ivg set filetype=verilog_systemverilog " ivg files
+autocmd Bufread,BufNewFile *.f set filetype=text " Don't interpret filelist files as Fortran
+autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
+
+filetype plugin indent on
+syntax enable
+" colorscheme industry
+colorscheme gruvbox
+" }}}
+"     
+"     " fix unicode
+"     " if has("multi_byte")
+"     " "  if &termencoding == ""
+"     " "    let &termencoding = &encoding
+"     " "  endif
+"     "   set encoding=utf-8
+"     "   scriptencoding utf-8
+"     "   setglobal fileencoding=utf-8
+"     "   "setglobal bomb
+"     "   set fileencodings=ucs-bom,utf-8,latin1
+"     " endif
+"     
+"     
+"     " ============================= Nikolai's stuff goes here ==================
+"     
+"     
+"     
+"     
+"     
+"     " filetype detect
+"     syntax enable
+"     "else
+"     set background=dark
+"     colorscheme pablo
+"     
+"     let g:ctrlp_max_depth = 5
+"     let g:ctrlp_max_files = 500
+"     " let g:ctrlp_cmd = 'CtrlPLastMode'
+"     " let g:ctrlp_working_path_mode = 'c'
+"     let g:ctrlp_working_path_mode = 'ra'
+"     let g:ctrlp_follow_symlinks = 0
+"     " let g:ctrlp_default_input = 1
+"     let g:ctrlp_use_caching = 1
+"     let g:ctrlp_root_markers = ['design', 'trunk']
+"     " Disable valadoc syntax highlight
+"     " let vala_ignore_valadoc = 1
+"     
+"     " Enable comment strings
+"     " let vala_comment_strings = 1
+"     
+"     " Highlight space errors
+"     " let vala_space_errors = 1
+"     
+"     " Disable trailing space errors
+"     "let vala_no_trail_space_error = 1
+"     " Disable space-tab-space errors
+"     " let vala_no_tab_space_error = 1
+"     
+"     " Minimum lines used for comment syncing (default 50)
+"     "let vala_minlines = 120
+"     
+"     " Some configurations for Python / program editing in general
+"     noremap <space> za
+"     
+"     au BufNewFile,BufRead *.py
+"         \ set softtabstop=4
+"         \ textwidth=79
+"         \ autoindent
+"         \ fileformat=unix
+"     
+"     " highlight BadWhitespace ctermbg=red guibg=red
+"     "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"     let python_highlight_all=1
+"     
+"     set statusline+=%#warningmsg#
+"     set statusline+=%{SyntasticStatuslineFlag()}
+"     set statusline+=%*
+"     
+"     let g:syntastic_always_populate_loc_list = 1
+"     let g:syntastic_auto_loc_list = 1
+"     let g:syntastic_check_on_open = 0
+"     let g:syntastic_check_on_wq = 0
+"     let g:syntastic_cpp_compiler_options = "-std=c++11"
+"     
+"     let g:syntastic_python_checkers = ['flake8']
+"     
+"     " Apple CE uses the older Exuberant ctags, this overrides it with my own
+"     " version
+"     if hostname() == "scv-nschlegel01.csg.apple.com"
+"         let g:tagbar_ctags_bin = '$HOME/.local/bin/ctags'
+"     endif
+"     
+"     " Leader Key mappings
+"     let g:minimap_show='<leader>ms'
+"     let g:minimap_update='<leader>mu'
+"     let g:minimap_close='<leader>gc'
+"     let g:minimap_toggle='<leader>gt'
+"     
+"     " Tagbar stuff
+"     nmap <F8> :TagbarToggle<CR>
+"     
+"     " Perforce stuff
+"     let g:perforce_open_on_change = 1
+"     
+"     " NERDCommenter
+"     let g:NERDSpaceDelims=1
+"     let g:NERDCommentEmptyLines=1
+"     let g:NERDTrimTrailingWhiteSpace=1
+"     
+"     " Verilog Mode
+"     nnoremap <leader>i :VerilogFollowInstance<CR>
+"     nnoremap <leader>I :VerilogFollowPort<CR>
+"     nnoremap <leader>u :VerilogGotoInstanceStart<CR>
+"     
+"     au BufRead,BufNewFile *.v,*.src 
+"         \ setlocal foldmethod=marker
+"         \ softtabstop=3
+"         \ shiftwidth=3
+"     autocmd BufRead *.v,*.src normal zM
+"     
+"     " Junkyard {{{
+"     " Show line numbers & ruler
+"     " set relativenumber
+"     
+"     
+"     " helps discover completions
+"     " set wildmode=longest,list,full
+"     
+"     " this converts help files to full-screen tabs
+"     " augroup HelpInTabs
+"     " 	autocmd!
+"     " 	autocmd BufEnter *.txt call HelpInNewTab()
+"     " augroup END
+"     
+"     " function! HelpInNewTab ()
+"     " 	if &buftype == 'help'
+"     " 		"Convert to help windo to a tab...
+"     " 		execute "normal \<C-W>T"
+"     " 	endif
+"     " endfunction
+"     
+"     " This is needed only for Cmder/cygwin TERM
+"     " if hostname() == "NIKOLAI"
+"     "     inoremap <Char-0x07f> <BS>
+"     " endif
+"     " }}}
