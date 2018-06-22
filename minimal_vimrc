@@ -56,19 +56,12 @@ set shiftwidth=4
 " Turn on line numbers
 set number
 
-" Highlight tailing whitespace
-" See issue: https://github.com/Integralist/ProVim/issues/4
-set list listchars=tab:▸\ ,eol:¬
-
 " Get rid of the delay when pressing O (for example)
 " http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 " Always show status bar
 set laststatus=2
-
-" Hide the toolbar
-set guioptions-=T
 
 " UTF encoding
 set encoding=utf-8
@@ -87,9 +80,6 @@ set shortmess+=I
 set splitbelow
 set splitright
 
-" Highlight the current line
-set cursorline
-
 " Ensure Vim doesn't beep at you every time you make a mistype
 set visualbell
 
@@ -105,51 +95,17 @@ set showmatch
 " Set built-in file system explorer to use layout similar to the NERDTree plugin
 "     let g:netrw_liststyle=3
 "     
-" Always highlight column 80 so it's easier to see where
-" cutoff appears on longer screens
-" THIS REQUIRES VIM > 7.2
-if version >= 704
-"  autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
-"  set colorcolumn=80
-endif
-
-" Disable mode indication in last line
-set noshowmode
-
-" Enable True Color support
-" THIS REQUIRES VIM > 7.2
-if version >= 704
-"  set termguicolors
-endif
 
 " }}}
 
 " Commands {{{
 
 " specify syntax highlighting for specific files
-autocmd Bufread,BufNewFile *.src set filetype=verilog_systemverilog " vexpand source files
-autocmd Bufread,BufNewFile *.ivg set filetype=verilog_systemverilog " ivg files
-autocmd Bufread,BufNewFile *.f set filetype=text " Don't interpret filelist files as Fortran
 autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
 
 filetype plugin indent on
 syntax enable
-"colorscheme pablo
-" THIS REQUIRES gruvbox to be installed
-try
-  colorscheme gruvbox
-  set background=dark
-  let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
-        \ 'component': {
-        \   'readonly': '%{&readonly?"":""}',
-        \ },
-        \ 'separator': { 'left': '', 'right': '' },
-        \ 'subseparator': { 'left': '', 'right': '' }
-        \ }
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-endtry
+
 " }}}
 "     
 "     " fix unicode
