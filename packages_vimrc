@@ -1,0 +1,45 @@
+if version >= 800
+ 
+  " Try to load minpac.
+  silent! packadd minpac
+
+  if !exists('*minpac#init')
+    " minpac is not available.
+  else
+    packadd minpac
+    call minpac#init()
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('tpope/vim-repeat')
+    call minpac#add('tpope/vim-unimpaired')
+    call minpac#add('tmhedberg/matchit')
+
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+    call minpac#add('vhda/verilog_systemverilog.vim', {'type': 'opt'})
+    call minpac#add('nfvs/vim-perforce', {'type': 'opt'})
+    call minpac#add('godlygeek/tabular', {'type': 'opt'})
+
+    call minpac#add('chrisbra/csv.vim', {'type': 'opt'})
+    call minpac#add('tmux-plugins/vim-tmux', {'type': 'opt'})
+    call minpac#add('ctrlpvim/ctrlp.vim', {'type': 'opt'})
+    call minpac#add('severin-lemaignan/vim-minimap', {'type': 'opt'})
+    call minpac#add('majutsushi/tagbar', {'type': 'opt'})
+    call minpac#add('tmhedberg/SimpylFold', {'type': 'opt'})
+    call minpac#add('vim-scripts/indentpython.vim', {'type': 'opt'})
+    call minpac#add('scrooloose/syntastic', {'type': 'opt'})
+    call minpac#add('scrooloose/nerdcommenter', {'type': 'opt'})
+    call minpac#add('nvie/vim-flake8', {'type': 'opt'})
+    call minpac#add('python-mode/python-mode', {'type': 'opt'})
+    call minpac#add('Valloric/YouCompleteMe', {'type': 'opt'})
+
+  endif
+  
+elseif 
+
+  " if Pathogen is present, try executing to run locally installed bundles
+  try
+    execute pathogen#infect()
+  catch /^Vim\%((\a\+)\)\=:E117/
+    " Do nothing
+  endtry
+
+endif

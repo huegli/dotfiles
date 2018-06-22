@@ -1,0 +1,42 @@
+" Highlight tailing whitespace
+" See issue: https://github.com/Integralist/ProVim/issues/4
+set list listchars=tab:▸\ ,eol:¬
+
+" Hide the toolbar
+set guioptions-=T
+
+" Highlight the current line
+set cursorline
+
+" Always highlight column 80 so it's easier to see where
+" cutoff appears on longer screens
+" THIS REQUIRES VIM > 7.2
+if version >= 704
+"  autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+"  set colorcolumn=80
+endif
+
+
+" Enable True Color support
+" THIS REQUIRES VIM > 7.2
+if version >= 704
+"  set termguicolors
+endif
+
+try
+  colorscheme gruvbox
+  set background=dark
+  let g:lightline = {
+        \ 'colorscheme': 'gruvbox',
+        \ 'component': {
+        \   'readonly': '%{&readonly?"":""}',
+        \ },
+        \ 'separator': { 'left': '', 'right': '' },
+        \ 'subseparator': { 'left': '', 'right': '' }
+        \ }
+  " Disable mode indication in last line (lightline gives us this)
+  set noshowmode
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+endtry
+
