@@ -3,3 +3,61 @@ autocmd Bufread,BufNewFile *.src set filetype=verilog_systemverilog " vexpand so
 autocmd Bufread,BufNewFile *.ivg set filetype=verilog_systemverilog " ivg files
 autocmd Bufread,BufNewFile *.f set filetype=text " Don't interpret filelist files as Fortran
 autocmd Bufread,BufNewFile *.spds set filetype=perl "SPDS files
+
+" enable some plugins
+if version >= 800
+  packadd vim-perforce
+  let g:perforce_open_on_change = 1
+
+  packadd tabular
+
+  packadd indentLine
+  let g:indentLine_char = '┆'
+  let g:indentLine_color_term = 239
+  let g:indentLine_enabled = 0
+
+  packadd verilog_systemverilog.vim
+
+  packadd vimux
+
+endif
+"     
+"     " Apple CE uses the older Exuberant ctags, this overrides it with my own
+"     " version
+"     if hostname() == "scv-nschlegel01.csg.apple.com"
+"         let g:tagbar_ctags_bin = '$HOME/.local/bin/ctags'
+"     endif
+"     
+"     " Leader Key mappings
+"     let g:minimap_show='<leader>ms'
+"     let g:minimap_update='<leader>mu'
+"     let g:minimap_close='<leader>gc'
+"     let g:minimap_toggle='<leader>gt'
+"     
+"     " Tagbar stuff
+"     nmap <F8> :TagbarToggle<CR>
+"     
+"     " Perforce stuff
+"     let g:perforce_open_on_change = 1
+"     
+"     " NERDCommenter
+"     let g:NERDSpaceDelims=1
+"     let g:NERDCommentEmptyLines=1
+"     let g:NERDTrimTrailingWhiteSpace=1
+"     
+"     " Verilog Mode
+"     nnoremap <leader>i :VerilogFollowInstance<CR>
+"     nnoremap <leader>I :VerilogFollowPort<CR>
+"     nnoremap <leader>u :VerilogGotoInstanceStart<CR>
+"     
+" Enable folding in verilog & src files
+au BufRead,BufNewFile *.v,*.src 
+    \ setlocal foldmethod=marker
+    \ softtabstop=3
+    \ shiftwidth=3
+autocmd BufRead *.v,*.src normal zM
+
+" Fold toggle with Spacebar
+noremap <space> za
+
+

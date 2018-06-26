@@ -23,9 +23,14 @@ if version >= 704
 "  set termguicolors
 endif
 
+set background=dark
+
+" Disable mode indication in last line (lightline gives us this)
+set noshowmode
+
+
 try
   colorscheme gruvbox
-  set background=dark
   let g:lightline = {
         \ 'colorscheme': 'gruvbox',
         \ 'component': {
@@ -34,8 +39,6 @@ try
         \ 'separator': { 'left': '', 'right': '' },
         \ 'subseparator': { 'left': '', 'right': '' }
         \ }
-  " Disable mode indication in last line (lightline gives us this)
-  set noshowmode
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
 endtry

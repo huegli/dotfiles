@@ -17,7 +17,9 @@ if version >= 800
     call minpac#add('vhda/verilog_systemverilog.vim', {'type': 'opt'})
     call minpac#add('nfvs/vim-perforce', {'type': 'opt'})
     call minpac#add('godlygeek/tabular', {'type': 'opt'})
-
+    call minpac#add('Yggdroot/indentLine', {'type': 'opt'})
+    call minpac#add('benmills/vimux', {'type': 'opt'})
+    
     call minpac#add('chrisbra/csv.vim', {'type': 'opt'})
     call minpac#add('tmux-plugins/vim-tmux', {'type': 'opt'})
     call minpac#add('ctrlpvim/ctrlp.vim', {'type': 'opt'})
@@ -32,8 +34,8 @@ if version >= 800
     call minpac#add('Valloric/YouCompleteMe', {'type': 'opt'})
 
   endif
-  
-elseif 
+
+else
 
   " if Pathogen is present, try executing to run locally installed bundles
   try
