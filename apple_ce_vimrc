@@ -16,9 +16,17 @@ if version >= 800
   let g:indentLine_color_term = 239
   let g:indentLine_enabled = 0
 
+  packadd fzf
+
+  packadd fzf.vim
+  nnoremap <C-P> :Files<CR>
+  nnoremap <C-B> :Buffers<CR>
+
+  packadd vim-projectionist
+
   packadd verilog_systemverilog.vim
 
-  packadd vimux
+  "  packadd vimux
 
 endif
 "     
@@ -45,11 +53,12 @@ endif
 "     let g:NERDCommentEmptyLines=1
 "     let g:NERDTrimTrailingWhiteSpace=1
 "     
-"     " Verilog Mode
-"     nnoremap <leader>i :VerilogFollowInstance<CR>
-"     nnoremap <leader>I :VerilogFollowPort<CR>
-"     nnoremap <leader>u :VerilogGotoInstanceStart<CR>
-"     
+
+" Verilog Mode
+nnoremap <leader>i :VerilogFollowInstance<CR>
+nnoremap <leader>I :VerilogFollowPort<CR>
+nnoremap <leader>u :VerilogGotoInstanceStart<CR>
+
 " Enable folding in verilog & src files
 au BufRead,BufNewFile *.v,*.src 
     \ setlocal foldmethod=marker
