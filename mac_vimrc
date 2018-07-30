@@ -1,0 +1,24 @@
+" enable some plugins
+if version >= 800
+
+  packadd tabular
+
+  packadd indentLine
+  let g:indentLine_char = '┆'
+  let g:indentLine_color_term = 239
+  let g:indentLine_enabled = 0
+
+  packadd fzf
+
+  packadd fzf.vim
+  nnoremap <C-P> :Files<CR>
+  nnoremap <C-B> :Buffers<CR>
+
+  packadd vim-projectionist
+
+endif
+
+" Fold toggle with Spacebar
+noremap <space> za
+
+
