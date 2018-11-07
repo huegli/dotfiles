@@ -12,6 +12,7 @@ if version >= 800
     call minpac#add('tpope/vim-repeat')
     call minpac#add('tpope/vim-unimpaired')
     call minpac#add('tmhedberg/matchit')
+    call minpac#add('tomtom/tcomment_vim')
 
     call minpac#add('k-takata/minpac', {'type': 'opt'})
     call minpac#add('vhda/verilog_systemverilog.vim', {'type': 'opt'})
@@ -22,6 +23,7 @@ if version >= 800
     call minpac#add('junegunn/fzf.vim', {'type': 'opt'})
     call minpac#add('tpope/vim-projectionist', {'type': 'opt'})
     call minpac#add('tpope/vim-dispatch', {'type': 'opt'})
+    call minpac#add('tomtom/tcomment_vim')
 
     call minpac#add('https://github.com/w0rp/ale.git', {'type': 'opt'})
 "    call minpac#add('benmills/vimux', {'type': 'opt'})
