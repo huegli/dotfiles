@@ -19,6 +19,8 @@ if version >= 800
   packadd ale
   let g:ale_linters = {'python': ['flake8']}
   let g:ale_lint_on_enter = 0
+
+  packadd xml.vim
 endif
 
 " Fold toggle with Spacebar
