@@ -43,24 +43,22 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
+     git
      markdown
-     ;; multiple-cursors
-     ;; treemacs
+     multiple-cursors
+     treemacs
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     ;; ===================
-     ;; my own stuff addad
-     ;; ===================
+     ;; ==== My own stuff
      perforce
+     perl5
      python
      ranger
-     shell
      themes-megapack
      )
 
@@ -194,7 +192,9 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(zenburn
+   dotspacemacs-themes '(ujelly
+                         wombat
+                         zenburn
                          misterioso
                          gruvbox-dark-soft
                          leuven)
@@ -361,7 +361,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
-   dotspacemacs-folding-method 'evil
+   dotspacemacs-folding-method 'origami
 
    ;; If non-nil `smartparens-strict-mode' will be enabled in programming modes.
    ;; (default nil)
@@ -463,15 +463,16 @@ dump."
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
- Put your configuration code here, except for variables that should be set
+Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; set up ESC substitute
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.4)
   (setq-default evil-escape-unordered-key-sequence t)
-;;  (evil-select-search-module 'evil-search-module 'evil-search)
+  ;;  (evil-select-search-module 'evil-search-module 'evil-search)
+  ;; disable line wrap
+  (spacemacs/toggle-truncate-lines-on)
   )
-
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
