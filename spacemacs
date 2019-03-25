@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
      ;; syntax-checking
      ;; version-control
      ;; ==== My own stuff
+     clojure
      perforce
      perl5
      python
@@ -307,7 +308,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
 
    ;; If non-nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
