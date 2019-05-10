@@ -1,5 +1,9 @@
 ;;; My personal init.el
 
+;;; ############################################################################
+;;; Basic stuff that doesn't require additonal packages
+;;; ############################################################################
+
 ;; Hide splash and startup
 (setq inhibit-startup-message t
 inhibit-startup-echo-area-message t)  
@@ -9,6 +13,9 @@ inhibit-startup-echo-area-message t)
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)
+
+;; Tooltip in echo area
+(setq tooltip-use-echo-area t)
 
 ;; default Font & Frame Size
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
@@ -24,32 +31,13 @@ inhibit-startup-echo-area-message t)
 ;; Line numbers
 (global-linum-mode 1)
 
-;; Package Configs
-(require 'package)
-(setq package-enable-at-startup nil)
-(setq package-archives '(("org"   . "http://orgmode.org/elpa/")
-			 ("gnu"   . "http://elpa.gnu.org/packages/")
-			 ("melpa" . "http://melpa.org/packages/")))
-(package-initialize)
+;; Disable backups
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
-;; Bootstrap 'use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
-
-;; Enable EVIL
-(use-package evil
-	     :ensure t
-	     :config
-	     (evil-mode 1))
-
-
-;; My favorite Theme of the moment
-(use-package jbeans-theme
-	     :ensure t
-	     :config
-	     (load-theme 'jbeans t))
+;; show matching parentheses
+(setq show-paren-delay 0)
+(show-paren-mode 1)
 
 ;; IDO
 (require 'ido)
@@ -65,6 +53,46 @@ inhibit-startup-echo-area-message t)
 
 ;; switch windows with cursor keys
 (windmove-default-keybindings)
+
+;;; ############################################################################
+;;; Package Configs
+;;; ############################################################################
+
+(require 'package)
+(setq package-enable-at-startup nil)
+(setq package-archives '(("org"   . "http://orgmode.org/elpa/")
+			 ("gnu"   . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "http://melpa.org/packages/")))
+(package-initialize)
+
+;; Bootstrap 'use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+
+;;; ############################################################################
+;;; Look & Feel from loaded packaged
+;;; ############################################################################
+
+;; My favorite Theme of the moment
+(use-package jbeans-theme
+	     :ensure t
+	     :config
+	     (load-theme 'jbeans t))
+
+;;; ############################################################################
+;;; Evil
+;;; ############################################################################
+
+;; Enable EVIL
+(use-package evil
+	     :ensure t
+	     :config
+	     (evil-mode 1))
+
+
+
 
 ;; Racket mode
 (setq racket-program "/usr/local/bin/racket")
