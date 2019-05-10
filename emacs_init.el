@@ -12,7 +12,7 @@ inhibit-startup-echo-area-message t)
 
 ;; default Font & Frame Size
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
-(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(height . 40))
 (add-to-list 'default-frame-alist '(width . 85))
 
 ;; Fancy titlebar for MacOS
@@ -82,7 +82,7 @@ inhibit-startup-echo-area-message t)
    (quote
     ("7f9dc0c7bc8e5b4a1b9904359ee449cac91fd89dde6aca7a45e4ed2e4985664c" default)))
  '(linum-format " %3i ")
- '(package-selected-packages (quote (racket-mode )))
+ '(package-selected-packages (quote (racket-mode)))
  '(winner-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
