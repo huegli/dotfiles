@@ -91,6 +91,12 @@ inhibit-startup-echo-area-message t)
 	     :config
 	     (evil-mode 1))
 
+(unless (package-installed-p 'evil-escape)
+  (package-install 'evil-escape))
+(evil-escape-mode t)
+(setq-default evil-escape-key-sequence "jk")
+(setq-default evil-escape-delay 0.4)
+(setq-default evil-escape-unordered-key-sequence t)
 
 
 
@@ -110,7 +116,7 @@ inhibit-startup-echo-area-message t)
    (quote
     ("7f9dc0c7bc8e5b4a1b9904359ee449cac91fd89dde6aca7a45e4ed2e4985664c" default)))
  '(linum-format " %3i ")
- '(package-selected-packages (quote (racket-mode )))
+ '(package-selected-packages (quote (evil-escape racket-mode)))
  '(winner-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
