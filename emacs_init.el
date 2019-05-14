@@ -91,6 +91,21 @@ inhibit-startup-echo-area-message t)
 	     :config
 	     (evil-mode 1))
 
+(use-package evil-escape
+  :ensure t
+  :config
+  (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-delay 0.4)
+  (setq-default evil-escape-unordered-key-sequence t)
+  (evil-escape-mode t))
+
+  
+;;; (unless (package-installed-p 'evil-escape)
+;;;   (package-install 'evil-escape))
+;;; (evil-escape-mode t)
+;;; (setq-default evil-escape-key-sequence "jk")
+;;; (setq-default evil-escape-delay 0.4)
+;;; (setq-default evil-escape-unordered-key-sequence t)
 
 
 
