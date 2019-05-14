@@ -19,7 +19,7 @@ inhibit-startup-echo-area-message t)
 
 ;; default Font & Frame Size
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
-(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(height . 35))
 (add-to-list 'default-frame-alist '(width . 85))
 
 ;; Fancy titlebar for MacOS
