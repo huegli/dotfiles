@@ -52,7 +52,7 @@ inhibit-startup-echo-area-message t)
 (add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
 
 ;; Truncate lines
-(setq-default 'truncate-lines t)
+(setq-default truncate-lines t)
 
 ;; IDO
 (require 'ido)
