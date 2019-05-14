@@ -1,4 +1,6 @@
 ;;; My personal init.el
+(setq user-full-name "Nikolai Schlegel")
+(setq user-mail-address "nikolai.schlegel@gmail.com")
 
 ;;; ############################################################################
 ;;; Basic stuff that doesn't require additonal packages
@@ -6,7 +8,7 @@
 
 ;; Hide splash and startup
 (setq inhibit-startup-message t
-inhibit-startup-echo-area-message t)  
+inhibit-startup-echo-area-message t)
 
 ;; Disable menu, scroll & tool bar
 (menu-bar-mode -1)
@@ -19,7 +21,7 @@ inhibit-startup-echo-area-message t)
 
 ;; default Font & Frame Size
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-15"))
-(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(height . 35))
 (add-to-list 'default-frame-alist '(width . 85))
 
 ;; Fancy titlebar for MacOS
@@ -38,6 +40,19 @@ inhibit-startup-echo-area-message t)
 ;; show matching parentheses
 (setq show-paren-delay 0)
 (show-paren-mode 1)
+
+;; Ask "y" or "n" instead of "yes" or "no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Show trailing white spaces
+(setq-default show-trailing-whitespace t)
+
+;; Remove useless whitespace before saving a file
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook (lambda() (delete-trailing-whitespace)))
+
+;; Truncate lines
+(setq-default 'truncate-lines t)
 
 ;; IDO
 (require 'ido)
@@ -99,16 +114,9 @@ inhibit-startup-echo-area-message t)
   (setq-default evil-escape-unordered-key-sequence t)
   (evil-escape-mode t))
 
-  
-;;; (unless (package-installed-p 'evil-escape)
-;;;   (package-install 'evil-escape))
-;;; (evil-escape-mode t)
-;;; (setq-default evil-escape-key-sequence "jk")
-;;; (setq-default evil-escape-delay 0.4)
-;;; (setq-default evil-escape-unordered-key-sequence t)
-
-
-
+;;; ############################################################################
+;;; Stuff needing clean-up
+;;; ############################################################################
 ;; Racket mode
 (setq racket-program "/usr/local/bin/racket")
 
