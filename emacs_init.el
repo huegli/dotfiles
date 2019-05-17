@@ -75,9 +75,9 @@ inhibit-startup-echo-area-message t)
 
 (require 'package)
 (setq package-enable-at-startup nil)
-(setq package-archives '(("org"   . "http://orgmode.org/elpa/")
-			 ("gnu"   . "http://elpa.gnu.org/packages/")
-			 ("melpa" . "http://melpa.org/packages/")))
+(setq package-archives '(("org"          . "http://orgmode.org/elpa/")
+			 ("gnu"          . "http://elpa.gnu.org/packages/")
+			 ("melpa-stable" . "http://stable.melpa.org/packages/")))
 (package-initialize)
 
 ;; Bootstrap 'use-package'
@@ -87,7 +87,7 @@ inhibit-startup-echo-area-message t)
 (require 'use-package)
 
 ;;; ############################################################################
-;;; Look & Feel from loaded packaged
+;;; Look & Feel from loaded package
 ;;; ############################################################################
 
 ;; My favorite Theme of the moment
@@ -113,6 +113,23 @@ inhibit-startup-echo-area-message t)
   (setq-default evil-escape-delay 0.4)
   (setq-default evil-escape-unordered-key-sequence t)
   (evil-escape-mode t))
+
+;; undefine some EVIL keys
+(with-eval-after-load 'evil
+  (define-key evil-normal-state-map (kbd "M-.") nil))
+
+;;; ############################################################################
+;;; Projects
+;;; ############################################################################
+
+;;; Projectile
+(use-package projectile
+  :ensure t
+  :pin melpa-stable
+  :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
 
 ;;; ############################################################################
 ;;; Stuff needing clean-up
