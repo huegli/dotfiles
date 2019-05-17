@@ -99,7 +99,11 @@ inhibit-startup-echo-area-message t)
   (setq-default evil-escape-unordered-key-sequence t)
   (evil-escape-mode t))
 
-  
+
+(use-package platformio-mode
+  :ensure t
+  )
+
 ;;; (unless (package-installed-p 'evil-escape)
 ;;;   (package-install 'evil-escape))
 ;;; (evil-escape-mode t)
