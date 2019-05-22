@@ -8,7 +8,7 @@
 
 ;; Hide splash and startup
 (setq inhibit-startup-message t
-inhibit-startup-echo-area-message t)
+      inhibit-startup-echo-area-message t)
 
 ;; Disable menu, scroll & tool bar
 (menu-bar-mode -1)
@@ -63,6 +63,12 @@ inhibit-startup-echo-area-message t)
 ;; '(ido-ignore-extensions t)
 (setq ido-use-filename-at-point (quote guess))
 
+;; use ibuffer for buffer management
+(defalias 'list-buffers 'ibuffer-other-window)
+
+;; Enable winner mode for window navigation
+(winner-mode 1)
+
 ;; switch window
 (global-set-key (kbd "M-o") 'other-window)
 
@@ -75,10 +81,15 @@ inhibit-startup-echo-area-message t)
 
 (require 'package)
 (setq package-enable-at-startup nil)
-(setq package-archives '(("org"          . "http://orgmode.org/elpa/")
+(setq package-archives '(("org"         . "http://orgmode.org/elpa/")
 			 ("gnu"          . "http://elpa.gnu.org/packages/")
 			 ("melpa-stable" . "http://stable.melpa.org/packages/")
 			 ("melpa"        . "http://melpa.org/packages/")))
+(setq package-archive-priorities
+      '(("melpa-stable" . 50)
+	("gnu"          . 10)
+	("org"          . 5)
+	("melpa"        . 0)))
 (package-initialize)
 
 ;; Bootstrap 'use-package'
@@ -87,15 +98,44 @@ inhibit-startup-echo-area-message t)
   (package-install 'use-package))
 (require 'use-package)
 
+;; Experiment !!!
+(use-package try
+  :ensure t)
+
 ;;; ############################################################################
 ;;; Look & Feel from loaded package
 ;;; ############################################################################
 
 ;; My favorite Theme of the moment
 (use-package jbeans-theme
-	     :ensure t
-	     :config
-	     (load-theme 'jbeans t))
+  :ensure t
+  :config
+  (load-theme 'jbeans t))
+
+;; Which-key helps with learning key combinations
+(use-package which-key
+  :ensure t
+  :config (which-key-mode 1))
+
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+))
+
+;; avy navigation
+(use-package avy
+  :ensure t
+  :bind ("M-g e" . avy-goto-word-1)
+  :bind ("M-g f" . avy-goto-line)
+  :bind ("M-g g" . avy-goto-line)
+  :bind ("M-g w" . avy-goto-word-1)
+  :bind ("C-:" . avy-goto-char)
+  :bind ("C-'" . avy-goto-char-timer))
 
 ;;; ############################################################################
 ;;; Evil
@@ -103,9 +143,8 @@ inhibit-startup-echo-area-message t)
 
 ;; Enable EVIL
 (use-package evil
-	     :ensure t
-	     :config
-	     (evil-mode 1))
+  :ensure t
+  :config (evil-mode 1))
 
 (use-package evil-escape
   :ensure t
@@ -138,7 +177,7 @@ inhibit-startup-echo-area-message t)
 ;;; PlatformIO
 (use-package platformio-mode
   :ensure t
-  )
+)
 
 ;;; ############################################################################
 ;;; Stuff needing clean-up
@@ -159,8 +198,9 @@ inhibit-startup-echo-area-message t)
    (quote
     ("7f9dc0c7bc8e5b4a1b9904359ee449cac91fd89dde6aca7a45e4ed2e4985664c" default)))
  '(linum-format " %3i ")
- '(package-selected-packages (quote (racket-mode)))
- '(winner-mode t))
+ '(package-selected-packages
+   (quote
+    (ace-window try platformio-mode projectile evil-escape evil jbeans-theme use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
