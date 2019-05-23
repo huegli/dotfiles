@@ -132,10 +132,17 @@
   :ensure t
   :bind ("M-g e" . avy-goto-word-1)
   :bind ("M-g f" . avy-goto-line)
-  :bind ("M-g g" . avy-goto-line)
+  :bind ("M-g g" . avy-goto-char-2)
   :bind ("M-g w" . avy-goto-word-1)
-  :bind ("C-:" . avy-goto-char)
-  :bind ("C-'" . avy-goto-char-timer))
+  :bind ("C-:" . avy-goto-char)        ;; won't work in terminal
+  :bind ("C-'" . avy-goto-char-timer)) ;; won't work in terminal
+
+;; ido-vertical
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-vertical-mode 1)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
 ;;; ############################################################################
 ;;; Evil
@@ -157,6 +164,11 @@
 ;; undefine some EVIL keys
 (with-eval-after-load 'evil
   (define-key evil-normal-state-map (kbd "M-.") nil))
+
+;; my keys for EVIL mode
+(with-eval-after-load 'evil
+  (define-key evil-normal-state-map (kbd "ga") 'avy-goto-char-timer)
+  (define-key evil-normal-state-map (kbd "gl") 'avy-goto-line))
 
 ;;; ############################################################################
 ;;; Projects
@@ -200,10 +212,11 @@
  '(linum-format " %3i ")
  '(package-selected-packages
    (quote
-    (ace-window try platformio-mode projectile evil-escape evil jbeans-theme use-package))))
+    (ido-vertical-mode ace-window try platformio-mode projectile evil-escape evil jbeans-theme use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0))))
  '(linum ((t (:background "#222222" :foreground "#666666")))))
