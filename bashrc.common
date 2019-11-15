@@ -18,5 +18,6 @@ alias lh="history +50"
 #############
 # Other Stuff
 #############
-set -o vi
-bind '"jk":vi-movement-mode'
+# set -o vi
+# bind '"jk":vi-movement-mode'
+export EDITOR=kak
