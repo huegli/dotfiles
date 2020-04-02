@@ -2,7 +2,7 @@
 # Prompt
 ########
 
-export PS1='\[\e[0;31m\][\h] \[\e[0;34m\][\t] \[\e[1;36m\](\!) \[\e[1;33m\]\w\[\e[0m\] % '
+export PS1='\[\e[0;31m\][\h] \[\e[0;34m\][\d \A] \[\e[1;36m\](\!) \[\e[1;33m\]\w\[\e[0m\] % '
 
 ########
 # Aliases
@@ -14,6 +14,7 @@ alias v="vim"
 alias gitssh="eval \`ssh-agent -s\`; ssh-add ~/.ssh/git_id_rsa"
 alias h="history +20"
 alias lh="history +50"
+alias bd=". bd -si"
 
 #############
 # Other Stuff
