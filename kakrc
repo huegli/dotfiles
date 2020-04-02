@@ -3,6 +3,18 @@ source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/fzf.kak"
 map global user 'p' ': fzf-mode<ret>'
 
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    # when `backspace' is pressed, 4 spaces are deleted at once
+    set-option global softtabstop 4
+} config %{
+    # these languages will use `expandtab' behavior
+    hook global WinSetOption filetype=(python|kak|sh) expandtab
+    # these languages will use `noexpandtab' behavior
+    hook global WinSetOption filetype=(makefile|go) noexpandtab
+    # these languages will use `smarttab' behavior
+    hook global WinSetOption filetype=(c|cpp) smarttab
+}
+
 plug "alexherbo2/connect.kak"
 
 # plug "andreyorst/kaktree" defer kaktree %{

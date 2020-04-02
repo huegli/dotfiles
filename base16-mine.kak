@@ -4,7 +4,7 @@
 
 evaluate-commands %sh{
     black_lighterer='rgb:383838'
-    black_lighter='rgb:2D2D2D'
+    black_lighter='rgb:171717'
     black_light='rgb:080808'
     cyan_light='rgb:7CB0FF'
     green_dark='rgb:A1B56C'
