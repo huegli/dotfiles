@@ -15,6 +15,7 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
     hook global WinSetOption filetype=(c|cpp) smarttab
 }
 
+plug "alexherbo2/prelude.kak"
 plug "alexherbo2/connect.kak"
 
 # plug "andreyorst/kaktree" defer kaktree %{
@@ -85,6 +86,9 @@ hook global WinSetOption filetype=go %{
     set-option window formatcmd 'gofmt'
 }
 
+# grep with ag
+set global grepcmd 'ag --column'
+
 # line numbers
 add-highlighter global/ number-lines -relative
 
@@ -111,3 +115,7 @@ map global user 'v' ": vsplit<ret>" -docstring "Vertical split buffer"
 map global user 'h' ": split<ret>" -docstring "Horizontal split buffer"
 map global user 't' ": tabnew<ret>" -docstring "New tab with buffer"
 map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
+
+
+# Other custom key mapings
+map global user ',' ": send-text<ret>" -docstring "Send selection to REPL"
