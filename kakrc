@@ -77,7 +77,7 @@ hook global InsertChar \. %{ try %{
 hook global WinSetOption filetype=python %{
     jedi-enable-autocomplete
     lint-enable
-    set-option window lintcmd 'pylint'
+    set-option window lintcmd 'flake8'
     set-option window formatcmd 'black -q  -'
 }
 
@@ -119,3 +119,4 @@ map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
 
 # Other custom key mapings
 map global user ',' ": send-text<ret>" -docstring "Send selection to REPL"
+
