@@ -120,3 +120,14 @@ map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
 # Other custom key mapings
 map global user ',' ": send-text<ret>" -docstring "Send selection to REPL"
 
+# fix tilish overlays
+# Figure out how to handle Alt-f /F -> select/extend to previous char
+map global user <s> <a-s>
+map global user <S> <a-S>
+# Don't worry about Alt-h -> select to beginning of lin,
+map global user <j> <a-j> -docstring "Join lines"
+map global user <J> <a-J> -docstring "Join lines & select spaces"
+map global user <k> <a-k>
+map global user <K> <a-K>
+# Don't worry about Alt-l -> select to end of line
+# Figure out how to handle Alt-t: select/extend previous char
