@@ -1,0 +1,15 @@
+# wget
+# lynx
+# gnupg
+# (manually install apt-cyg from https://raw.githubusercontent.com/kou1okada/apt-cyg/master/apt-cyg to /bin)
+g++
+git
+build-essential
+pkg-config
+make
+libncursesw5-dev
+libncurses5-dev
+automake
+libevent-dev
+bison
+dos2unix

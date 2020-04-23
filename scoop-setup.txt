@@ -1,0 +1,4 @@
+scoop install 7zip git concfg
+scoop install pshazz
+scoop install sudo
+

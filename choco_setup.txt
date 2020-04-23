@@ -1,0 +1,26 @@
+Outside:
+ScanSnap Home
+1Password (broken in Chocolatey)
+Jump Desktop
+Source Code Pro Font
+
+Bootstrap professional:
+choco install chocolatey.extension 
+
+Chocolatey packages:
+
+choco install dropbox -y
+choco install microsoft-windows-terminal -y
+choco install evernote -y
+choco install divvy -y
+choco install notepadplusplus.install -ia "'/D=D:\Chocolatey\NotePadPlusPlu'" -y
+  reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\notepad.exe" /v "Debugger" /t REG_SZ /d "\"d:\Chocolatey\NotepadPlusPlus\notepad++.exe\" -notepadStyleCmdline -z" /f
+choco install libreOffice -y --dir d:\Chocolatey\libreOffice
+choco install virtualhere-client -y --dir d:\Chocolatey\VirtualHere
+choco install bonjour -y
+choco install etcher -y --dir d:\Chocolatey\Etcher
+choco install arduino -y --dir D:\Chocolatey\Arduino
+choco install vscode -y --dir D:\Chocolatey\VSCode
+choco install cascadiacodepl -y --dir D:\Chocolatey\CascadiaCodePL
+choco install thonny -y --dir D:\Chocolatey\Thonny
+
