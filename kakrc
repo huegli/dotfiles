@@ -1,5 +1,4 @@
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
-
+source "%val{config}/plugins/plug.kak/rc/plug.kak" 
 plug "andreyorst/fzf.kak"
 map global user 'p' ': fzf-mode<ret>'
 
@@ -120,14 +119,49 @@ map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
 # Other custom key mapings
 map global user ',' ": send-text<ret>" -docstring "Send selection to REPL"
 
-# fix tilish overlays
-# Figure out how to handle Alt-f /F -> select/extend to previous char
-map global user <s> <a-s>
-map global user <S> <a-S>
-# Don't worry about Alt-h -> select to beginning of lin,
-map global user <j> <a-j> -docstring "Join lines"
-map global user <J> <a-J> -docstring "Join lines & select spaces"
-map global user <k> <a-k>
-map global user <K> <a-K>
+# fix tilish overlay
+declare-user-mode ctrla
+
+map global ctrla <a> <a-a> -docstring "Select whole object"
+map global ctrla <b> <a-b> -docstring "Select previous WORD start"
+map global ctrla <B> <a-B> -docstring "Extend previous WORD start"
+map global ctrla <c> <a-c> -docstring "Change select text without yanking"
+map global ctrla <C> <a-C> -docstring "Copy selection on previous lines"
+map global ctrla <d> <a-d> -docstring "Erase selected text withou yanking"
+map global ctrla <e> <a-e> -docstring "Select next WORD end"
+map global ctrla <E> <a-E> -docstring "Extend next WORD end"
+map global ctrla <f> <a-f> -docstring "Select to previous character included"
+map global ctrla <F> <a-F> -docstring "Extend to previous character included"
+map global ctrla <h> <a-h> -docstring "Select to line begin"
+map global ctrla <H> <a-H> -docstring "Extend to line begin"
+map global ctrla <i> <a-i> -docstring "Select inner object"
+map global ctrla <j> <a-j> -docstring "Join lines"
+map global ctrla <J> <a-J> -docstring "Join lines & select spaces"
+map global ctrla <k> <a-k> -docstring "Keep matching selections"
+map global ctrla <K> <a-K> -docstring "Keep non-matching selections"
+map global ctrla <l> <a-l> -docstring "Select to line end"
+map global ctrla <L> <a-L> -docstring "Extend to line end"
+map global ctrla <m> <a-m> -docstring "Select to previous matching character"
+map global ctrla <M> <a-M> -docstring "Extend to previous matching character"
+map global ctrla <n> <a-n> -docstring "Select previous current search pattern"
+map global ctrla <N> <a-N> -docstring "Extend with previous current search pattern"
+map global ctrla <o> <a-o> -docstring "Add a new empty line below"
+map global ctrla <O> <a-O> -docstring "Add a new emply line above"
+map global ctrla <p> <a-p> -docstring "Paste every yanked line after text"
+map global ctrla <P> <a-P> -docstring "Paste every yanked line before text"
+map global ctrla <R> <a-R> -docstring "Replace selected text with all yanked texts"
+map global ctrla <s> <a-s> -docstring "Split on line ends"
+map global ctrla <S> <a-S> -docstring "Select first/last of selection"
+map global ctrla <t> <a-t> -docstring "Select to previous character"
+map global ctrla <T> <a-T> -docstring "Extend to previou character"
+map global ctrla <u> <a-u> -docstring "Move backward in history"
+map global ctrla <U> <a-U> -docstring "Move forward in history"
+map global ctrla <w> <a-w> -docstring "Select to next WORD start"
+map global ctrla <W> <a-W> -docstring "Extend to next WORD start"
+map global ctrla <x> <a-x> -docstring "Extend selections to whole lines"
+map global ctrla <X> <a-X> -docstring "Crop selections to whole lines"
+map global ctrla <z> <a-z> -docstring "Combine selections from register"
+map global ctrla <Z> <a-Z> -docstring "Combine selections to register"
 # Don't worry about Alt-l -> select to end of line
 # Figure out how to handle Alt-t: select/extend previous char
+map global normal <c-a> ':enter-user-mode<space>ctrla<ret>'
