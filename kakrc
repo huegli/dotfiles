@@ -14,8 +14,8 @@ plug "andreyorst/smarttab.kak" defer smarttab %{
     hook global WinSetOption filetype=(c|cpp) smarttab
 }
 
-plug "alexherbo2/prelude.kak"
-plug "alexherbo2/connect.kak"
+# plug "alexherbo2/prelude.kak"
+# plug "alexherbo2/connect.kak"
 
 # plug "andreyorst/kaktree" defer kaktree %{
 #     # settings for fancy icons as on the screenshot above.
