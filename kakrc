@@ -1,6 +1,12 @@
-source "%val{config}/plugins/plug.kak/rc/plug.kak" 
-plug "andreyorst/fzf.kak"
-map global user 'p' ': fzf-mode<ret>'
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "andreyorst/fzf.kak" config %{
+    map -docstring 'fzf mode' global user 'p' ': fzf-mode<ret>'
+} defer fzf %{
+    set-option global fzf_preview_width '65%'
+    set-option global fzf_project_use_tilda true
+    set-option global fzf_file_command "find . \( -path '*/venv*' -o -path '*/.git*' \) -prune -o -type f -print"
+}
 
 plug "andreyorst/smarttab.kak" defer smarttab %{
     # when `backspace' is pressed, 4 spaces are deleted at once
@@ -45,6 +51,14 @@ plug 'delapouite/kakoune-cd' %{
     alias global ecd edit-current-buffer-directory
     alias global pwd print-working-directory
 }
+
+# EasyMotion
+plug 'danr/kakoune-easymotion' defer kakoune-easymotion %{
+
+}
+face global EasyMotionBackground rgb:999999
+face global EasyMotionForeground yellow+b
+face global EasyMotionSelected white+b
 
 # Favorite color scheme
 colorscheme base16-mine
@@ -108,12 +122,13 @@ tabnew -params .. -command-completion %{
 }
 
 # Ranger
-define-command ranger -params .. -file-completion %(connect ranger %arg(@))
+# define-command ranger -params .. -file-completion %(connect ranger %arg(@))
 
 map global user 'v' ": vsplit<ret>" -docstring "Vertical split buffer"
 map global user 'h' ": split<ret>" -docstring "Horizontal split buffer"
 map global user 't' ": tabnew<ret>" -docstring "New tab with buffer"
-map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
+# map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
+map global user w :easy-motion-word<ret>
 
 
 # Other custom key mapings
