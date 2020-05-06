@@ -53,12 +53,13 @@ plug 'delapouite/kakoune-cd' %{
 }
 
 # EasyMotion
-plug 'danr/kakoune-easymotion' defer kakoune-easymotion %{
-
+plug 'danr/kakoune-easymotion'  %{
+    map global user e ': enter-user-mode easymotion<ret>' -docstring 'EasyMotion'
+    face global EasyMotionBackground rgb:999999
+    face global EasyMotionForeground yellow+b
+    face global EasyMotionSelected white+b
 }
-face global EasyMotionBackground rgb:999999
-face global EasyMotionForeground yellow+b
-face global EasyMotionSelected white+b
+
 
 # Favorite color scheme
 colorscheme base16-mine
@@ -128,7 +129,6 @@ map global user 'v' ": vsplit<ret>" -docstring "Vertical split buffer"
 map global user 'h' ": split<ret>" -docstring "Horizontal split buffer"
 map global user 't' ": tabnew<ret>" -docstring "New tab with buffer"
 # map global user 'r' ": ranger<ret>" -docstring "Vertical split with Ranger"
-map global user w :easy-motion-word<ret>
 
 
 # Other custom key mapings
