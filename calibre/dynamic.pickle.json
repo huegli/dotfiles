@@ -1,0 +1,24 @@
+{
+  "database location dialog": "/library",
+  "recursive book import root dir dialog": "/dropbox/Calibre_Library",
+  "sort_history": [
+    [
+      "title",
+      true
+    ],
+    [
+      "timestamp",
+      true
+    ],
+    [
+      "title",
+      true
+    ],
+    [
+      "timestamp",
+      false
+    ]
+  ],
+  "welcome_wizard_device": "default",
+  "welcome_wizard_was_run": true
+}
