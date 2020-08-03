@@ -3,4 +3,5 @@
 calibre/fonts
 calibre/conversion
 calibre/server-users.sqlite
+calibre/gui.py.json
 

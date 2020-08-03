@@ -26,7 +26,7 @@
   "installation_uuid": "a7047108-5144-4612-89f0-ca5766d07d0f",
   "isbndb_com_key": "",
   "language": "en",
-  "library_path": "/library",
+  "library_path": "/data/Calibre-Library",
   "limit_search_columns": false,
   "limit_search_columns_to": [
     "title",
