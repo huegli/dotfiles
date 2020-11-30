@@ -1,9 +1,10 @@
 source "%val{runtime}/rc/filetype/sh.kak"
 source "%val{runtime}/rc/filetype/kakrc.kak"
+source "%val{runtime}/rc/windowing/tmux.kak"
+source "%val{runtime}/rc/windowing/new-client.kak"
+source "%val{runtime}/rc/windowing/repl/tmux.kak"
 
-require-module kak
 
-require-module prelude
 require-module connect
 
 # source "%val{config}/plugins/plug.kak/rc/plug.kak"
