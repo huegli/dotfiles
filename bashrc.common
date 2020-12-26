@@ -22,3 +22,5 @@ alias bd=". bd -si"
 # set -o vi
 # bind '"jk":vi-movement-mode'
 export EDITOR=kak
+
+stty -ixon
