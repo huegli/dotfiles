@@ -88,7 +88,7 @@ hook global ModuleLoaded tmux %{
       alias global popup tmux-terminal-vertical
 }
 
-source "%val{config}/verilog.kak"
+# source "%val{config}/verilog.kak"
 
 # plug "andreyorst/fzf.kak" config %{
 #     map -docstring 'fzf mode' global user 'p' ': fzf-mode<ret>'
