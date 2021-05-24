@@ -1,0 +1,20 @@
+[core]
+    pager = delta
+
+[delta]
+    plus-style = green bold "#005500"
+    plus-emph-style = white bold "#009900"
+    minus-style = red bold "#550000"
+    minus-emph-style = white bold "#990000"
+    side-by-side = true
+    syntax-theme = base16
+
+[interactive]
+    diffFilter = delta --color-only
+
+[user]
+	email = nikolai.schlegel@gmail.com
+	name = Nikolai Schlegel
+
+[pull]
+	rebase = false
