@@ -8,14 +8,18 @@ export PS1='\[\e[0;31m\][\h] \[\e[m\] \[\e[0;34m\][\d \A]\[\e[m\] \[\e[1;36m\] \
 # Aliases
 #########
 
-# alias ll="ls -lhA"
-alias ll="exa --grid --long --classify --git"
-alias dir="ls -l"
-alias v="vim"
-alias gitssh="eval \`ssh-agent -s\`; ssh-add ~/.ssh/git_id_rsa"
-alias h="history +20"
-alias lh="history +50"
+alias bat='batcat'
+alias fd='fdfind'
 alias bd=". bd -si"
+alias dir='ls -lhAl --color=auto'
+alias cat='bat --theme base16'
+alias b='bat --theme base16 `fd . -tf -d1 | fzy`'
+alias k='kak -c `kak -l | head -1` `fd . -tf -d1 | fzy`'
+alias yd='cd `find . -maxdepth 4 -type d | fzy`'
+alias ybd='. bd -si `pwd | tr / "\n" | fzy`'
+alias ll="exa --long --grid --classify --git --icons"
+alias l="exa --grid --classify --icons"
+alias lt="exa --tree --level=2 --icons --color=always | bat"
 
 #############
 # Other Stuff
