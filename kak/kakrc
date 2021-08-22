@@ -1,3 +1,11 @@
+# LSP for Kakoune
+eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
+set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+        lsp-enable-window
+}
+map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
+
 def fed -params 1 -shell-script-candidates %{ fd . -L -t f } %{ edit %arg{1} }
 def fcd -params 1 -shell-script-candidates %{ fd . -t d } %{ change-directory %arg{1} }
 
@@ -130,7 +138,8 @@ hook global ModuleLoaded tmux %{
 
 
 # Favorite color scheme
-colorscheme base16-mine
+# colorscheme base16-mine
+colorscheme dracula-transparent
 
 # Tab's for completion
 hook global InsertCompletionShow .* %{
