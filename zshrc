@@ -1,122 +1,69 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Dracula Pro prompt
+PROMPT="%B%F{green}> %F{blue}%2~%F{white}%b "
+# Github? / Status?
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+# useful for checking on supported zsh features by version
+autoload is-at-least
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# change directories w/o cd
+setopt AUTO_CD AUTO_PUSHD
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# allow corrections
+setopt CORRECT
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# case sensivite globbing
+setopt CASE_GLOB
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# history related stuff
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+HISTSIZE=20000    			# lines remembered per session
+SAVEHIST=50000    			# lines stored in history file
+setopt EXTENDED_HISTORY			# detailed history
+setopt SHARE_HISTORY			# share across sessions
+setopt HIST_EXPIRE_DUPS_FIRST		# expire duplicates first
+setopt HIST_IGNORE_DUPS			# do not store duplicates
+setopt HIST_FIND_NO_DUPS		# ignore duplicates when searching
+setopt HIST_REDUCE_BLANKS		# remove blank lines from history
+setopt HIST_VERIFY			# allow corrections before execution
+# Disable Ctrl-S
+stty -ixon
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# favorite CLI editor
+if [[ -f /usr/bin/kak || -f /usr/local/bin/kak ]]; then
+  export EDITOR=kak
+fi
+  
+# source FZF
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_TMUX=1
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# source aliases
+[ -f $HOME/dotfiles/zsh_alias.sh ] && source $HOME/dotfiles/zsh_alias.sh
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# zoxide
+eval "$(zoxide init zsh)"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# virtualenvwrapper
+[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ] && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs   # Optional
+export PROJECT_HOME=$HOME/projects      # Optiona# Broot
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+# Broot
+source /home/nikolai/.config/broot/launcher/bash/br
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# this will add local bin if not already present
+[[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# The following lines were added by compinstall
 
-# User configuration
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/nikolai/.zshrc'
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# Nikolai's stuff
-export WORKON_HOME=$HOME/Envs
-source /usr/local/bin/virtualenvwrapper.sh 
-
-# fix terminal colors
-if [ "$TERM" = "xterm" ] ; then
-    if [ -z "$COLORTERM" ] ; then
-        if [ -z "$XTERM_VERSION" ] ; then
-            echo "Warning: Terminal wrongly calling itself 'xterm'."
-        else
-            case "$XTERM_VERSION" in
-                "XTerm(256)") TERM="xterm-256color" ;;
-                "XTerm(88)") TERM="xterm-88color" ;;
-                "XTerm") ;;
-                *)
-                    echo "Warning: Unrecognized XTERM_VERSION: $XTERM_VERSION"
-                    ;;
-                esac
-             fi
-         else
-     case "$COLORTERM" in
-         gnome-terminal)
-             # Those crafty Gnome folks require you to check COLORTERM,
-             # but don't allow you to just *favor* the setting over TERM.
-             # Instead you need to compare it and perform some guesses
-             # based upon the value. This is, perhaps, too simplistic.
-             TERM="gnome-256color"
-             ;;
-          xfce4-terminal)
-              TERM="gnome-256color"
-              ;;
-          *)
-              echo "Warning: Unrecognized COLORTERM: $COLORTERM"
-              ;;
-          esac
-      fi
- fi
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
