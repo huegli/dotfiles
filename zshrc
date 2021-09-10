@@ -42,11 +42,13 @@ export FZF_TMUX=1
 # source aliases
 [ -f $HOME/dotfiles/zsh_alias.sh ] && source $HOME/dotfiles/zsh_alias.sh
 
+# zoxide
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # zoxide
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
 
 # virtualenvwrapper
 [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ] && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
@@ -54,7 +56,7 @@ export WORKON_HOME=$HOME/.virtualenvs   # Optional
 export PROJECT_HOME=$HOME/projects      # Optiona# Broot
 
 # Broot
-source /home/nikolai/.config/broot/launcher/bash/br
+[ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
 
 # this will add local bin if not already present
 [[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
