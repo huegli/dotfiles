@@ -1,6 +1,8 @@
 # Dracula Pro prompt
 PROMPT="%B%F{green}> %F{blue}%2~%F{white}%b "
-# Github? / Status?
+
+# Right side prompt
+RPROMPT='%F{cyan}%*'
 
 # useful for checking on supported zsh features by version
 autoload is-at-least
