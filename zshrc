@@ -61,6 +61,9 @@ export PROJECT_HOME=$HOME/projects      # Optiona# Broot
 # this will add local bin if not already present
 [[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
 
+# Golang
+[[ :$PATH: == *:/usr/local/go/bin:* ]] || PATH=$PATH:/usr/local/go/bin
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
