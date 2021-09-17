@@ -75,9 +75,6 @@ export PROJECT_HOME=$HOME/projects      # Optiona# Broot
 # Broot
 [ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
 
-# this will add local bin if not already present
-[[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
-
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
