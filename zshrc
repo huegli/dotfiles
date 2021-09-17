@@ -18,20 +18,30 @@ setopt CASE_GLOB
 
 # history related stuff
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
-HISTSIZE=20000    			# lines remembered per session
-SAVEHIST=50000    			# lines stored in history file
-setopt EXTENDED_HISTORY			# detailed history
-setopt SHARE_HISTORY			# share across sessions
-setopt HIST_EXPIRE_DUPS_FIRST		# expire duplicates first
-setopt HIST_IGNORE_DUPS			# do not store duplicates
-setopt HIST_FIND_NO_DUPS		# ignore duplicates when searching
-setopt HIST_REDUCE_BLANKS		# remove blank lines from history
-setopt HIST_VERIFY			# allow corrections before execution
+HISTSIZE=20000                          # lines remembered per session
+SAVEHIST=50000                          # lines stored in history file
+setopt EXTENDED_HISTORY                 # detailed history
+setopt SHARE_HISTORY                    # share across sessions
+setopt HIST_EXPIRE_DUPS_FIRST           # expire duplicates first
+setopt HIST_IGNORE_DUPS                 # do not store duplicates
+setopt HIST_FIND_NO_DUPS                # ignore duplicates when searching
+setopt HIST_REDUCE_BLANKS               # remove blank lines from history
+setopt HIST_VERIFY                      # allow corrections before execution
+
 # Disable Ctrl-S
 stty -ixon
 
+# this will add local bin if not already present
+[[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
+ 
+# source aliases
+[ -f $HOME/dotfiles/zsh_alias.sh ] && source $HOME/dotfiles/zsh_alias.sh
+
+# source LS_COLORS
+[ -f $HOME/dotfiles/lscolors.sh ] && source $HOME/dotfiles/lscolors.sh
+
 # favorite CLI editor
-if [[ -f /usr/bin/kak || -f /usr/local/bin/kak ]]; then
+if [[ -f /usr/bin/kak || -f /usr/local/bin/kak || -f $HOME/.local/bin/kak ]]; then
   export EDITOR=kak
 fi
   
