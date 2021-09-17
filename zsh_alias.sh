@@ -6,7 +6,9 @@ alias v="bat --theme base16"
 alias bd='. bd -si'
 
 alias ll="exa --long --grid --classify --git --icons"
-alias lt="exa --tree --level=2 --icons --color=always | bat"
+alias lt="exa --tree --level=2 --icons --color=always | less -r"
+alias ln="exa --grid --classify --icons --sort newest"
+alias lln="exa --long --grid --classify --git --icons --sort newest"
 
 alias t3="tree -d -L 3 | bat --theme base16"
 
