@@ -44,24 +44,29 @@ stty -ixon
 if [[ -f /usr/bin/kak || -f /usr/local/bin/kak || -f $HOME/.local/bin/kak ]]; then
   export EDITOR=kak
 fi
-  
-# source FZF
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-export FZF_TMUX=1
 
-# source aliases
-[ -f $HOME/dotfiles/zsh_alias.sh ] && source $HOME/dotfiles/zsh_alias.sh
+# # source FZF, but make sure both fzf and fd are available
+path_to_fzf=$(whence -p fzf)
+path_to_fd=$(whence -p fd)
+if [[ -x $path_to_fzf && -x $path_to_fzf ]]; then
 
+    [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+
+    # mutually exclusive to the above
+    [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+    [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+
+    export FZF_ALT_C_COMMAND='fd -d 4 -t d -L'
+    export FZF_ALT_C_OPTS="--preview 'tree -L 2 -C {} | head -200'"
+    export FZF_TMUX=1
+
+fi
+ 
 # zoxide
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-# zoxide
-# eval "$(zoxide init zsh)"
-
+if command -v zoxide > /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+ 
 # virtualenvwrapper
 [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ] && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs   # Optional
