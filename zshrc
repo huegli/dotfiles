@@ -28,6 +28,10 @@ setopt HIST_FIND_NO_DUPS                # ignore duplicates when searching
 setopt HIST_REDUCE_BLANKS               # remove blank lines from history
 setopt HIST_VERIFY                      # allow corrections before execution
 
+
+# proper display of Unicode characters 
+export LC_ALL=en_US.UTF-8
+
 # Disable Ctrl-S
 stty -ixon
 
