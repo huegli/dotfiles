@@ -21,7 +21,7 @@ HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=20000                          # lines remembered per session
 SAVEHIST=50000                          # lines stored in history file
 setopt EXTENDED_HISTORY                 # detailed history
-setopt SHARE_HISTORY                    # share across sessions
+# setopt SHARE_HISTORY                    # share across sessions
 setopt HIST_EXPIRE_DUPS_FIRST           # expire duplicates first
 setopt HIST_IGNORE_DUPS                 # do not store duplicates
 setopt HIST_FIND_NO_DUPS                # ignore duplicates when searching
