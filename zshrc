@@ -52,7 +52,7 @@ fi
 # # source FZF, but make sure both fzf and fd are available
 path_to_fzf=$(whence -p fzf)
 path_to_fd=$(whence -p fd)
-if [[ -x $path_to_fzf && -x $path_to_fzf ]]; then
+if [[ -x $path_to_fzf && -x $path_to_fd ]]; then
 
     [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
@@ -71,10 +71,8 @@ if command -v zoxide > /dev/null; then
     eval "$(zoxide init zsh)"
 fi
  
-# virtualenvwrapper
-[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ] && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs   # Optional
-export PROJECT_HOME=$HOME/projects      # Optiona# Broot
+# PipEnv
+export WORKON_HOME=$HOME/.virtualenvs
 
 # Broot
 [ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
@@ -85,10 +83,15 @@ if [[ -x /usr/local/go ]]; then
 fi
 
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/nikolai/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+# iTerm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Secure ShellFish Integration
+test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
