@@ -28,6 +28,14 @@ setopt HIST_FIND_NO_DUPS                # ignore duplicates when searching
 setopt HIST_REDUCE_BLANKS               # remove blank lines from history
 setopt HIST_VERIFY                      # allow corrections before execution
 
+# ZSH completions
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/nikolai/.zshrc'
+
+autoload -Uz compinit
+compinit
+autoload -U bashcompinit
+bashcompinit
 
 # proper display of Unicode characters 
 export LC_ALL=en_US.UTF-8
@@ -73,6 +81,10 @@ fi
  
 # PipEnv
 export WORKON_HOME=$HOME/.virtualenvs
+eval "$(pipenv --completion)"
+
+# PipX
+eval "$(register-python-argcomplete pipx)"
 
 # Broot
 [ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
@@ -81,14 +93,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 if [[ -x /usr/local/go ]]; then
     [[ :$PATH: == *:/usr/local/go/bin:* ]] || PATH=$PATH:/usr/local/go/bin
 fi
-
-# The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/nikolai/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 
 # iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
