@@ -28,6 +28,14 @@ setopt HIST_FIND_NO_DUPS                # ignore duplicates when searching
 setopt HIST_REDUCE_BLANKS               # remove blank lines from history
 setopt HIST_VERIFY                      # allow corrections before execution
 
+# ZSH completions
+zstyle ':completion:*' completer _complete _ignored
+zstyle :compinstall filename '/home/nikolai/.zshrc'
+
+autoload -Uz compinit
+compinit
+autoload -U bashcompinit
+bashcompinit
 
 # proper display of Unicode characters 
 export LC_ALL=en_US.UTF-8
@@ -52,7 +60,7 @@ fi
 # # source FZF, but make sure both fzf and fd are available
 path_to_fzf=$(whence -p fzf)
 path_to_fd=$(whence -p fd)
-if [[ -x $path_to_fzf && -x $path_to_fzf ]]; then
+if [[ -x $path_to_fzf && -x $path_to_fd ]]; then
 
     [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
@@ -75,10 +83,12 @@ if command -v zoxide > /dev/null; then
     eval "$(zoxide init zsh)"
 fi
  
-# virtualenvwrapper
-[ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ] && source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-export WORKON_HOME=$HOME/.virtualenvs   # Optional
-export PROJECT_HOME=$HOME/projects      # Optiona# Broot
+# PipEnv
+export WORKON_HOME=$HOME/.virtualenvs
+eval "$(pipenv --completion)"
+
+# PipX
+eval "$(register-python-argcomplete pipx)"
 
 # Broot
 [ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
@@ -88,11 +98,8 @@ if [[ -x /usr/local/go ]]; then
     [[ :$PATH: == *:/usr/local/go/bin:* ]] || PATH=$PATH:/usr/local/go/bin
 fi
 
-# The following lines were added by compinstall
+# iTerm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/home/nikolai/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Secure ShellFish Integration
+test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
