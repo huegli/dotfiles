@@ -165,11 +165,11 @@ hook global InsertChar \. %{ try %{
 }}
 
 # black formating for Python
-hook global WinSetOption filetype=python %{
-    jedi-enable-autocomplete
-    lint-enable
-    set-option window lintcmd 'flake8'
-    set-option window formatcmd 'black -q  -'
+hook global BufSetOption filetype=python %{
+    # jedi-enable-autocomplete
+    # lint-enable
+    set-option buffer lintcmd 'flake8'
+    set-option buffer formatcmd 'black -q  -'
 }
 
 # Formating and Listing for Go
