@@ -88,7 +88,11 @@ export WORKON_HOME=$HOME/.virtualenvs
 eval "$(pipenv --completion)"
 
 # PipX
-eval "$(register-python-argcomplete pipx)"
+if [[ -x /usr/bin/register-python-argcomplete3 ]]; then
+    eval "$(register-python-argcomplete3 pipx)"
+else
+    eval "$(register-python-argcomplete pipx)"
+fi
 
 # Broot
 [ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
