@@ -60,6 +60,10 @@ if [[ -x $path_to_fzf && -x $path_to_fzf ]]; then
     [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
     [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
 
+    # mutually exclusive to the above
+    [ -f /usr/local/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/local/share/doc/fzf/examples/key-bindings.zsh
+    [ -f /usr/local/share/doc/fzf/examples/completion.zsh ] && source /usr/local/share/doc/fzf/examples/completion.zsh
+
     export FZF_ALT_C_COMMAND='fd -d 4 -t d -L'
     export FZF_ALT_C_OPTS="--preview 'tree -L 2 -C {} | head -200'"
     export FZF_TMUX=1
