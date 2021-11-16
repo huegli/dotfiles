@@ -1,7 +1,7 @@
 alias e="kak"
 alias l="exa --grid --classify --icons"
 alias t="tree -d -L 2 | head -n 40"
-alias v="bat --theme base16"
+alias v="bat --theme Dracula"
 
 alias bd='. bd -si'
 
@@ -11,31 +11,32 @@ alias lt="exa --tree --level=2 --icons --color=always | less -r"
 alias lsn="exa --grid --classify --icons --sort newest"
 alias llsn="exa --long --grid --classify --git --icons --sort newest"
 
-alias t3="tree -d -L 3 | bat --theme base16"
+alias t3="tree -d -L 3 | bat --theme Dracula"
 
-alias yv='bat --theme base16 `fd . -t f -d 1 | fzy`'
+alias yv='bat --theme Dracula `fd . -t f -d 1 | fzy`'
 alias ye='kak -c `kak -l | head -1` `fd . -t f -d 1 | fzy`'
 alias yd='cd `fd . -d 6 -t d | fzy || pwd`'
 alias yb='. bd -si `pwd | tr / "\n" | fzy`'
 
 if [[ -f /usr/local/bin/bat ]]; then
   alias batcat=bat
-  alias bat='bat --theme base16'
-  alias b="bat --theme base16"
+  alias bat='bat --theme Dracula'
+  alias b="bat --theme Dracula"
   
   # suffix aliases
-  alias -s py='bat --theme base16'
-  alias -s c='bat --theme base16'
-  alias -s h='bat --theme base16'
+  alias -s py='bat --theme Dracula'
+  alias -s c='bat --theme Dracula'
+  alias -s h='bat --theme Dracula'
 else
-  alias bat='batcat --theme base16'
-  alias b="batcat --theme base16"
+  alias bat='batcat --theme Dracula'
+  alias b="batcat --theme Dracula"
   
   # suffix aliases
-  alias -s py='batcat --theme base16'
-  alias -s c='batcat --theme base16'
-  alias -s h='batcat --theme base16'
+  alias -s py='batcat --theme Dracula'
+  alias -s c='batcat --theme Dracula'
+  alias -s h='batcat --theme Dracula'
 fi
   
 
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 

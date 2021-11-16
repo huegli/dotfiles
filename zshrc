@@ -84,8 +84,10 @@ if command -v zoxide > /dev/null; then
 fi
  
 # PipEnv
-export WORKON_HOME=$HOME/.virtualenvs
-eval "$(pipenv --completion)"
+if command -v pipenv > /dev/null; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    eval "$(pipenv --completion)"
+fi
 
 # PipX
 if [[ -x /usr/bin/register-python-argcomplete3 ]]; then
@@ -93,9 +95,6 @@ if [[ -x /usr/bin/register-python-argcomplete3 ]]; then
 else
     eval "$(register-python-argcomplete pipx)"
 fi
-
-# Broot
-[ -f /home/nikolai/.config/broot/launcher/bash/br ] && source /home/nikolai/.config/broot/launcher/bash/br
 
 # Golang
 if [[ -x /usr/local/go ]]; then
