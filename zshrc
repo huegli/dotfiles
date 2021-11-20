@@ -1,5 +1,9 @@
 # Dracula Pro prompt
-PROMPT="%B%F{green}> %F{blue}%2~%F{white}%b "
+if [[ -z $SSH_CONNECTION ]]; then
+    PROMPT="%B%F{green}> %F{blue}%2~%F{white}%b "
+else
+    PROMPT="%B%F{magenta}%m%F{green}> %F{blue}%2~%F{white}%b "
+fi
 
 # Right side prompt
 RPROMPT='%F{cyan}%*'
