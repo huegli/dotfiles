@@ -41,6 +41,12 @@ compinit
 autoload -U bashcompinit
 bashcompinit
 
+# Host-specific settings
+if [[ "`hostname`" = "clockworkpi-a06" ]]; then
+    export DOCKER_HOST=ssh://rpi3m-swarm-mgr1
+    export PAN_MESA_DEBUG="gl3"
+fi
+ 
 # proper display of Unicode characters 
 export LC_ALL=en_US.UTF-8
 
