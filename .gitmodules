@@ -1,0 +1,3 @@
+[submodule "nvim/pack/bundle/start/fzf"]
+	path = nvim/pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf.git
