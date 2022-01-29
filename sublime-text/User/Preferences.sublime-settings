@@ -1,0 +1,14 @@
+{
+	"font_face": "MonoLisa Regular",
+	"font_size": 13,
+	
+	"ignored_packages":
+	[
+		"Six",
+		"Vintage",
+		"Vintageous",
+	],
+	"color_scheme": "Packages/Dracula Pro/Dracula Pro (Van Helsing).tmTheme",
+	"theme": "Agila Dracula.sublime-theme",
+	"neovintageous_build_version": 11100,
+}

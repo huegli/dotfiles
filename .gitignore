@@ -4,4 +4,9 @@ calibre/fonts
 calibre/conversion
 calibre/server-users.sqlite
 calibre/gui.py.json
-
+sublime-text/Package Control.last-run
+sublime-text/Package Control.ca-list
+sublime-text/Package Control.ca-bundle
+sublime-text/Package Control.system-ca-bundle
+sublime-text/Package Control.cache/
+sublime-text/Package Control.ca-certs/

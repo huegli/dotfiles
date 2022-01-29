@@ -1,0 +1,5 @@
+[
+	// Toggle the default shell in panel
+  	{ "keys": ["alt+`"], "command": "toggle_terminus_panel" },
+
+]
