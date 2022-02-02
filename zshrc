@@ -2,7 +2,11 @@
 if [[ -z $SSH_CONNECTION ]]; then
     PROMPT="%B%F{green}> %F{blue}%2~%F{white}%b "
 else
-    PROMPT="%B%F{magenta}%m%F{green}> %F{blue}%2~%F{white}%b "
+    if [[ `hostname -s` == "static" ]]; then
+        PROMPT="%B%F{magenta}remote-macmini%F{green}> %F{blue}%2~%F{white}%b "
+    else
+        PROMPT="%B%F{magenta}%m%F{green}> %F{blue}%2~%F{white}%b "
+    fi
 fi
 
 # Right side prompt
