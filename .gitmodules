@@ -4,3 +4,18 @@
 [submodule "nvim/pack/bundle/start/fzf.vim"]
 	path = nvim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "nvim/pack/bundle/start/incsearch.vim"]
+	path = nvim/pack/bundle/start/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim.git
+[submodule "nvim/pack/bundle/start/vim-dispatch"]
+	path = nvim/pack/bundle/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "nvim/pack/bundle/start/vim-dispatch-neovim"]
+	path = nvim/pack/bundle/start/vim-dispatch-neovim
+	url = https://github.com/radenling/vim-dispatch-neovim.git
+[submodule "nvim/pack/bundle/start/vim-projectionist"]
+	path = nvim/pack/bundle/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "nvim/pack/bundle/start/vim-surround"]
+	path = nvim/pack/bundle/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
