@@ -15,7 +15,7 @@ set expandtab
 "" Map leader to ,
 let mapleader=','
 
-"" use ',.' as ESC replacement
+"" use 'jk' as ESC replacement
 imap jk <Esc>
 
 "" Searching
