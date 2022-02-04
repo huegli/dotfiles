@@ -1,10 +1,21 @@
 {
 	"font_face": "MonoLisa Regular",
-	"font_size": 16,
-	"font_options":
-	[
-		"subpixel_antialias"
-	],
+	"osx":
+	{
+		"font_size": 16,
+        "font_options":
+	    [
+		    "subpixel_antialias"
+	    ],
+	},
+	"linux":
+	{
+		"font_size": 13,
+	},
+	"windows":
+	{
+		"font_size": 13,
+	},
     "vintageous_i_escape_jk": true,	
 	"ignored_packages":
 	[
