@@ -1,7 +1,11 @@
 {
 	"font_face": "MonoLisa Regular",
-	"font_size": 13,
-	
+	"font_size": 16,
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+    "vintageous_i_escape_jk": true,	
 	"ignored_packages":
 	[
 		"Six",
