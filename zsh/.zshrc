@@ -43,31 +43,14 @@ compinit
 autoload -U bashcompinit
 bashcompinit
 
-# Host-specific settings
-if [[ "`hostname`" = "clockworkpi-a06" ]]; then
-    export DOCKER_HOST=ssh://rpi3m-swarm-mgr1
-    export PAN_MESA_DEBUG="gl3"
-fi
- 
-# proper display of Unicode characters 
-export LC_ALL=en_US.UTF-8
-
 # Disable Ctrl-S
 stty -ixon
 
-# this will add local bin if not already present
-[[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
- 
 # source aliases
 [ -f $XDG_CONFIG_HOME/zsh/aliases ] && source $XDG_CONFIG_HOME/zsh/aliases
 
 # source LS_COLORS
 [ -f $HOME/dotfiles/lscolors.sh ] && source $HOME/dotfiles/lscolors.sh
-
-# favorite CLI editor
-if [[ -f /usr/bin/kak || -f /usr/local/bin/kak || -f $HOME/.local/bin/kak ]]; then
-  export EDITOR=kak
-fi
 
 # # source FZF, but make sure both fzf and fd are available
 path_to_fzf=$(whence -p fzf)
@@ -103,11 +86,11 @@ if command -v pipenv > /dev/null; then
 fi
 
 # PipX
-if [[ -x /usr/bin/register-python-argcomplete3 ]]; then
-    eval "$(register-python-argcomplete3 pipx)"
-else
-    eval "$(register-python-argcomplete pipx)"
-fi
+#if [[ -x /usr/bin/register-python-argcomplete3 ]]; then
+#    eval "$(register-python-argcomplete3 pipx)"
+#else
+#    eval "$(register-python-argcomplete pipx)"
+#fi
 
 # Golang
 if [[ -x /usr/local/go ]]; then
