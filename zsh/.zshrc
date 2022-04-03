@@ -61,7 +61,7 @@ stty -ixon
 [[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
  
 # source aliases
-[ -f $HOME/dotfiles/zsh_alias.sh ] && source $HOME/dotfiles/zsh_alias.sh
+[ -f $XDG_CONFIG_HOME/zsh/aliases ] && source $XDG_CONFIG_HOME/zsh/aliases
 
 # source LS_COLORS
 [ -f $HOME/dotfiles/lscolors.sh ] && source $HOME/dotfiles/lscolors.sh
@@ -100,7 +100,8 @@ fi
 # PipEnv
 if command -v pipenv > /dev/null; then
     export WORKON_HOME=$HOME/.virtualenvs
-    eval "$(pipenv --completion)"
+    # Need to revisit this
+    # eval "$(pipenv --completion)"
 fi
 
 # PipX
