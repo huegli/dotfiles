@@ -1,5 +1,5 @@
 "" source setttings
-include "settings.vim"
+source "settings.vim"
 
 "" Dracula Pro colorscheme
 packadd! dracula_pro
