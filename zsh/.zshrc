@@ -1,6 +1,21 @@
 # VI mode
 bindkey -v
-export KEYTIMEOUT=1
+export KEYTIMEOUT=40
+
+# For VI mode 
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Exit Insert mode with 'jk'
+bindkey -M viins 'jk' vi-cmd-mode 
+
+# NeoVim for command line edit
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
 
 # Dracula Pro prompt
 if [[ -z $SSH_CONNECTION ]]; then
@@ -46,13 +61,7 @@ setopt HIST_VERIFY                      # allow corrections before execution
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/nikolai/.zshrc'
 
-# For VI mode 
-zmodload zsh/complist
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
+# completion (both zsh and bash)
 autoload -Uz compinit
 compinit
 autoload -U bashcompinit
