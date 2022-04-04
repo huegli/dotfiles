@@ -1,3 +1,7 @@
+# VI mode
+bindkey -v
+export KEYTIMEOUT=1
+
 # Dracula Pro prompt
 if [[ -z $SSH_CONNECTION ]]; then
     PROMPT="%B%F{green}> %F{blue}%2~%F{white}%b "
@@ -17,6 +21,10 @@ autoload is-at-least
 
 # change directories w/o cd
 setopt AUTO_CD AUTO_PUSHD
+# Do not store duplicate directories in the stack
+setopt PUSHD_IGNORE_DUPS
+# Do not print the directory stack after using pushd or popd
+setopt PUSHD_SILENT
 
 # insert slash after directory
 setopt AUTO_PARAM_SLASH
@@ -38,13 +46,32 @@ setopt HIST_VERIFY                      # allow corrections before execution
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/nikolai/.zshrc'
 
+# For VI mode 
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
 autoload -Uz compinit
 compinit
 autoload -U bashcompinit
 bashcompinit
 
+# Autocomplete hidden files
+_comp_options+=(globdots)
+
+# source extra completion from presto
+source ~/dotfiles/zsh/external/completion.zsh
+
+# for autoloading everything in external directory
+fpath=($ZDOTDIR/external $fpath)
+
 # Disable Ctrl-S
 stty -ixon
+
+# Changing Cursor
+autoload -Uz cursor_mode && cursor_mode
 
 # source aliases
 [ -f $XDG_CONFIG_HOME/zsh/aliases ] && source $XDG_CONFIG_HOME/zsh/aliases
