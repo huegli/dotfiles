@@ -16,7 +16,7 @@ alias ye='kak -c `kak -l | head -1` `fd . -t f -d 1 | fzy`'
 alias yd='cd `fd . -d 6 -t d | fzy || pwd`'
 alias yb='. bd -si `pwd | tr / "\n" | fzy`'
 
-if [[ -f /usr/local/bin/bat ]]; then
+if [[ -f /usr/local/bin/bat ]] || [[ -f /sbin/bat ]]; then
   alias batcat=bat
   alias bat='bat --theme Dracula'
   alias b="bat --theme Dracula"
