@@ -77,6 +77,8 @@ _comp_options+=(globdots)
 
 # source extra completion from presto
 source ~/dotfiles/zsh/external/completion.zsh
+# bd command
+source ~/dotfiles/zsh/external/bd.zsh
 
 # for autoloading everything in external directory
 fpath=($ZDOTDIR/external $fpath)

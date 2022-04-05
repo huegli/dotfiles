@@ -3,8 +3,6 @@ alias l="exa --grid --classify --icons"
 alias t="tree -d -L 2 | head -n 40"
 alias v="bat --theme Dracula"
 
-alias bd='. bd -si'
-
 alias ll="exa --long --grid --classify --git --icons"
 alias dir=ll
 alias lt="exa --tree --level=2 --icons --color=always | less -r"
