@@ -61,6 +61,11 @@ setopt HIST_VERIFY                      # allow corrections before execution
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/nikolai/.zshrc'
 
+# additional ZSH completions
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
 # completion (both zsh and bash)
 autoload -Uz compinit
 compinit
@@ -138,3 +143,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Secure ShellFish Integration
 test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
+
+# ZSH syntax highlighting
+test -e "/usr/local/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" &&
+    source "/usr/local/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
