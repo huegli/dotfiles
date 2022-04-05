@@ -1,4 +1,4 @@
-alias e="kak"
+alias e="nvim"
 alias l="exa --grid --classify --icons"
 alias t="tree -d -L 2 | head -n 40"
 alias v="bat --theme Dracula"
@@ -35,6 +35,10 @@ else
   alias -s h='batcat --theme Dracula'
 fi
   
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gs='git status'
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
