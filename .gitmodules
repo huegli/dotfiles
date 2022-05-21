@@ -49,3 +49,9 @@
 [submodule "a-shell/vim/pack/basic/start/nerdtree"]
 	path = a-shell/vim/pack/basic/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "a-shell/vim/pack/themes/start"]
+	path = a-shell/vim/pack/themes/start
+	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "a-shell/vim/pack/themes/start/papercolor-theme"]
+	path = a-shell/vim/pack/themes/start/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
