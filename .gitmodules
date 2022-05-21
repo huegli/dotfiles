@@ -19,3 +19,33 @@
 [submodule "nvim/pack/bundle/start/vim-surround"]
 	path = nvim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "ctrlp.vim"]
+	path = ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim-surround"]
+	path = vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim-unimpaired"]
+	path = vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim-sneak"]
+	path = vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
+[submodule "./vim-sneak"]
+	path = ./vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
+[submodule "a-shell/vim/pack/basic/start/vim-sneak"]
+	path = a-shell/vim/pack/basic/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
+[submodule "a-shell/vim/pack/basic/start/vim-unimpaired"]
+	path = a-shell/vim/pack/basic/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "a-shell/vim/pack/basic/start/vim-surround"]
+	path = a-shell/vim/pack/basic/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "a-shell/vim/pack/basic/start/ctrlp.vim"]
+	path = a-shell/vim/pack/basic/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "a-shell/vim/pack/basic/start/nerdtree"]
+	path = a-shell/vim/pack/basic/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
