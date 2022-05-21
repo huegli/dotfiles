@@ -49,9 +49,24 @@
 [submodule "a-shell/vim/pack/basic/start/nerdtree"]
 	path = a-shell/vim/pack/basic/start/nerdtree
 	url = https://github.com/preservim/nerdtree.git
-[submodule "a-shell/vim/pack/themes/start"]
-	path = a-shell/vim/pack/themes/start
-	url = https://github.com/NLKNguyen/papercolor-theme.git
 [submodule "a-shell/vim/pack/themes/start/papercolor-theme"]
 	path = a-shell/vim/pack/themes/start/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "haiku/vim/pack/basic/start/vim-unimpaired"]
+	path = haiku/vim/pack/basic/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "haiku/vim/pack/basic/start/vim-surround"]
+	path = haiku/vim/pack/basic/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "haiku/vim/pack/basic/start/vim-sneak"]
+	path = haiku/vim/pack/basic/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
+[submodule "haiku/vim/pack/basic/start/nerdtree"]
+	path = haiku/vim/pack/basic/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "haiku/vim/pack/basic/start/ctrlp.vim"]
+	path = haiku/vim/pack/basic/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "haiku/vim/pack/themes/start/papercolor-theme"]
+	path = haiku/vim/pack/themes/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
