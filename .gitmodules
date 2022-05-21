@@ -61,3 +61,6 @@
 [submodule "a-shell/vim/pack/themes/start/vim-airline-themes"]
 	path = a-shell/vim/pack/themes/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "a-shell/vim/pack/coding/start/ale"]
+	path = a-shell/vim/pack/coding/start/ale
+	url = https://github.com/dense-analysis/ale.git
