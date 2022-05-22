@@ -67,3 +67,6 @@
 [submodule "a-shell/vim/pack/themes/start/vim-polyglot"]
 	path = a-shell/vim/pack/themes/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "a-shell/vim/pack/basic/start/vim-sensible"]
+	path = a-shell/vim/pack/basic/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
