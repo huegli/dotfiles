@@ -1,26 +1,17 @@
 " Very basic Vim
 
-" Basic settings {{{
+" Basic settings not covered in vim-sensible {{{
 
-set nocompatible 	" use Vim, not vi API
 set nobackup		" No backup files
 set nowritebackup
 set noswapfile
 
-set history=100 	" command history
-
-set ruler		" always show cursor
-
 set showcmd		" show incomplete commands
 
-set incsearch		" search as you type
-set hlsearch		" highlight search matches
+set hlsearch
 set smartcase		" ignore case in search
 
 set nowrap		" turn word wrap off
-
-" Allow backspace to delete end of line, indent and start of line characters
-set backspace=indent,eol,start
 
 set tabstop=4		" set tab size in spaces
 set expandtab		" tabs to spacts
@@ -30,15 +21,9 @@ set number relativenumber	" show line relative lineumbers
 
 set visualbell      " No beeping
 
-set wildmenu        " Visual autocomplete for command menu
-
-set encoding=utf-8  " UTF Encoding
-
 set autoread        " Autoload files that have changed outside of vim
 
 set lazyredraw     " redraw only when needed (e.g. don't redraw when executing a macro)
-
-set autoindent      " same indent in new line 
 
 " highlight matching [{()}] when cursor is placed on start/end character
 set showmatch
@@ -52,9 +37,6 @@ let g:netrw_liststyle=3     " Set built-in file system explorer to match NERDTre
 
 set cursorline      " Highlight current line
 
-" ident enabled
-filetype plugin indent on
-
 " Highlight tailing whitespace
 set list listchars=tab:▸\ ,eol:¬
 
@@ -65,12 +47,6 @@ set colorcolumn=88
 " exit insert mode
 inoremap jk <ESC>
 inoremap kj <ESC>
-
-"" Dracula Pro colorscheme
-"packadd! dracula_pro
-syntax enable
-"let g:dracula_colorterm = 0
-"colorscheme dracula_pro_van_helsing
 
 " PaperColor colorscheme
 colorscheme PaperColor
