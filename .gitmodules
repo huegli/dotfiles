@@ -76,3 +76,6 @@
 [submodule "a-shell/vim/pack/coding/start/SimplyFold"]
 	path = a-shell/vim/pack/coding/start/SimplyFold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "a-shell/vim/pack/coding/start/indentLine"]
+	path = a-shell/vim/pack/coding/start/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
