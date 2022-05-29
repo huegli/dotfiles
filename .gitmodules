@@ -73,3 +73,6 @@
 [submodule "haiku/vim/pack/basic/start/vim-sensible"]
 	path = haiku/vim/pack/basic/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "a-shell/vim/pack/coding/start/SimplyFold"]
+	path = a-shell/vim/pack/coding/start/SimplyFold
+	url = https://github.com/tmhedberg/SimpylFold.git
