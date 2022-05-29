@@ -79,3 +79,6 @@
 [submodule "a-shell/vim/pack/coding/start/indentLine"]
 	path = a-shell/vim/pack/coding/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "a-shell/vim/pack/basic/start/fern"]
+	path = a-shell/vim/pack/basic/start/fern
+	url = https://github.com/lambdalisue/fern.vim.git
