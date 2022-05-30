@@ -79,3 +79,12 @@
 [submodule "a-shell/vim/pack/basic/start/fern"]
 	path = a-shell/vim/pack/basic/start/fern
 	url = https://github.com/lambdalisue/fern.vim.git
+[submodule "a-shell/vim/pack/coding/start/vim-commentary"]
+	path = a-shell/vim/pack/coding/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "a-shell/vim/pack/coding/start/vim-projectionist"]
+	path = a-shell/vim/pack/coding/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "a-shell/vim/pack/coding/start/vim-dispatch"]
+	path = a-shell/vim/pack/coding/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
