@@ -88,3 +88,6 @@
 [submodule "a-shell/vim/pack/coding/start/vim-dispatch"]
 	path = a-shell/vim/pack/coding/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "a-shell/vim/pack/basic/start/supertab"]
+	path = a-shell/vim/pack/basic/start/supertab
+	url = https://github.com/ervandew/supertab.git
