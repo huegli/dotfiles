@@ -28,9 +28,6 @@
 [submodule "a-shell/vim/pack/basic/start/vim-surround"]
 	path = a-shell/vim/pack/basic/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "a-shell/vim/pack/basic/start/ctrlp.vim"]
-	path = a-shell/vim/pack/basic/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "a-shell/vim/pack/themes/start/papercolor-theme"]
 	path = a-shell/vim/pack/themes/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
@@ -73,21 +70,27 @@
 [submodule "a-shell/vim/pack/coding/start/SimplyFold"]
 	path = a-shell/vim/pack/coding/start/SimplyFold
 	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "a-shell/vim/pack/coding/start/indentLine"]
-	path = a-shell/vim/pack/coding/start/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
-[submodule "a-shell/vim/pack/basic/start/fern"]
-	path = a-shell/vim/pack/basic/start/fern
-	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "a-shell/vim/pack/coding/start/vim-commentary"]
-	path = a-shell/vim/pack/coding/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "a-shell/vim/pack/coding/start/vim-projectionist"]
-	path = a-shell/vim/pack/coding/start/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist.git
 [submodule "a-shell/vim/pack/coding/start/vim-dispatch"]
 	path = a-shell/vim/pack/coding/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
 [submodule "a-shell/vim/pack/basic/start/supertab"]
 	path = a-shell/vim/pack/basic/start/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "a-shell/vim/pack/basic/start/vim-commentary"]
+	path = a-shell/vim/pack/basic/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "a-shell/vim/pack/basic/start/vim-flagship"]
+	path = a-shell/vim/pack/basic/start/vim-flagship
+	url = https://github.com/tpope/vim-flagship.git
+[submodule "a-shell/vim/pack/basic/start/vim-projectionist"]
+	path = a-shell/vim/pack/basic/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "a-shell/vim/pack/basic/start/indentLine"]
+	path = a-shell/vim/pack/basic/start/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule "a-shell/vim/pack/coding/start/ctrlp.vim"]
+	path = a-shell/vim/pack/coding/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "a-shell/vim/pack/coding/start/fern.vim"]
+	path = a-shell/vim/pack/coding/start/fern.vim
+	url = https://github.com/lambdalisue/fern.vim.git
