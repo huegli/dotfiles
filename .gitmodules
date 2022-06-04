@@ -94,3 +94,6 @@
 [submodule "a-shell/vim/pack/coding/start/fern.vim"]
 	path = a-shell/vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
+[submodule "a-shell/vim/pack/basic/start/targets"]
+	path = a-shell/vim/pack/basic/start/targets
+	url = https://github.com/wellle/targets.vim.git
