@@ -8,6 +8,7 @@ set noswapfile
 
 set showcmd		" show incomplete commands
 
+set hidden      " switch buffers w/o saving
 set hlsearch
 set smartcase		" ignore case in search
 
