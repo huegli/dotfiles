@@ -40,9 +40,6 @@
 [submodule "haiku/vim/pack/basic/start/vim-sneak"]
 	path = haiku/vim/pack/basic/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak.git
-[submodule "haiku/vim/pack/basic/start/nerdtree"]
-	path = haiku/vim/pack/basic/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
 [submodule "haiku/vim/pack/basic/start/ctrlp.vim"]
 	path = haiku/vim/pack/basic/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -97,3 +94,21 @@
 [submodule "a-shell/vim/pack/basic/start/targets"]
 	path = a-shell/vim/pack/basic/start/targets
 	url = https://github.com/wellle/targets.vim.git
+[submodule "haiku/vim/pack/basic/start/indentLine"]
+	path = haiku/vim/pack/basic/start/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule "haiku/vim/pack/basic/start/supertab"]
+	path = haiku/vim/pack/basic/start/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "haiku/vim/pack/basic/start/targets.vim"]
+	path = haiku/vim/pack/basic/start/targets.vim
+	url = https://github.com/wellle/targets.vim.git
+[submodule "haiku/vim/pack/basic/start/vim-commentary"]
+	path = haiku/vim/pack/basic/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "haiku/vim/pack/basic/start/vim-flagship"]
+	path = haiku/vim/pack/basic/start/vim-flagship
+	url = https://github.com/tpope/vim-flagship.git
+[submodule "haiku/vim/pack/basic/start/vim-projectionist"]
+	path = haiku/vim/pack/basic/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
