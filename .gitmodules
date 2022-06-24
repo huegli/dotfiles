@@ -127,3 +127,6 @@
 [submodule "haiku/vim/pack/coding/start/tagbar"]
 	path = haiku/vim/pack/coding/start/tagbar
 	url = https://github.com/preservim/tagbar.git
+[submodule "a-shell/vim/pack/basic/start/vim-cheat40"]
+	path = a-shell/vim/pack/basic/start/vim-cheat40
+	url = https://github.com/lifepillar/vim-cheat40.git
