@@ -130,3 +130,6 @@
 [submodule "a-shell/vim/pack/basic/start/vim-cheat40"]
 	path = a-shell/vim/pack/basic/start/vim-cheat40
 	url = https://github.com/lifepillar/vim-cheat40.git
+[submodule "haiku/vim/pack/basic/start/vim-cheat40"]
+	path = haiku/vim/pack/basic/start/vim-cheat40
+	url = https://github.com/lifepillar/vim-cheat40.git
