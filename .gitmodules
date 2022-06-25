@@ -136,30 +136,3 @@
 [submodule "a-shell/vim/pack/coding/start/context"]
 	path = a-shell/vim/pack/coding/start/context
 	url = https://github.com/wellle/context.vim.git
-[submodule "vim/themes/start/papercolor-theme"]
-	path = vim/themes/start/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "vim/themes/start/vim-airline"]
-	path = vim/themes/start/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "vim/themes/start/vim-airline-themes"]
-	path = vim/themes/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/themes/start/vim-polyglot"]
-	path = vim/themes/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
-[submodule "vim/basic/start/vim-unimpaired"]
-	path = vim/basic/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-[submodule "vim/basic/start/vim-surround"]
-	path = vim/basic/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/basic/start/vim-sneak"]
-	path = vim/basic/start/vim-sneak
-	url = https://github.com/justinmk/vim-sneak.git
-[submodule "vim/basic/start/vim-sensible"]
-	path = vim/basic/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/basic/start/vim-projectionist"]
-	path = vim/basic/start/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist.git
