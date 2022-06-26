@@ -136,3 +136,6 @@
 [submodule "a-shell/vim/pack/coding/start/context"]
 	path = a-shell/vim/pack/coding/start/context
 	url = https://github.com/wellle/context.vim.git
+[submodule "vim/pack/coding/start/YouCompleteMe"]
+	path = vim/pack/coding/start/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
