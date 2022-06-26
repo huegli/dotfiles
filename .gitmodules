@@ -139,3 +139,6 @@
 [submodule "vim/pack/coding/start/YouCompleteMe"]
 	path = vim/pack/coding/start/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule "a-shell/vim/pack/coding/start/vim-pythonsense"]
+	path = a-shell/vim/pack/coding/start/vim-pythonsense
+	url = https://github.com/jeetsukumaran/vim-pythonsense.git
