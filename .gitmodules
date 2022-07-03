@@ -145,3 +145,6 @@
 [submodule "a-shell/vim/pack/coding/start/vim-pythonsense"]
 	path = a-shell/vim/pack/coding/start/vim-pythonsense
 	url = https://github.com/jeetsukumaran/vim-pythonsense.git
+[submodule "a-shell/vim/pack/coding/start/ctrlp-funky"]
+	path = a-shell/vim/pack/coding/start/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git
