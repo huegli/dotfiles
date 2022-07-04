@@ -151,3 +151,12 @@
 [submodule "vim/pack/coding/start/SimpylFold"]
 	path = vim/pack/coding/start/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "vim/pack/coding/start/ctrlp.vim"]
+	path = vim/pack/coding/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/coding/start/ctrlp-funky"]
+	path = vim/pack/coding/start/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule "vim/pack/coding/start/fern.vim"]
+	path = vim/pack/coding/start/fern.vim
+	url = https://github.com/lambdalisue/fern.vim.git
