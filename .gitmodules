@@ -148,3 +148,6 @@
 [submodule "a-shell/vim/pack/coding/start/ctrlp-funky"]
 	path = a-shell/vim/pack/coding/start/ctrlp-funky
 	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule "vim/pack/coding/start/SimpylFold"]
+	path = vim/pack/coding/start/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
