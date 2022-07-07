@@ -160,3 +160,21 @@
 [submodule "vim/pack/coding/start/fern.vim"]
 	path = vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
+[submodule "vim/pack/basic/start/vim-projectionist"]
+	path = vim/pack/basic/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "vim/pack/basic/start/vim-surround"]
+	path = vim/pack/basic/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/basic/start/vim-sensible"]
+	path = vim/pack/basic/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/pack/basic/start/vim-unimpaired"]
+	path = vim/pack/basic/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/pack/basic/start/vim-commentary"]
+	path = vim/pack/basic/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/pack/basic/start/vim-sneak"]
+	path = vim/pack/basic/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
