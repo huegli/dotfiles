@@ -136,3 +136,48 @@
 [submodule "haiku/vim/pack/coding/start/context.vim"]
 	path = haiku/vim/pack/coding/start/context.vim
 	url = https://github.com/wellle/context.vim.git
+[submodule "a-shell/vim/pack/coding/start/context"]
+	path = a-shell/vim/pack/coding/start/context
+	url = https://github.com/wellle/context.vim.git
+[submodule "vim/pack/coding/start/ale"]
+	path = vim/pack/coding/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "vim/pack/coding/start/context.vim"]
+	path = vim/pack/coding/start/context.vim
+	url = https://github.com/wellle/context.vim.git
+[submodule "a-shell/vim/pack/coding/start/vim-pythonsense"]
+	path = a-shell/vim/pack/coding/start/vim-pythonsense
+	url = https://github.com/jeetsukumaran/vim-pythonsense.git
+[submodule "a-shell/vim/pack/coding/start/ctrlp-funky"]
+	path = a-shell/vim/pack/coding/start/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule "vim/pack/coding/start/SimpylFold"]
+	path = vim/pack/coding/start/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "vim/pack/coding/start/ctrlp.vim"]
+	path = vim/pack/coding/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/pack/coding/start/ctrlp-funky"]
+	path = vim/pack/coding/start/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule "vim/pack/coding/start/fern.vim"]
+	path = vim/pack/coding/start/fern.vim
+	url = https://github.com/lambdalisue/fern.vim.git
+[submodule "vim/pack/basic/start/vim-projectionist"]
+	path = vim/pack/basic/start/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist.git
+[submodule "vim/pack/basic/start/vim-surround"]
+	path = vim/pack/basic/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/basic/start/vim-sensible"]
+	path = vim/pack/basic/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/pack/basic/start/vim-unimpaired"]
+	path = vim/pack/basic/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/pack/basic/start/vim-commentary"]
+	path = vim/pack/basic/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/pack/basic/start/vim-sneak"]
+	path = vim/pack/basic/start/vim-sneak
+	url = https://github.com/justinmk/vim-sneak.git
