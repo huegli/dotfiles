@@ -133,3 +133,6 @@
 [submodule "haiku/vim/pack/basic/start/vim-cheat40"]
 	path = haiku/vim/pack/basic/start/vim-cheat40
 	url = https://github.com/lifepillar/vim-cheat40.git
+[submodule "haiku/vim/pack/coding/start/context.vim"]
+	path = haiku/vim/pack/coding/start/context.vim
+	url = https://github.com/wellle/context.vim.git
