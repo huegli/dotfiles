@@ -94,9 +94,6 @@
 [submodule "haiku/vim/pack/basic/start/indentLine"]
 	path = haiku/vim/pack/basic/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "haiku/vim/pack/basic/start/supertab"]
-	path = haiku/vim/pack/basic/start/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "haiku/vim/pack/basic/start/targets.vim"]
 	path = haiku/vim/pack/basic/start/targets.vim
 	url = https://github.com/wellle/targets.vim.git
@@ -181,3 +178,6 @@
 [submodule "vim/pack/basic/start/vim-sneak"]
 	path = vim/pack/basic/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak.git
+[submodule "haiku/vim/pack/basic/start/vim-fzy"]
+	path = haiku/vim/pack/basic/start/vim-fzy
+	url = https://github.com/bfrg/vim-fzy.git
