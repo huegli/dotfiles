@@ -22,7 +22,7 @@ if [[ -f /usr/local/bin/bat ]] || [[ -f /sbin/bat ]]; then
   alias b="bat --theme Dracula"
   
   # suffix aliases
-  alias -s py='bat --theme Dracula'
+#  alias -s py='bat --theme Dracula'
   alias -s c='bat --theme Dracula'
   alias -s h='bat --theme Dracula'
 else
@@ -30,7 +30,7 @@ else
   alias b="batcat --theme Dracula"
   
   # suffix aliases
-  alias -s py='batcat --theme Dracula'
+#  alias -s py='batcat --theme Dracula'
   alias -s c='batcat --theme Dracula'
   alias -s h='batcat --theme Dracula'
 fi
@@ -45,3 +45,4 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'
 
+# alias vim=/usr/local/bin/vim
