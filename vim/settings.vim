@@ -50,14 +50,7 @@ inoremap kj <ESC>
 
 " PaperColor colorscheme
 colorscheme PaperColor
-set background=dar
+set background=dark
 
 
 " }}}
-
-
-let g:ale_linters={
-\ 'python': ['flake8', 'pylsp'],
-\}
-
-
