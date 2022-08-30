@@ -193,3 +193,15 @@
 [submodule "haiku/vim/pack/coding/start/vim-lsp-ale"]
 	path = haiku/vim/pack/coding/start/vim-lsp-ale
 	url = https://github.com/rhysd/vim-lsp-ale.git
+[submodule "vim/pack/basic/start/vim-flagship"]
+	path = vim/pack/basic/start/vim-flagship
+	url = https://github.com/tpope/vim-flagship.git
+[submodule "vim/pack/basic/start/vim-interestingwords"]
+	path = vim/pack/basic/start/vim-interestingwords
+	url = https://github.com/lfv89/vim-interestingwords.git
+[submodule "vim/pack/basic/start/vimpager"]
+	path = vim/pack/basic/start/vimpager
+	url = https://github.com/rkitover/vimpager.git
+[submodule "vim/pack/coding/start/FastFold"]
+	path = vim/pack/coding/start/FastFold
+	url = https://github.com/Konfekt/FastFold.git
