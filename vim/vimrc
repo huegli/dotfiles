@@ -1,0 +1,7 @@
+set nocompatible      " use vim, not vi
+
+" Basic settings
+source $HOME/dotfiles/vim/settings.vim
+
+" plugin set-up
+source $HOME/dotfiles/vim/plugins.vim
