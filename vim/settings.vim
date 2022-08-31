@@ -48,6 +48,9 @@ set colorcolumn=88
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+" Leader key is SPACE
+let mapleader="\<Space>"
+
 " PaperColor colorscheme
 colorscheme PaperColor
 set background=dark
