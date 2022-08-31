@@ -1,0 +1,5 @@
+set nocompatible 			" use vim, not vi
+colorscheme PaperColor
+set background=dark
+
+
