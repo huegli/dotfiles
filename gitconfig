@@ -1,6 +1,6 @@
 [core]
     pager = delta
-	editor = subl --wait
+#	editor = subl --wait
 
 [delta]
     plus-style = green bold "#005500"
