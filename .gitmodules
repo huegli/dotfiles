@@ -220,3 +220,9 @@
 [submodule "vim/pack/basic/start/vim-signify"]
 	path = vim/pack/basic/start/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "vim/pack/coding/start/vim-dispatch"]
+	path = vim/pack/coding/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/pack/coding/start/cmake4vim"]
+	path = vim/pack/coding/start/cmake4vim
+	url = https://github.com/ilyachur/cmake4vim.git
