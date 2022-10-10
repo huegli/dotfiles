@@ -35,7 +35,3 @@ fi
 # proper display of Unicode characters 
 export LC_ALL=en_US.UTF-8
 
-# this will add local bin if not already present
-[[ :$PATH: == *:$HOME/.local/bin:* ]] || PATH=$HOME/.local/bin:$PATH
- 
-

@@ -155,3 +155,16 @@ test -e "/usr/local/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highl
     source "/usr/local/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 test -e "/usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"  &&
     source "/usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+
+# Manipulated PATH etc. here so MacOS doesn't reorder it
+#
+# Add MacPorts bin directories
+[[ :$PATH: == *:/opt/local/bin:* ]] || export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+[[ :$MANPATH: == *:/opt/local/share/man:* ]] || export MANPATH=/opt/local/share/man:$MANPATH
+
+# this will add local bin if not already present
+[[ :$PATH: == *:$HOME/.local/bin:* ]] ||export PATH=$HOME/.local/bin:$PATH
+[[ :$MANPATH: == *:$HOME/.local/man:* ]] || export MANPATH=$HOME/.local/man:$MANPATH
+ 
+
