@@ -4,6 +4,19 @@
 let g:ale_linters={
 \ 'python': ['flake8', 'pylsp'],
 \}
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_insert_leave = 0
+" let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
+" let g:ale_completion_delay = 500
+
+" let g:ale_set_ballons = 1
+" set omnifunc=ale#completion#OmniFunc
+
+" show details on issues in preview window, close when going into insert mode
+let g:ale_cursor_detail = 1
+let g:ale_close_preview_on_insert = 1
 " }}}
 
 " Fern {{{
@@ -62,4 +75,51 @@ let g:perl_fold_blocks = 1
 autocmd FileType c,cpp setlocal foldmethod=syntax
 " }}}
 
+"" async-complete {{{
+"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
+"let g:asyncomplete_min_chars = 3
+
+"" allow modifying the completeopt variable, or it will
+"" be overridden all the time
+"let g:asyncomplete_auto_completeopt = 0
+
+"set completeopt=menuone,noinsert,noselect,preview
+
+"" Use ALE's function for asyncomplete defaults
+"" call asyncomplete#register_source(asyncomplete#sources#ale#get_source_options({
+""     \ 'priority': 10, 
+""     \ }))
+
+"" let g:asyncomplete_auto_popup = 0
+
+""" function! s:check_back_space() abort
+"""       let col = col('.') - 1
+"""       return !col || getline('.')[col - 1]  =~ '\s'
+"""  endfunction
+""" 
+"""  inoremap <silent><expr> <TAB>
+"""     \ pumvisible() ? "\<C-n>" :
+"""     \ <SID>check_back_space() ? "\<TAB>" :
+"""     \ asyncomplete#force_refresh()
+"""  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
+"" call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+""     \ 'name': 'buffer',
+""     \ 'allowlist': ['*'],
+""     \ 'blocklist': ['go'],
+""     \ 'completor': function('asyncomplete#sources#buffer#completor'),
+""     \ 'config': {
+""       \    'max_buffer_size': 5000000,
+""     \  },
+""     \ }))
+
+
+"" }}}
+
+" indentLine {{{
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" }}}
