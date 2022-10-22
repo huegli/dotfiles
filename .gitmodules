@@ -226,9 +226,6 @@
 [submodule "vim/pack/coding/start/cmake4vim"]
 	path = vim/pack/coding/start/cmake4vim
 	url = https://github.com/ilyachur/cmake4vim.git
-[submodule "vim/pack/coding/start/supertab"]
-	path = vim/pack/coding/start/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "vim/pack/coding/start/indentLine"]
 	path = vim/pack/coding/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
