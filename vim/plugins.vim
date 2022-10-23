@@ -10,9 +10,8 @@ let g:ale_lint_on_insert_leave = 0
 " let g:ale_completion_enabled = 1
 let g:ale_completion_enabled = 0
 " let g:ale_completion_delay = 500
-
-" let g:ale_set_ballons = 1
-" set omnifunc=ale#completion#OmniFunc
+let g:ale_set_ballons = 1
+set omnifunc=ale#completion#OmniFunc
 
 " show details on issues in preview window, close when going into insert mode
 let g:ale_cursor_detail = 1
@@ -122,4 +121,8 @@ autocmd FileType c,cpp setlocal foldmethod=syntax
 
 " indentLine {{{
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" }}}
+
+" YouCompleteMe {{{
+let g:ycm_show_diagnostics_ui = 0
 " }}}
