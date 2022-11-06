@@ -184,15 +184,6 @@
 [submodule "haiku/vim/pack/coding/start/asyncomplete.vim"]
 	path = haiku/vim/pack/coding/start/asyncomplete.vim
 	url = https://github.com/prabirshrestha/asyncomplete.vim.git
-[submodule "haiku/vim/pack/coding/start/asyncomplete-lsp.vim"]
-	path = haiku/vim/pack/coding/start/asyncomplete-lsp.vim
-	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
-[submodule "haiku/vim/pack/coding/start/vim-lsp"]
-	path = haiku/vim/pack/coding/start/vim-lsp
-	url = https://github.com/prabirshrestha/vim-lsp.git
-[submodule "haiku/vim/pack/coding/start/vim-lsp-ale"]
-	path = haiku/vim/pack/coding/start/vim-lsp-ale
-	url = https://github.com/rhysd/vim-lsp-ale.git
 [submodule "vim/pack/basic/start/vim-flagship"]
 	path = vim/pack/basic/start/vim-flagship
 	url = https://github.com/tpope/vim-flagship.git
