@@ -235,3 +235,6 @@
 [submodule "vim/pack/coding/start/lexima.vim"]
 	path = vim/pack/coding/start/lexima.vim
 	url = https://github.com/cohama/lexima.vim.git
+[submodule "vim/pack/basic/start/supertab"]
+	path = vim/pack/basic/start/supertab
+	url = https://github.com/ervandew/supertab.git
