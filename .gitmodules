@@ -7,12 +7,6 @@
 [submodule "nvim/pack/bundle/start/incsearch.vim"]
 	path = nvim/pack/bundle/start/incsearch.vim
 	url = https://github.com/haya14busa/incsearch.vim.git
-[submodule "nvim/pack/bundle/start/vim-dispatch"]
-	path = nvim/pack/bundle/start/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "nvim/pack/bundle/start/vim-dispatch-neovim"]
-	path = nvim/pack/bundle/start/vim-dispatch-neovim
-	url = https://github.com/radenling/vim-dispatch-neovim.git
 [submodule "nvim/pack/bundle/start/vim-projectionist"]
 	path = nvim/pack/bundle/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
@@ -61,21 +55,9 @@
 [submodule "haiku/vim/pack/basic/start/vim-sensible"]
 	path = haiku/vim/pack/basic/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "a-shell/vim/pack/coding/start/SimplyFold"]
-	path = a-shell/vim/pack/coding/start/SimplyFold
-	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "a-shell/vim/pack/coding/start/vim-dispatch"]
-	path = a-shell/vim/pack/coding/start/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "a-shell/vim/pack/basic/start/supertab"]
-	path = a-shell/vim/pack/basic/start/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "a-shell/vim/pack/basic/start/vim-commentary"]
 	path = a-shell/vim/pack/basic/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "a-shell/vim/pack/basic/start/vim-flagship"]
-	path = a-shell/vim/pack/basic/start/vim-flagship
-	url = https://github.com/tpope/vim-flagship.git
 [submodule "a-shell/vim/pack/basic/start/vim-projectionist"]
 	path = a-shell/vim/pack/basic/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
@@ -88,21 +70,12 @@
 [submodule "a-shell/vim/pack/coding/start/fern.vim"]
 	path = a-shell/vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "a-shell/vim/pack/basic/start/targets"]
-	path = a-shell/vim/pack/basic/start/targets
-	url = https://github.com/wellle/targets.vim.git
 [submodule "haiku/vim/pack/basic/start/indentLine"]
 	path = haiku/vim/pack/basic/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "haiku/vim/pack/basic/start/targets.vim"]
-	path = haiku/vim/pack/basic/start/targets.vim
-	url = https://github.com/wellle/targets.vim.git
 [submodule "haiku/vim/pack/basic/start/vim-commentary"]
 	path = haiku/vim/pack/basic/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "haiku/vim/pack/basic/start/vim-flagship"]
-	path = haiku/vim/pack/basic/start/vim-flagship
-	url = https://github.com/tpope/vim-flagship.git
 [submodule "haiku/vim/pack/basic/start/vim-projectionist"]
 	path = haiku/vim/pack/basic/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
@@ -115,42 +88,18 @@
 [submodule "haiku/vim/pack/coding/start/fern.vim"]
 	path = haiku/vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "haiku/vim/pack/coding/start/SimpylFold"]
-	path = haiku/vim/pack/coding/start/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
-[submodule "haiku/vim/pack/coding/start/vim-dispatch"]
-	path = haiku/vim/pack/coding/start/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
 [submodule "haiku/vim/pack/coding/start/tagbar"]
 	path = haiku/vim/pack/coding/start/tagbar
 	url = https://github.com/preservim/tagbar.git
-[submodule "a-shell/vim/pack/basic/start/vim-cheat40"]
-	path = a-shell/vim/pack/basic/start/vim-cheat40
-	url = https://github.com/lifepillar/vim-cheat40.git
-[submodule "haiku/vim/pack/basic/start/vim-cheat40"]
-	path = haiku/vim/pack/basic/start/vim-cheat40
-	url = https://github.com/lifepillar/vim-cheat40.git
-[submodule "haiku/vim/pack/coding/start/context.vim"]
-	path = haiku/vim/pack/coding/start/context.vim
-	url = https://github.com/wellle/context.vim.git
-[submodule "a-shell/vim/pack/coding/start/context"]
-	path = a-shell/vim/pack/coding/start/context
-	url = https://github.com/wellle/context.vim.git
 [submodule "vim/pack/coding/start/ale"]
 	path = vim/pack/coding/start/ale
 	url = https://github.com/dense-analysis/ale.git
 [submodule "vim/pack/coding/start/context.vim"]
 	path = vim/pack/coding/start/context.vim
 	url = https://github.com/wellle/context.vim.git
-[submodule "a-shell/vim/pack/coding/start/vim-pythonsense"]
-	path = a-shell/vim/pack/coding/start/vim-pythonsense
-	url = https://github.com/jeetsukumaran/vim-pythonsense.git
 [submodule "a-shell/vim/pack/coding/start/ctrlp-funky"]
 	path = a-shell/vim/pack/coding/start/ctrlp-funky
 	url = https://github.com/tacahiroy/ctrlp-funky.git
-[submodule "vim/pack/coding/start/SimpylFold"]
-	path = vim/pack/coding/start/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
 [submodule "vim/pack/coding/start/ctrlp.vim"]
 	path = vim/pack/coding/start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
@@ -169,9 +118,6 @@
 [submodule "vim/pack/basic/start/vim-sensible"]
 	path = vim/pack/basic/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/pack/basic/start/vim-unimpaired"]
-	path = vim/pack/basic/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "vim/pack/basic/start/vim-commentary"]
 	path = vim/pack/basic/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -181,15 +127,6 @@
 [submodule "haiku/vim/pack/basic/start/vim-fzy"]
 	path = haiku/vim/pack/basic/start/vim-fzy
 	url = https://github.com/bfrg/vim-fzy.git
-[submodule "haiku/vim/pack/coding/start/asyncomplete.vim"]
-	path = haiku/vim/pack/coding/start/asyncomplete.vim
-	url = https://github.com/prabirshrestha/asyncomplete.vim.git
-[submodule "vim/pack/basic/start/vim-flagship"]
-	path = vim/pack/basic/start/vim-flagship
-	url = https://github.com/tpope/vim-flagship.git
-[submodule "vim/pack/basic/start/vim-interestingwords"]
-	path = vim/pack/basic/start/vim-interestingwords
-	url = https://github.com/lfv89/vim-interestingwords.git
 [submodule "vim/pack/basic/start/vimpager"]
 	path = vim/pack/basic/start/vimpager
 	url = https://github.com/rkitover/vimpager.git
@@ -220,12 +157,6 @@
 [submodule "vim/pack/coding/start/indentLine"]
 	path = vim/pack/coding/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "vim/pack/coding/start/YouCompleteMe"]
-	path = vim/pack/coding/start/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe.git
 [submodule "vim/pack/coding/start/lexima.vim"]
 	path = vim/pack/coding/start/lexima.vim
 	url = https://github.com/cohama/lexima.vim.git
-[submodule "vim/pack/basic/start/supertab"]
-	path = vim/pack/basic/start/supertab
-	url = https://github.com/ervandew/supertab.git
