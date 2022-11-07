@@ -3,6 +3,8 @@
 " ALE {{{
 let g:ale_linters={
 \ 'python': ['flake8', 'pylsp'],
+\ 'c': ['ccls'],
+\ 'cpp': ['ccls'],
 \}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -125,4 +127,10 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " YouCompleteMe {{{
 let g:ycm_show_diagnostics_ui = 0
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" }}}
+" SuperTab {{{
+let g:SuperTabDefaultCompletionType = '<C-n>'
 " }}}
