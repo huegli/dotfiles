@@ -14,19 +14,21 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 " Other essential stuff
-Plug 'justinmk/vim-sneak' 
 Plug 'lifepillar/vim-cheat40'
 Plug 'lfv89/vim-interestingwords'
 Plug 'mhinz/vim-signify'
+" Navigation
+Plug 'justinmk/vim-sneak' 
+Plug 'wellle/targets.vim'
+" Files & directories
+" Plug 'bfrg/vim-fzy'
+Plug 'lambdalisue/fern.vim'
 " Coding
 Plug 'vim-scripts/cscope.vim'
 Plug 'dense-analysis/ale'
 Plug 'cohama/lexima.vim'
-Plug 'lambdalisue/fern.vim'
 " Completion Frameworks
-" Plug 'ycm-core/YouCompleteMe'
 Plug 'prabirshrestha/asyncomplete.vim'
-" Plug 'andreypopp/asyncomplete-ale.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 call plug#end()
 " }}}

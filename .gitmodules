@@ -25,15 +25,6 @@
 [submodule "a-shell/vim/pack/themes/start/papercolor-theme"]
 	path = a-shell/vim/pack/themes/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "haiku/vim/pack/basic/start/vim-unimpaired"]
-	path = haiku/vim/old-pack/basic/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-[submodule "haiku/vim/pack/basic/start/vim-surround"]
-	path = haiku/vim/old-pack/basic/start/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "haiku/vim/pack/basic/start/vim-sneak"]
-	path = haiku/vim/old-pack/basic/start/vim-sneak
-	url = https://github.com/justinmk/vim-sneak.git
 [submodule "haiku/vim/pack/themes/start/papercolor-theme"]
 	path = haiku/vim/old-pack/themes/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
@@ -52,9 +43,6 @@
 [submodule "a-shell/vim/pack/basic/start/vim-sensible"]
 	path = a-shell/vim/pack/basic/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "haiku/vim/pack/basic/start/vim-sensible"]
-	path = haiku/vim/old-pack/basic/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
 [submodule "a-shell/vim/pack/basic/start/vim-commentary"]
 	path = a-shell/vim/pack/basic/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -70,15 +58,6 @@
 [submodule "a-shell/vim/pack/coding/start/fern.vim"]
 	path = a-shell/vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "haiku/vim/pack/basic/start/indentLine"]
-	path = haiku/vim/old-pack/basic/start/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
-[submodule "haiku/vim/pack/basic/start/vim-commentary"]
-	path = haiku/vim/old-pack/basic/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "haiku/vim/pack/basic/start/vim-projectionist"]
-	path = haiku/vim/old-pack/basic/start/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist.git
 [submodule "haiku/vim/pack/coding/start/ale"]
 	path = haiku/vim/old-pack/coding/start/ale
 	url = https://github.com/dense-analysis/ale.git
@@ -124,9 +103,6 @@
 [submodule "vim/pack/basic/start/vim-sneak"]
 	path = vim/pack/basic/start/vim-sneak
 	url = https://github.com/justinmk/vim-sneak.git
-[submodule "haiku/vim/pack/basic/start/vim-fzy"]
-	path = haiku/vim/old-pack/basic/start/vim-fzy
-	url = https://github.com/bfrg/vim-fzy.git
 [submodule "vim/pack/basic/start/vimpager"]
 	path = vim/pack/basic/start/vimpager
 	url = https://github.com/rkitover/vimpager.git
