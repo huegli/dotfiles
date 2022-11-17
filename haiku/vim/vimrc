@@ -1,5 +1,36 @@
 " Very basic Vim
 
+" plug-ins {{{
+call plug#begin()
+" Theme / Looks
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'sheerun/vim-polyglot'
+Plug 'Yggdroot/indentLine'
+" Tim Pope Goodness
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+" Other essential stuff
+Plug 'justinmk/vim-sneak' 
+Plug 'lifepillar/vim-cheat40'
+Plug 'lfv89/vim-interestingwords'
+Plug 'mhinz/vim-signify'
+" Coding
+Plug 'vim-scripts/cscope.vim'
+Plug 'dense-analysis/ale'
+Plug 'cohama/lexima.vim'
+Plug 'lambdalisue/fern.vim'
+" Completion Frameworks
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'andreypopp/asyncomplete-ale.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+call plug#end()
+" }}}
+
 " Basic settings not covered in vim-sensible {{{
 
 set nobackup		" No backup files
@@ -34,7 +65,6 @@ let g:netrw_liststyle=3     " Set built-in file system explorer to match NERDTre
 " }}}
 
 " Coloring / Look & Feel {{{
-"
 
 set cursorline      " Highlight current line
 
@@ -42,8 +72,10 @@ set cursorline      " Highlight current line
 set list listchars=tab:▸\ ,eol:¬
 
 " Highlight column 88
-" autocmd BufWinEnter * highlight ColorColumn ctermbg=darkgray
 set colorcolumn=88
+
+" Leader key is SPACE
+let mapleader="\<Space>"
 
 " exit insert mode
 inoremap jk <ESC>
@@ -53,30 +85,79 @@ inoremap kj <ESC>
 colorscheme PaperColor
 set background=light
 
+" Fold by marker Vimscript
+autocmd FileType vim setlocal foldmethod=marker
 
 " }}}
 
 
+"" allow modifying the completeopt variable, or it will
+"" be overridden all the time
+"let g:asyncomplete_auto_completeopt = 0
+
+"set completeopt=menuone,noinsert,noselect,preview
+
+""autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+"let g:asyncomplete_min_chars=3
+"let g:asyncomplete_popup_delay=300
+
+" ALE {{{
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\    'c': ['clangd'],
+\    'cpp': ['clangd'],
+\}
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_set_ballons = 1
+" }}}
+
+" asyncomplete {{{
+
+" Tab Completion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-" allow modifying the completeopt variable, or it will
-" be overridden all the time
-let g:asyncomplete_auto_completeopt = 0
-
-set completeopt=menuone,noinsert,noselect,preview
-
-"autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-let g:asyncomplete_min_chars=3
-let g:asyncomplete_popup_delay=300
 
 " Use ALE's function for asyncomplete defaults
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ale#get_source_options({
   \ 'priority': 10,
   \ }))
 
-let g:ale_linters_explicit = 1
-let g:ale_linters = {
-\    'c': ['clangd'],
-\    'cpp': ['clangd'],
-\}
+" Buffer source
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'allowlist': ['*'],
+    \ 'blocklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+        \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+" }}}
+
+" indentLine {{{
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" }}}
+
+" Fern {{{
+
+" Open drawer with current file selected, all windows same height & size
+noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
+
+" Open split with current file selected, all windows same height & size
+noremap <silent> <Leader>o :Fern . -reveal=%<CR><C-w>=
+
+function! s:init_fern() abort
+  " Use 'select' instead of 'edit' for default 'open' action
+  nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+" }}}
+
