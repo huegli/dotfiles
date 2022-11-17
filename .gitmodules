@@ -25,9 +25,6 @@
 [submodule "a-shell/vim/pack/themes/start/papercolor-theme"]
 	path = a-shell/vim/pack/themes/start/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "haiku/vim/pack/themes/start/papercolor-theme"]
-	path = haiku/vim/old-pack/themes/start/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme.git
 [submodule "a-shell/vim/pack/themes/start/vim-airline"]
 	path = a-shell/vim/pack/themes/start/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -58,18 +55,6 @@
 [submodule "a-shell/vim/pack/coding/start/fern.vim"]
 	path = a-shell/vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "haiku/vim/pack/coding/start/ale"]
-	path = haiku/vim/old-pack/coding/start/ale
-	url = https://github.com/dense-analysis/ale.git
-[submodule "haiku/vim/pack/coding/start/ctrlp.vim"]
-	path = haiku/vim/old-pack/coding/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "haiku/vim/pack/coding/start/fern.vim"]
-	path = haiku/vim/old-pack/coding/start/fern.vim
-	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "haiku/vim/pack/coding/start/tagbar"]
-	path = haiku/vim/old-pack/coding/start/tagbar
-	url = https://github.com/preservim/tagbar.git
 [submodule "vim/pack/coding/start/ale"]
 	path = vim/pack/coding/start/ale
 	url = https://github.com/dense-analysis/ale.git

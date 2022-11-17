@@ -21,12 +21,14 @@ Plug 'mhinz/vim-signify'
 Plug 'justinmk/vim-sneak' 
 Plug 'wellle/targets.vim'
 " Files & directories
+Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'bfrg/vim-fzy'
 Plug 'lambdalisue/fern.vim'
 " Coding
 Plug 'vim-scripts/cscope.vim'
 Plug 'dense-analysis/ale'
 Plug 'cohama/lexima.vim'
+Plug 'preservim/tagbar'
 " Completion Frameworks
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
