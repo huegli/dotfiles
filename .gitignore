@@ -10,4 +10,6 @@ sublime-text/Package Control.ca-bundle
 sublime-text/Package Control.system-ca-bundle
 sublime-text/Package Control.cache/
 sublime-text/Package Control.ca-certs/
+**/viminfo
+**/plugged
 **/.netrwhist
