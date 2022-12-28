@@ -1,17 +1,51 @@
+" Initialize minpac
+packadd minpac
+
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+call minpac#add('NLKNguyen/papercolor-theme')
+
+call minpac#add('tpope/vim-sensible')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-flagship')
+call minpac#add('mhinz/vim-signify')
+call minpac#add('lfv89/vim-interestingwords')
+call minpac#add('justinmk/vim-sneak')
+call minpac#add('rkitover/vimpager')
+call minpac#add('ervandew/supertab')
+
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('sheerun/vim-polyglot')
+
+call minpac#add('Yggdroot/indentLine')
+call minpac#add('wellle/context.vim')
+call minpac#add('dense-analysis/ale')
+call minpac#add('lambdalisue/fern.vim')
+call minpac#add('lambdalisue/fern-git-status.vim')
+" call minpac#add('lambdalisue/fern-renderer-nerdfont.vim')
+call minpac#add('lambdalisue/fern-hijack.vim')
+call minpac#add('lambdalisue/fern-bookmark.vim')
+call minpac#add('yuki-yano/fern-preview.vim')
+
 " Settings for plugins
 
 " ALE {{{
 let g:ale_linters={
 \ 'python': ['flake8', 'pylsp'],
-\ 'c': ['ccls'],
-\ 'cpp': ['ccls'],
+\ 'c': ['clangd'], 
+\ 'cpp': ['clangd'],
 \}
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
-" let g:ale_completion_enabled = 1
-let g:ale_completion_enabled = 0
-" let g:ale_completion_delay = 500
+let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 0
+let g:ale_completion_delay = 500
 let g:ale_set_ballons = 1
 set omnifunc=ale#completion#OmniFunc
 
@@ -33,10 +67,21 @@ function! s:init_fern() abort
   nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
 endfunction
 
+function! s:fern_settings() abort
+    nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+    nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+    nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+    nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
+
 augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
+  autocmd FileType fern call s:fern_settings()
 augroup END
+
+" let g:fern#renderer = "nerdfont"
+
 " }}}
 
 " Vim-Signify {{{
@@ -126,11 +171,22 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " }}}
 
 " YouCompleteMe {{{
-let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_show_diagnostics_ui = 0
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" Toggle signature
+imap <silent> <C-l> <Plug>(YCMToggleSignatureHelp)
+" Semantic highlihghting
+let g:ycm_enable_semantic_highlighting=1
+" Find Symbol
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+" Info in Popup
+let g:ycm_add_preview_to_completeopt="popup"
 " }}}
+
 " SuperTab {{{
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = '<c-p>'
 " }}}

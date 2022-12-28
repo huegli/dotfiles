@@ -41,7 +41,6 @@ set cursorline      " Highlight current line
 set list listchars=tab:▸\ ,eol:¬
 
 " Highlight column 88
-" autocmd BufWinEnter * highlight ColorColumn ctermbg=darkgray
 set colorcolumn=88
 
 " exit insert mode
@@ -55,5 +54,16 @@ let mapleader="\<Space>"
 colorscheme PaperColor
 set background=dark
 
+" Marker folding for vim
+autocmd FileType vim setlocal foldmethod=marker
+" }}}
+
+" Source code editing {{{
+" no commment continuation in all files
+autocmd FileType * setlocal formatoptions-=cro
+
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=fuzzy,pum,tagfile
 
 " }}}

@@ -55,69 +55,6 @@
 [submodule "a-shell/vim/pack/coding/start/fern.vim"]
 	path = a-shell/vim/pack/coding/start/fern.vim
 	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "vim/pack/coding/start/ale"]
-	path = vim/pack/coding/start/ale
-	url = https://github.com/dense-analysis/ale.git
-[submodule "vim/pack/coding/start/context.vim"]
-	path = vim/pack/coding/start/context.vim
-	url = https://github.com/wellle/context.vim.git
 [submodule "a-shell/vim/pack/coding/start/ctrlp-funky"]
 	path = a-shell/vim/pack/coding/start/ctrlp-funky
 	url = https://github.com/tacahiroy/ctrlp-funky.git
-[submodule "vim/pack/coding/start/ctrlp.vim"]
-	path = vim/pack/coding/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/pack/coding/start/ctrlp-funky"]
-	path = vim/pack/coding/start/ctrlp-funky
-	url = https://github.com/tacahiroy/ctrlp-funky.git
-[submodule "vim/pack/coding/start/fern.vim"]
-	path = vim/pack/coding/start/fern.vim
-	url = https://github.com/lambdalisue/fern.vim.git
-[submodule "vim/pack/basic/start/vim-projectionist"]
-	path = vim/pack/basic/start/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist.git
-[submodule "vim/pack/basic/start/vim-surround"]
-	path = vim/pack/basic/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/pack/basic/start/vim-sensible"]
-	path = vim/pack/basic/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/pack/basic/start/vim-commentary"]
-	path = vim/pack/basic/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/pack/basic/start/vim-sneak"]
-	path = vim/pack/basic/start/vim-sneak
-	url = https://github.com/justinmk/vim-sneak.git
-[submodule "vim/pack/basic/start/vimpager"]
-	path = vim/pack/basic/start/vimpager
-	url = https://github.com/rkitover/vimpager.git
-[submodule "vim/pack/coding/start/FastFold"]
-	path = vim/pack/coding/start/FastFold
-	url = https://github.com/Konfekt/FastFold.git
-[submodule "vim/pack/themes/start/papercolor-theme"]
-	path = vim/pack/themes/start/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "vim/pack/themes/start/vim-airline"]
-	path = vim/pack/themes/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/pack/themes/start/vim-airline-themes"]
-	path = vim/pack/themes/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/pack/themes/start/vim-polyglot"]
-	path = vim/pack/themes/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
-[submodule "vim/pack/basic/start/vim-signify"]
-	path = vim/pack/basic/start/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
-[submodule "vim/pack/coding/start/vim-dispatch"]
-	path = vim/pack/coding/start/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "vim/pack/coding/start/cmake4vim"]
-	path = vim/pack/coding/start/cmake4vim
-	url = https://github.com/ilyachur/cmake4vim.git
-[submodule "vim/pack/coding/start/indentLine"]
-	path = vim/pack/coding/start/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
-[submodule "vim/pack/coding/start/lexima.vim"]
-	path = vim/pack/coding/start/lexima.vim
-	url = https://github.com/cohama/lexima.vim.git
