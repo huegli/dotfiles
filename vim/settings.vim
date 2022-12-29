@@ -64,6 +64,6 @@ autocmd FileType * setlocal formatoptions-=cro
 
 set wildmenu
 set wildmode=longest:full,full
-set wildoptions=fuzzy,pum,tagfile
+" set wildoptions=fuzzy,pum,tagfile
 
 " }}}

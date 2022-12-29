@@ -4,8 +4,13 @@ packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
+" Look & Feel
 call minpac#add('NLKNguyen/papercolor-theme')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
+call minpac#add('sheerun/vim-polyglot')
 
+" Basic stuff
 call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-surround')
@@ -17,20 +22,23 @@ call minpac#add('lfv89/vim-interestingwords')
 call minpac#add('justinmk/vim-sneak')
 call minpac#add('rkitover/vimpager')
 call minpac#add('ervandew/supertab')
+call minpac#add('lifepillar/vim-cheat40')
 
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('sheerun/vim-polyglot')
-
+" Programing
 call minpac#add('Yggdroot/indentLine')
 call minpac#add('wellle/context.vim')
 call minpac#add('dense-analysis/ale')
+call minpac#add('ycm-core/YouCompleteMe')
+call minpac#add('jeetsukumaran/vim-pythonsense')
+
+" File & Directory Handling
 call minpac#add('lambdalisue/fern.vim')
 call minpac#add('lambdalisue/fern-git-status.vim')
-" call minpac#add('lambdalisue/fern-renderer-nerdfont.vim')
 call minpac#add('lambdalisue/fern-hijack.vim')
 call minpac#add('lambdalisue/fern-bookmark.vim')
 call minpac#add('yuki-yano/fern-preview.vim')
+call minpac#add('ctrlpvim/ctrlp.vim')
+call minpac#add('tacahiroy/ctrlp-funky')
 
 " Settings for plugins
 
@@ -43,10 +51,8 @@ let g:ale_linters={
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
-let g:ale_completion_enabled = 1
-" let g:ale_completion_enabled = 0
-let g:ale_completion_delay = 500
-let g:ale_set_ballons = 1
+let g:ale_completion_enabled = 0
+let g:ale_set_balloons = has('gui_running') ? 'hover' : 0
 set omnifunc=ale#completion#OmniFunc
 
 " show details on issues in preview window, close when going into insert mode
