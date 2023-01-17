@@ -26,12 +26,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lambdalisue/fern.vim'
 " Coding
 Plug 'vim-scripts/cscope.vim'
-Plug 'dense-analysis/ale'
+Plug 'konfekt/fastfold'
+" Plug 'dense-analysis/ale'
 Plug 'cohama/lexima.vim'
 Plug 'preservim/tagbar'
 " Completion Frameworks
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'piec/vim-lsp-clangd'
+" Plug 'mattn/vim-lsp-settings'
 call plug#end()
 " }}}
 
@@ -94,6 +98,15 @@ autocmd FileType vim setlocal foldmethod=marker
 
 " }}}
 
+" Source code editing {{{
+" no commment continuation in all files
+autocmd FileType * setlocal formatoptions-=cro
+
+set wildmenu
+set wildmode=longest:full,full
+
+" }}}
+
 
 "" allow modifying the completeopt variable, or it will
 "" be overridden all the time
@@ -123,23 +136,23 @@ let g:ale_set_ballons = 1
 " Tab Completion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+" inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " Use ALE's function for asyncomplete defaults
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ale#get_source_options({
-  \ 'priority': 10,
-  \ }))
+"au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ale#get_source_options({
+"  \ 'priority': 10,
+"  \ }))
 
 " Buffer source
-call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-    \ 'name': 'buffer',
-    \ 'allowlist': ['*'],
-    \ 'blocklist': ['go'],
-    \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ 'config': {
-        \    'max_buffer_size': 5000000,
-    \  },
-    \ }))
+"call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+"    \ 'name': 'buffer',
+"    \ 'allowlist': ['*'],
+"    \ 'blocklist': ['go'],
+"    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+"    \ 'config': {
+"        \    'max_buffer_size': 5000000,
+"    \  },
+"    \ }))
 " }}}
 
 " indentLine {{{
@@ -165,3 +178,71 @@ augroup fern-custom
 augroup END
 " }}}
 
+" FastFold {{{
+nmap zuz <Plug>(FastFoldUpdate)                 " Force update in normal mode
+let g:fastfold_savehook = 1                     " Update on save
+" Update on the following fold commands
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
+" Fast fold for the following file types
+let g:markdown_folding = 1
+let g:rst_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:zsh_fold_enable = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+
+" And C like filetyes
+autocmd FileType c,cpp setlocal foldmethod=syntax
+" }}}
+
+" vim-lsp
+if executable('pylsp')
+    " pip install python-lsp-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pylsp',
+        \ 'cmd': {server_info->['pylsp']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
