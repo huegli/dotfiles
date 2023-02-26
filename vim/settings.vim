@@ -52,18 +52,23 @@ let mapleader="\<Space>"
 
 " PaperColor colorscheme
 colorscheme PaperColor
-set background=dark
+set background=light
 
 " Marker folding for vim
 autocmd FileType vim setlocal foldmethod=marker
 " }}}
 
 " Source code editing {{{
-" no commment continuation in all files
-autocmd FileType * setlocal formatoptions-=cro
 
+" no commment continuation in all files
+augroup Format-Options
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=cro
+augroup END
+
+" configure wildmenu completion
 set wildmenu
 set wildmode=longest:full,full
-" set wildoptions=fuzzy,pum,tagfile
+set wildoptions=fuzzy,pum,tagfile
 
 " }}}
