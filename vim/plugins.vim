@@ -31,6 +31,7 @@ call minpac#add('dense-analysis/ale')
 call minpac#add('ycm-core/YouCompleteMe')
 call minpac#add('jeetsukumaran/vim-pythonsense')
 call minpac#add('konfekt/fastfold')
+call minpac#add('cohama/lexima.vim')
 
 " File & Directory Handling
 call minpac#add('lambdalisue/fern.vim')
