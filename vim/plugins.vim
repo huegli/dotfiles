@@ -27,7 +27,7 @@ call minpac#add('lifepillar/vim-cheat40')
 " Programing
 call minpac#add('Yggdroot/indentLine')
 call minpac#add('wellle/context.vim')
-call minpac#add('dense-analysis/ale')
+" call minpac#add('dense-analysis/ale')
 call minpac#add('ycm-core/YouCompleteMe')
 call minpac#add('jeetsukumaran/vim-pythonsense')
 call minpac#add('konfekt/fastfold')
@@ -179,7 +179,9 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " }}}
 
 " YouCompleteMe {{{
-" let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
+" Show diagnostics in PopUp rather than command line
+let g:ycm_show_detailed_diag_in_popup = 1
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -191,7 +193,7 @@ let g:ycm_enable_semantic_highlighting=1
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
 " Info in Popup
-let g:ycm_add_preview_to_completeopt="popup"
+" let g:ycm_add_preview_to_completeopt="popup"
 " }}}
 
 " SuperTab {{{
