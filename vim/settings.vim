@@ -30,6 +30,9 @@ set showmatch
 
 let g:netrw_liststyle=3     " Set built-in file system explorer to match NERDTree
 
+set hidden      " allow switching away from unsaved buffer
+
+set completeopt-=preview   " don't show preview window for completions
 " }}}
 
 " Coloring / Look & Feel {{{
