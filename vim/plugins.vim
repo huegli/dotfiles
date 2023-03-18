@@ -32,6 +32,8 @@ call minpac#add('ycm-core/YouCompleteMe')
 call minpac#add('jeetsukumaran/vim-pythonsense')
 call minpac#add('konfekt/fastfold')
 call minpac#add('cohama/lexima.vim')
+call minpac#add('SirVer/ultisnips')
+call minpac#add('honza/vim-snippets')
 
 " File & Directory Handling
 call minpac#add('lambdalisue/fern.vim')
@@ -201,5 +203,11 @@ nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
 
 " SuperTab {{{
 let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-p>'
+let g:SuperTabContextDefaultCompletionType = '<c-n>'
+" }}}
+
+" UltiSnips {{{
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " }}}
