@@ -25,6 +25,7 @@ call minpac#add('ervandew/supertab')
 call minpac#add('lifepillar/vim-cheat40')
 
 " Programing
+call minpac#add('tpope/vim-dispatch')
 call minpac#add('Yggdroot/indentLine')
 call minpac#add('wellle/context.vim')
 " call minpac#add('dense-analysis/ale')
