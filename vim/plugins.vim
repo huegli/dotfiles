@@ -25,6 +25,7 @@ call minpac#add('ervandew/supertab')
 call minpac#add('lifepillar/vim-cheat40')
 
 " Programing
+call minpac#add('tpope/vim-dispatch')
 call minpac#add('Yggdroot/indentLine')
 call minpac#add('wellle/context.vim')
 " call minpac#add('dense-analysis/ale')
@@ -32,6 +33,8 @@ call minpac#add('ycm-core/YouCompleteMe')
 call minpac#add('jeetsukumaran/vim-pythonsense')
 call minpac#add('konfekt/fastfold')
 call minpac#add('cohama/lexima.vim')
+call minpac#add('SirVer/ultisnips')
+call minpac#add('honza/vim-snippets')
 
 " File & Directory Handling
 call minpac#add('lambdalisue/fern.vim')
@@ -201,5 +204,11 @@ nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
 
 " SuperTab {{{
 let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-p>'
+let g:SuperTabContextDefaultCompletionType = '<c-n>'
+" }}}
+
+" UltiSnips {{{
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " }}}
