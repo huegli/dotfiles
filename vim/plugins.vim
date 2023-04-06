@@ -42,6 +42,9 @@ call minpac#add('yuki-yano/fern-preview.vim')
 call minpac#add('ctrlpvim/ctrlp.vim')
 call minpac#add('tacahiroy/ctrlp-funky')
 
+" Window & Control
+call minpac#add('jpalardy/vim-slime')
+
 " Settings for plugins
 
 " ALE {{{
