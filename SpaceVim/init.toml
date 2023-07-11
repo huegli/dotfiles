@@ -25,11 +25,12 @@
     enable_statusline_mode = false
 
     # My Configuration
+    guifont = "MonoLisa:h16"
     enable_cursorline = true
     enable_cursorcolumn = true
     enable_tabline_filetype_icon = true
-
-    autocomplete_method = 'asyncomplete' 
+    filetree_direction = "left"
+    default_indent = 4
 
 # Enable autocomplete layer
 [[layers]]
@@ -39,8 +40,8 @@ auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
 name = 'shell'
-default_position = 'top'
-default_height = 30
+default_position = 'bottom'
+default_height = 60
 
 # My layers
 [[layers]]
@@ -48,7 +49,7 @@ name = 'colorscheme'
 
 [[layers]]
 name = 'lang#c'
-enable_clang_syntax_highlight = true
+# enable_clang_syntax_highlight = true
 
 [[layers]]
 name = 'ctrlp'
@@ -62,3 +63,14 @@ enable = 'has("nvim")'
 name = 'lsp'
 enabled_clients = ['clangd']
 filetypes = [ 'c', 'cpp' ]
+
+[[layers]]
+name = 'treesitter'
+
+# [[layers]]
+# name = 'checkers'
+# enable = false
+# My custom stuff
+# [[custom_plugins]]
+# repo = "NLKNguyen/papercolor-theme"
+# merged = 0
