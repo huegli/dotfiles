@@ -67,6 +67,15 @@ filetypes = [ 'c', 'cpp' ]
 [[layers]]
 name = 'treesitter'
 
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'github'
+
+[[layers]]
+name = 'VersionControl'
+
 # [[layers]]
 # name = 'checkers'
 # enable = false
