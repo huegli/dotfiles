@@ -17,7 +17,7 @@
     enable_statusline_mode = true
 
     # My Configuration
-    guifont = "MonoLisa:h16"
+    guifont = "MonoLisa Nerd Font 13"
     enable_cursorline = true
     enable_cursorcolumn = true
     enable_tabline_filetype_icon = true
