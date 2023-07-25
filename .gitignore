@@ -14,3 +14,4 @@ sublime-text/Package Control.ca-certs/
 **/plugged
 **/.netrwhist
 vim/pack/minpac/start
+LunarVim/lazy-lock.json
