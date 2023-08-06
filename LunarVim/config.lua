@@ -55,15 +55,80 @@ lvim.plugins = {
       vim.g.rnvimr_bw_enable = 1
       end,
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neo-tree").setup({
+        sources = {
+          "filesystem",
+          "buffers",
+          "git_status",
+          "document_symbols",
+        },
+        close_if_last_window = true,
+        window = {
+          width = 30,
+        },
+        buffers = {
+          follow_current_file = {
+            enabled = false
+          },
+        },
+        filesystem = {
+          follow_current_file = {
+            enabled = false
+          },
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+            hide_by_name = {
+              "node_modules"
+            },
+            never_show = {
+              ".DS_Store",
+              "thumbs.db"
+            },
+          },
+        },
+        event_handlers = {
+          {
+            event = "file_opened",
+            handler = function(file_path)
+              -- auto close
+              require("neo-tree.command").execute({ action = "close" })
+            end
+          },
+        },
+      })
+    end
+  },
 }
 
 -- LunarVim specific configurations
 lvim.colorscheme = "catppuccin-frappe"
+lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
+lvim.builtin.lir.active = false -- NOTE: using neo-tree
 
 -- Key mappings
 lvim.builtin.which_key.mappings["r"] = {
   "<cmd>RnvimrToggle<CR>", "Ranger"
 }
+lvim.builtin.which_key.mappings["n"] = {
+  "<cmd>Neotree toggle<CR>", "NeoTree filesystem toggle"
+}
+lvim.builtin.which_key.mappings["|"] = {
+  "<cmd>Neotree reveal<CR>", "NeoTree reveal"
+}
+lvim.builtin.which_key.mappings["B"] = {
+  "<cmd>Neotree buffers toggle right<CR>", "NeoTree Buffers"
+}
+
 
 -- Neovide specific configuration
 if vim.g.neovide then
