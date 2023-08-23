@@ -8,7 +8,7 @@ return {
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
     -- Set the fish shell
-    shell = "/usr/bin/fish", 
+    shell = "/opt/homebrew/bin/fish", 
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader

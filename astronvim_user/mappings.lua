@@ -6,7 +6,7 @@
 return {
   -- first key is the mode
   n = {
-    ["<C-\\"] = { "<cmd>ToggleTerm<cr>", desc = "Launch ToggleTerm" },
+    ["<C-\\>"] = { "<cmd>ToggleTerm<cr>", desc = "Launch ToggleTerm" },
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
