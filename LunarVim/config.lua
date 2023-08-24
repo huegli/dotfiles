@@ -111,13 +111,17 @@ lvim.plugins = {
 }
 
 -- LunarVim specific configurations
-lvim.colorscheme = "catppuccin-frappe"
+if vim.fn.hostname() == "Mac.local" then
+  lvim.colorscheme = "catppuccin-latte"
+else
+  lvim.colorscheme = "catppuccin-frappe"
+end
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.lir.active = false -- NOTE: using neo-tree
 
 -- Key mappings
 lvim.builtin.which_key.mappings["r"] = {
-  "<cmd>RnvimrToggle<CR>", "Ranger"
+    "<cmd>RnvimrToggle<CR>", "Ranger"
 }
 lvim.builtin.which_key.mappings["n"] = {
   "<cmd>Neotree toggle<CR>", "NeoTree filesystem toggle"
