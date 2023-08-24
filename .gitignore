@@ -15,3 +15,9 @@ sublime-text/Package Control.ca-certs/
 **/.netrwhist
 vim/pack/minpac/start
 LunarVim/lazy-lock.json
+fish/fish_variables
+fish/completions
+fish/conf.d
+fish/themes
+fish/functions
+
