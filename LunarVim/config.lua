@@ -1,6 +1,6 @@
 -- General Vim / NeoVim options
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 vim.opt.relativenumber = true
 
@@ -107,6 +107,15 @@ lvim.plugins = {
         },
       })
     end
+  },
+  {
+   "stevearc/overseer.nvim",
+    opts = {},
+    config = function()
+      require("overseer").setup({
+        templates = { "builtin", "user.cpp_build" },
+      })
+    end,
   },
 }
 
