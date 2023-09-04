@@ -117,6 +117,32 @@ lvim.plugins = {
       })
     end,
   },
+  {
+    "Tyler-Barham/floating-help.nvim",
+    config = function()
+      local fh = require('floating-help')
+      fh.setup({
+        width = 80,
+        height = 0.9,
+        position = 'E',
+      })
+      vim.keymap.set('n', '<F1>', fh.toggle)
+      vim.keymap.set('n', '<F2>', function()
+        fh.open('t=ccpman', vim.fn.expand('<cword>'))
+      end)
+
+      local function cmd_abbrev(abbrev, expansion)
+        local cmd = 'cabbr ' .. abbrev .. ' <c-r>=(getcmdpos() == 1 && getcmdtype() == ":" ? "' .. expansion .. '" : "' .. abbrev ..'")<CR>'
+        vim.cmd(cmd)
+      end
+
+      cmd_abbrev('h',         'FloatingHelp')
+      cmd_abbrev('help',      'FloatingHelp')
+      cmd_abbrev('helpc',     'FloatingHelpClose')
+      cmd_abbrev('helpclose', 'FloatingHelpClose')
+    end
+  },
+
 }
 
 -- LunarVim specific configurations
@@ -125,6 +151,7 @@ if vim.fn.hostname() == "Mac.local" then
 else
   lvim.colorscheme = "catppuccin-frappe"
 end
+
 lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.lir.active = false -- NOTE: using neo-tree
 
