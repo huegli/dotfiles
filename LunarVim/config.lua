@@ -129,7 +129,13 @@ lvim.builtin.nvimtree.active = false -- NOTE: using neo-tree
 lvim.builtin.lir.active = false -- NOTE: using neo-tree
 
 -- Key mappings
+lvim.builtin.which_key.mappings["x"] = {
+    "<cmd>TermExec cmd='./a.out'<CR>", "Execute a.out"
+}
 lvim.builtin.which_key.mappings["r"] = {
+    "<cmd>OverseerRun<CR>", "Execute a.out"
+}
+lvim.builtin.which_key.mappings["R"] = {
     "<cmd>RnvimrToggle<CR>", "Ranger"
 }
 lvim.builtin.which_key.mappings["n"] = {
