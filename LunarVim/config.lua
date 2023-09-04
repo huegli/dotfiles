@@ -1,7 +1,6 @@
 -- General Vim / NeoVim options
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-
 vim.opt.relativenumber = true
 
 -- use treesitter folding
@@ -142,6 +141,10 @@ lvim.plugins = {
       cmd_abbrev('helpclose', 'FloatingHelpClose')
     end
   },
+  -- {
+  --   "RaafatTurki/corn.nvim",
+  --   config = true,
+  -- },
 
 }
 
@@ -159,8 +162,11 @@ lvim.builtin.lir.active = false -- NOTE: using neo-tree
 lvim.builtin.which_key.mappings["x"] = {
     "<cmd>TermExec cmd='./a.out'<CR>", "Execute a.out"
 }
-lvim.builtin.which_key.mappings["r"] = {
-    "<cmd>OverseerRun<CR>", "Execute a.out"
+lvim.builtin.which_key.mappings["o"] = {
+    "<cmd>OverseerRun clang++\\ build<CR>", "Overseer Run"
+}
+lvim.builtin.which_key.mappings["m"] = {
+    "<cmd>make<CR>", "Execute 'makeprg'"
 }
 lvim.builtin.which_key.mappings["R"] = {
     "<cmd>RnvimrToggle<CR>", "Ranger"
