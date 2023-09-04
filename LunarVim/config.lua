@@ -128,7 +128,7 @@ lvim.plugins = {
       })
       vim.keymap.set('n', '<F1>', fh.toggle)
       vim.keymap.set('n', '<F2>', function()
-        fh.open('t=ccpman', vim.fn.expand('<cword>'))
+                fh.open('t=cppman', vim.fn.expand('<cword>'))
       end)
 
       local function cmd_abbrev(abbrev, expansion)
