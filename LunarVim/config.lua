@@ -151,6 +151,8 @@ lvim.plugins = {
 -- LunarVim specific configurations
 if vim.fn.hostname() == "Mac.local" then
   lvim.colorscheme = "catppuccin-latte"
+elseif vim.fn.hostname() == "macos-sonoma.shared"then
+  lvim.colorscheme = "catppuccin-latte"
 else
   lvim.colorscheme = "catppuccin-frappe"
 end
