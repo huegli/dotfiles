@@ -24,11 +24,10 @@
 (use-package vertico
   ;; (Note: It is recommended to also enable the savehist package.)
   :straight t
-  :defer t
   :commands vertico-mode
   :hook (after-init . vertico-mode)
   :custom
-  (vertico-count 25) 
+  (vertico-count 10) 
   (vertico-resize t)
   :init
   ;; (vertico-buffer-mode)
@@ -88,16 +87,15 @@
         ("C-c m" . consult-man)
         ("C-c r" . consult-recent-file)
         ("C-c i" . consult-imenu)
-        ; ("C-c i" . consult-info)
-        ([remap Info-search] . consult-info)
+         ([remap Info-search] . consult-info)
         ;; C-x bindings in `ctl-x-map'
-        ("C-x M-:" . consult-complex-command)
-        ("C-x b" . consult-buffer)
-        ("C-x 4 b" . consult-buffer-other-window)
-        ("C-x 5 b" . consult-buffer-other-frame)
-        ("C-x t b" . consult-buffer-other-tab)
-        ("C-x r b" . consult-bookmark)
-        ("C-x p b" . consult-project-buffer)
+        ;; ("C-x M-:" . consult-complex-command)
+        ;; ("C-x b" . consult-buffer)
+        ;; ("C-x 4 b" . consult-buffer-other-window)
+        ;; ("C-x 5 b" . consult-buffer-other-frame)
+        ;; ("C-x t b" . consult-buffer-other-tab)
+        ;; ("C-x r b" . consult-bookmark)
+        ;; ("C-x p b" . consult-project-buffer)
         ;; Custom M-# bindings for fast register access
         ("M-#" . consult-register-load)
         ("M-'" . consult-register-store)
@@ -105,37 +103,45 @@
         ;; Other custom bindings
         ("M-y" . consult-yank-pop)
         ;; M-g bindings in `goto-map'
-        ("M-g e" . consult-compile-error)
-        ("M-g f" . consult-flymake)
-        ("M-g g" . consult-goto-line)
-        ("M-g M-g" . consult-goto-line)
-        ("M-g o" . consult-outline)
-        ("M-g m" . consult-mark)
-        ("M-g k" . consult-global-mark)
-        ("M-g i" . consult-imenu)
-        ("M-g I" . consult-imenu-multi)
+        ;; ("M-g e" . consult-compile-error)
+        ;; ("M-g f" . consult-flymake)
+        ;; ("M-g g" . consult-goto-line)
+        ;; ("M-g M-g" . consult-goto-line)
+        ;; ("M-g o" . consult-outline)
+        ;; ("M-g m" . consult-mark)
+        ;; ("M-g k" . consult-global-mark)
+        ;; ("M-g i" . consult-imenu)
+        ;; ("M-g I" . consult-imenu-multi)
         ;; M-s bindings in `search-map'
-        ("M-s d" . consult-find)
-        ("M-s c" . consult-locate)
-        ("M-s g" . consult-grep)
-        ("M-s G" . consult-git-grep)
-        ("M-s r" . consult-ripgrep)
-        ("M-s l" . consult-line)
-        ("M-s L" . consult-line-multi)
-        ("M-s k" . consult-keep-lines)
-        ("M-s u" . consult-focus-lines)
+        ;; ("M-s d" . consult-find)
+        ;; ("M-s c" . consult-locate)
+        ;; ("M-s g" . consult-grep)
+        ;; ("M-s G" . consult-git-grep)
+        ;; ("M-s r" . consult-ripgrep)
+        ;; ("M-s l" . consult-line)
+        ;; ("M-s L" . consult-line-multi)
+        ;; ("M-s k" . consult-keep-lines)
+        ;; ("M-s u" . consult-focus-lines)
         ;; Isearch integration
-        ("M-s e" . consult-isearch-history)
-        :map isearch-mode-map
-        ("M-e" . consult-isearch-history)
-        ("M-s e" . consult-isearch-history)
-        ("M-s l" . consult-line)
-        ("M-s L" . consult-line-multi)
+        ;; ("M-s e" . consult-isearch-history)
+        ;; :map isearch-mode-map
+        ;; ("M-e" . consult-isearch-history)
+        ;; ("M-s e" . consult-isearch-history)
+        ;; ("M-s l" . consult-line)
+        ;; ("M-s L" . consult-line-multi)
         ;; Minibuffer history
-        :map minibuffer-local-map
-        ("M-s" . consult-history)
-        ("M-r" . consult-history))
+        ;; :map minibuffer-local-map
+        ;; ("M-s" . consult-history)
+        ;; ("M-r" . consult-history))
 
+        ;; xah-fly-keys map binding
+        :map xah-fly-leader-key-map
+        ;; ("u" . consult-buffer)
+        ;; ("c c" . consult-bookmark)
+        ;; ("8 u" . consult-project-buffer)
+
+        )
+ 
  ;; Enable automatic preview at point in the *Completions* buffer.
  :hook (completion-list-mode . consult-preview-at-point-mode)
 
@@ -162,101 +168,44 @@
   :preview-key '(:debounce 0.4 any))
  (setq consult-narrow-key "<"))
 
-;; (defun meow-setup ()
-;;   (setq meow-cheatsheet-layout meow-cheatsheet-layout-dvorak)
-;;   (meow-leader-define-key
-;;    '("1" . meow-digit-argument)
-;;    '("2" . meow-digit-argument)
-;;    '("3" . meow-digit-argument)
-;;    '("4" . meow-digit-argument)
-;;    '("5" . meow-digit-argument)
-;;    '("6" . meow-digit-argument)
-;;    '("7" . meow-digit-argument)
-;;    '("8" . meow-digit-argument)
-;;    '("9" . meow-digit-argument)
-;;    '("0" . meow-digit-argument)
-;;    '("/" . meow-keypad-describe-key)
-;;    '("?" . meow-cheatsheet))
-;;   (meow-motion-overwrite-define-key
-;;    ;; custom keybinding for motion state
-;;    '("<escape>" . ignore))
-;;   (meow-normal-define-key
-;;    '("0" . meow-expand-0)
-;;    '("9" . meow-expand-9)
-;;    '("8" . meow-expand-8)
-;;    '("7" . meow-expand-7)
-;;    '("6" . meow-expand-6)
-;;    '("5" . meow-expand-5)
-;;    '("4" . meow-expand-4)
-;;    '("3" . meow-expand-3)
-;;    '("2" . meow-expand-2)
-;;    '("1" . meow-expand-1)
-;;    '("-" . negative-argument)
-;;    '(";" . meow-reverse)
-;;    '("," . meow-inner-of-thing)
-;;    '("." . meow-bounds-of-thing)
-;;    '("<" . meow-beginning-of-thing)
-;;    '(">" . meow-end-of-thing)
-;;    '("a" . meow-append)
-;;    '("A" . meow-open-below)
-;;    '("b" . meow-back-word)
-;;    '("B" . meow-back-symbol)
-;;    '("c" . meow-change)
-;;    '("d" . meow-delete)
-;;    '("D" . meow-backward-delete)
-;;    '("e" . meow-line)
-;;    '("E" . meow-goto-line)
-;;    '("f" . meow-find)
-;;    '("g" . meow-cancel-selection)
-;;    '("G" . meow-grab)
-;;    '("h" . meow-left)
-;;    '("H" . meow-left-expand)
-;;    '("i" . meow-insert)
-;;    '("I" . meow-open-above)
-;;    '("j" . meow-join)
-;;    '("k" . meow-kill)
-;;    '("l" . meow-till)
-;;    '("m" . meow-mark-word)
-;;    '("M" . meow-mark-symbol)
-;;    '("n" . meow-next)
-;;    '("N" . meow-next-expand)
-;;    '("o" . meow-block)
-;;    '("O" . meow-to-block)
-;;    '("p" . meow-prev)
-;;    '("P" . meow-prev-expand)
-;;    '("q" . meow-quit)
-;;    '("Q" . meow-goto-line)
-;;    '("r" . meow-replace)
-;;    '("R" . meow-swap-grab)
-;;    '("s" . meow-search)
-;;    '("t" . meow-right)
-;;    '("T" . meow-right-expand)
-;;    '("u" . meow-undo)
-;;    '("U" . meow-undo-in-selection)
-;;    '("v" . meow-visit)
-;;    '("w" . meow-next-word)
-;;    '("W" . meow-next-symbol)
-;;    '("x" . meow-save)
-;;    '("X" . meow-sync-grab)
-;;    '("y" . meow-yank)
-;;    '("z" . meow-pop-selection)
-;;    '("'" . repeat)
-;;    '("<escape>" . ignore)))
-
-;; (use-package meow
-;;   :straight t
-;;   :config
-;;   (meow-setup)
-;;   (meow-global-mode 1))
-
 (use-package xah-fly-keys
   :straight t
+  :demand t
   :custom
   (xah-fly-use-control-key t)
   (xah-fly-use-meta-key t)
+  ;; :hook
+  ;; ((dired-mode info-mode ibuffer-mode bookmark-bmenu-mode) . xah-fly-insert-mode-activate)
   :config
   (xah-fly-keys-set-layout "dvorak")
-  (xah-fly-keys 1))
+  (xah-fly-keys 1)
+
+  (defvar xah-major-leader-key nil "Global leader key for major modes.
+Value is a string, in the same format as printed by `describe-key'.
+e.g. \"TAB\" \"<f9>\" \"C-c\".")
+
+  (when (not xah-major-leader-key)
+    (setq xah-major-leader-key "TAB"))
+
+  (defvar xah-org-leader-map nil "A keymap for all `org-mode' keybinding.")
+
+  (define-key xah-fly-leader-key-map (kbd "8") 'nil)
+
+  (define-key xah-fly-insert-map (kbd "C-b") 'backward-char)
+  (define-key xah-fly-insert-map (kbd "C-f") 'forward-char)
+  (define-key xah-fly-insert-map (kbd "C-a") 'move-beginning-of-line)
+  (define-key xah-fly-insert-map (kbd "C-e") 'move-end-of-line)
+  (define-key xah-fly-insert-map (kbd "C-p") 'previous-line)
+  (define-key xah-fly-insert-map (kbd "C-n") 'next-line)
+  (define-key xah-fly-insert-map (kbd "C-k") 'kill-line)
+
+  
+  )
+
+;; color delimiters
+(use-package rainbow-delimiters
+  :straight t
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package which-key
   :straight t
@@ -269,46 +218,55 @@
 
 ;;; Org-mode
 (defun huegli/org-mode-setup()
-  (org-indent-mode)
   (variable-pitch-mode 1)
   (auto-fill-mode 0)
   (visual-line-mode 1)
-  (setq line-spacing 10))
+  
+  (setq line-spacing 0.2
+        org-startup-indented t
+        org-pretty-entities t
+        org-use-sub-superscripts "{}"
+        org-hide-emphasis-markers t
+        org-startup-with-inline-images t
+        org-image-actual-width '(300))
 
-(defun huegli/org-font-setup ()
-  ;; Replace list hyphen with dot
-  (font-lock-add-keywords 'org-mode
-                          '(("^ *\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "º"))))))
-  (dolist (face '((org-level-1 . 1.5)
-		(org-level-2 . 1.2)
-		(org-level-3 . 1.1)
-		(org-level-4 . 1.0)
-		(org-level-5 . 0.9)
-		(org-level-6 . 0.5)
-		(org-level-7 . 0.5)
-		(org-level-8 . 0.5)))
-    (set-face-attribute (car face) nil :font "ETBembo" :weight 'Regular :height (cdr face)))
-  ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-  (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
-  (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
-  (set-face-attribute 'org-table nil   :inherit 'fixed-pitch)
-  (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-  (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-  (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-  (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
+  (progn
+    (define-prefix-command 'xah-org-leader-map)
+    (define-key xah-org-leader-map (kbd "TAB") #'org-cycle)
+    
+    (define-key xah-org-leader-map (kbd ".") #'org-time-stamp)
+
+    (define-key xah-org-leader-map (kbd "e") #'org-mac-link-get-link)
+    (define-key xah-org-leader-map (kbd "o") #'denote-insert-link)
+    (define-key xah-org-leader-map (kbd "a") #'denote-org-extras-link-to-heading)
+    (define-key xah-org-leader-map (kbd "u") #'org-insert-link)
+    
+  )
+
+  (define-key org-mode-map (kbd xah-major-leader-key) xah-org-leader-map)
+)
+
 
 (use-package org
   :ensure nil
   :defer t
+  :after xah-fly-keys
+  :bind
+  ( :map xah-fly-leader-key-map
+    ("8 l" . org-store-link)
+    ;; to define: org-capture, org-agenda
+  )
   :hook (org-mode . huegli/org-mode-setup)
+  :custom-face
+  (org-table ((t (:inherit fixed-pitch))))
+  (org-code ((t (:inherit (shadow fixed-pitch)))))
+  (org-verbatim ((t (:inherit (shadow fixed-pitch)))))
+  (org-block ((t (:inherit fixed-pitch))))
+  (org-special-keyword ((t (:inherit fixed-pitch))))
+  (org-meta-line ((t (:inherit fixed-pitch))))
+  (org-checkbox ((t (:inherit fixed-pitch))))
+  ;; (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
   :config
-  (setq org-ellipsis " ▾"
-	    org-hide-emphasis-marker t)
-  (huegli/org-font-setup)
-  (global-set-key (kbd "C-c l") #'org-store-link)
-  (global-set-key (kbd "C-c a") #'org-agenda)
-  (global-set-key (kbd "C-c c") #'org-capture)
   (setq org-work-directory "/Users/nikolai/Library/Mobile\ Documents/com~apple~icloud~applecorporate/Documents/Org")
   (setq beorg-directory "/Users/nikolai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org")
   (setq org-directory beorg-directory)
@@ -323,20 +281,43 @@
   :straight t
   :hook (org-mode . huegli/org-mode-visual-fill))
 
-(use-package org-bullets
-  :after org
-  :straight t
-  :hook (org-mode . org-bullets-mode)
-  :custom
-  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
-
-
 (use-package org-mac-link
   :after org
+  :straight t)
+
+(use-package org-modern
   :straight t
   :config
-  (add-hook 'org-mode-hook (lambda ()
-			                 (define-key org-mode-map (kbd "C-c g") 'org-mac-link-get-link))))
+  (global-org-modern-mode t))
+
+;; Configure project.el's root markers
+(defcustom project-root-markers
+  '("compile_commands.json" "compile_flags.txt" ".project" ".git")
+  "Files or directories that indicate the root of a project."
+  :type '(repeat string)
+  :group 'project)
+
+(defun project-root-p (path)
+  "Check if the current PATH has any of the project root markers."
+  (catch 'found
+    (dolist (marker project-root-markers)
+      (when (file-exists-p (concat path marker))
+        (throw 'found marker)))))
+
+
+(defun project-find-root (path)
+  "Search up the PATH for `project-root-markers'."
+  (let ((path (expand-file-name path)))
+    (catch 'found
+      (while (not (equal "/" path))
+        (if (not (project-root-p path))
+            (setq path (file-name-directory (directory-file-name path)))
+          (throw 'found (cons 'transient path)))))))
+
+(use-package project
+  :ensure nil  
+  :config
+  (add-to-list 'project-find-functions #'project-find-root))
 
 (use-package exec-path-from-shell
   :straight t
@@ -351,6 +332,7 @@
 
 (use-package casual
   :straight t
+  :defer t
   :bind (:map dired-mode-map
               ("C-o" . #'casual-dired-tmenu)
               ("s" . #'casual-dired-sort-by-tmenu)
@@ -365,9 +347,9 @@
               ("F" . #'casual-ibuffer-filter-tmenu)
               ("s" . #'casual-ibuffer-sortby-tmenu)))
 
-(use-package ibuffer
-  :hook (ibuffer-mode . ibuffer-auto-mode)
-  :defer t)
+;; (use-package ibuffer
+  ;; :hook (ibuffer-mode . ibuffer-auto-mode)
+  ;; :defer t)
 ;; (use-package casual-ibuffer
 ;;   :straight t
 ;;   :bind (:map

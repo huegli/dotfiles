@@ -5,8 +5,6 @@
 (setq package-user-dir (expand-file-name "elpa" minimal-emacs-var-dir))
 (setq user-emacs-directory minimal-emacs-var-dir)
 
-(setq custom-file null-device)
-
 ;; This configures some of the usual Mac OS command key shortcuts
 (setq mac-option-modifier 'meta          
       mac-command-modifier 'super 
