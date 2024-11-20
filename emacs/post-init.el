@@ -347,54 +347,17 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
               ("F" . #'casual-ibuffer-filter-tmenu)
               ("s" . #'casual-ibuffer-sortby-tmenu)))
 
-;; (use-package ibuffer
-  ;; :hook (ibuffer-mode . ibuffer-auto-mode)
-  ;; :defer t)
-;; (use-package casual-ibuffer
-;;   :straight t
-;;   :bind (:map
-;;          ibuffer-mode-map
-;;          ("C-o" . casual-ibuffer-tmenu)
-;;          ("F" . casual-ibuffer-filter-tmenu)
-;;          ("s" . casual-ibuffer-sortby-tmenu)
-;;          ("<double-mouse-1>" . ibuffer-visit-buffer) ; optional
-;;          ("M-<double-mouse-1>" . ibuffer-visit-buffer-other-window) ; optional
-;;          ("{" . ibuffer-backwards-next-marked) ; optional
-;;          ("}" . ibuffer-forward-next-marked)   ; optional
-;;          ("[" . ibuffer-backward-filter-group) ; optional
-;;          ("]" . ibuffer-forward-filter-group)  ; optional
-;;          ("$" . ibuffer-toggle-filter-group))  ; optional
-;;   :after (ibuffer))
-;; 
-;; (use-package casual-isearch
-;;   :straight t
-;;   :bind (:map isearch-mode-map ("C-o" . casual-isearch-tmenu)))
-
-;; (use-package helm
-;;   :straight t)
-;; 
-;; (use-package helm-gtags
-;;   :straight t)
-
-;; (use-package vterm
-;;   :straight t
-;;   :defer t
-;;   :commands vterm
-;;   :config
-;;   ;; Speed up vterm
-;;   (setq vterm-timer-delay 0.01))
-
-;; (use-package projectile
-;;   :straight t
-;;   :init
-;;   (projectile-mode +1)
-;;   :bind (:map projectile-mode-map
-;;               ("s-p" . projectile-command-map)
-;;               ("C-c p" . projectile-command-map)))
-
 (use-package denote
   :straight t
   :commands (denote-directory)
+  :after xah-fly-keys
+  :bind
+  ( :map dired-mode-map
+    ("C-c C-d C-r" . denote-dired-rename-files)
+    :map xah-fly-leader-key-map
+    ("8 e" . denote-open-or-create)
+    ("8 t" . denote-journal-extras-new-or-existing-entry))
+  
   :custom
   ((denote-directory "/Users/nikolai/Library/CloudStorage/Dropbox/Denote")
    (denote-file-type 'org)
@@ -408,6 +371,17 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   :config
   (setq denote-journal-extras-title-format 'day-date-month-year)
   (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
+
+(use-package consult-denote
+  :straight t
+  :after denote
+  :bind
+  ( :map global-map
+    ("C-c n f" . consult-denote-find)
+    ("C-c n g" . consult-denote-grep)
+    )
+  :config
+  (consult-denote-mode t))
 
 (use-package elfeed
   :straight t
@@ -445,9 +419,29 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
 
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-  
+
+(use-package spacious-padding
+  :straight t
+  :if (display-graphic-p)
+  :config
+  (spacious-padding-mode t))
+
+(use-package emacs
+  :ensure nil
+  :config
+  (setq completion-auto-select 'second-tab)
+  )
+
+
 (pixel-scroll-precision-mode)
 
 (display-time-mode)
 
+(repeat-mode t)
+
+(winner-mode t)
+
 (toggle-frame-maximized)
+
+;;; Load custom.el
+(minimal-emacs-load-user-init "custom.el")
