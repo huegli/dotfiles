@@ -342,10 +342,16 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
               ("C-o" . #'casual-bookmarks-tmenu)
               ("J" . #'bookmark-jump)
 
-           :map ibuffer-mode-map
+          :map ibuffer-mode-map
               ("C-o" . #'casual-ibuffer-tmenu)
               ("F" . #'casual-ibuffer-filter-tmenu)
-              ("s" . #'casual-ibuffer-sortby-tmenu)))
+              ("s" . #'casual-ibuffer-sortby-tmenu)
+
+          :map calendar-mode-map
+              ("C-o" . #'casual-calendar-tmenu)
+          
+          :map Info-mode-map
+              ("C-o" . #'casual-info-tmenu)))
 
 (use-package denote
   :straight t
@@ -359,18 +365,13 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
     ("8 t" . denote-journal-extras-new-or-existing-entry))
   
   :custom
-  ((denote-directory "/Users/nikolai/Library/CloudStorage/Dropbox/Denote")
+  ((denote-directory (expand-file-name "~/Library/CloudStorage/Dropbox/Denote"))
    (denote-file-type 'org)
    (denote-known-keywords '("emacs" "macosx" "stephanie" "mikhaila" "sandiego" "financials" "programing"))
    (denote-date-prompt-use-org-read-date t)
-   (denote-dired-directories '("/Users/nikolai/Library/CloudStorage/Dropbox/Denote"
-                               "/Users/nikolai/Library/CloudStorage/Dropbox/Statements 2024"
-                               "/Users/nikolai/Desktop"
-                               "/Users/nikolai/Downloads"))
+   (denote-journal-extras-title-format 'day-date-month-year)
    (denote-dired-directories-include-subdirectories t))
-  :config
-  (setq denote-journal-extras-title-format 'day-date-month-year)
-  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories))
+  )
 
 (use-package consult-denote
   :straight t
@@ -432,6 +433,18 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   (setq completion-auto-select 'second-tab)
   )
 
+(use-package dired
+  :straight nil
+  :ensure nil
+  :config
+  ;; (setq denote-dired-directories
+        ;; (list denote-directory
+              ;; (expand-file-name "~/Library/CloudStorage/Dropbox/Statements 2024")
+              ;; (expand-file-name "~/Desktop")
+              ;; (expand-file-name "~/Downloads")))
+  ;; (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
+  (add-hook 'dired-mode-hook #'denote-dired-mode)
+  )
 
 (pixel-scroll-precision-mode)
 
