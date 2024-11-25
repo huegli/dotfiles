@@ -461,6 +461,13 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
               ("F" . #'casual-ibuffer-filter-tmenu)
               ("s" . #'casual-ibuffer-sortby-tmenu)))
 
+(use-package winner-mode
+  :straight nil
+  :ensure nil
+  :bind (
+         :map xah-fly-leader-key-map
+              ("8 w" . winner-undo)))
+ 
 (pixel-scroll-precision-mode)
 
 (display-time-mode)
