@@ -444,6 +444,7 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   :straight nil
   :ensure nil
   :config
+  (setq dired-dwim-target t)
   (setq denote-dired-directories
         '("~/Library/CloudStorage/Dropbox/Denote"
           "~/Library/CloudStorage/Dropbox/Statements 2024"
