@@ -333,19 +333,12 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
 (use-package casual
   :straight t
   :defer t
-  :bind (:map dired-mode-map
-              ("C-o" . #'casual-dired-tmenu)
-              ("s" . #'casual-dired-sort-by-tmenu)
-              ("/" . #'casual-dired-search-replace-tmenu)
+  :bind (
 
           :map bookmark-bmenu-mode-map
               ("C-o" . #'casual-bookmarks-tmenu)
               ("J" . #'bookmark-jump)
 
-          :map ibuffer-mode-map
-              ("C-o" . #'casual-ibuffer-tmenu)
-              ("F" . #'casual-ibuffer-filter-tmenu)
-              ("s" . #'casual-ibuffer-sortby-tmenu)
 
           :map calendar-mode-map
               ("C-o" . #'casual-calendar-tmenu)
@@ -443,6 +436,11 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
 (use-package dired
   :straight nil
   :ensure nil
+  :bind (
+         :map dired-mode-map
+              ("C-o" . #'casual-dired-tmenu)
+              ("s" . #'casual-dired-sort-by-tmenu)
+              ("/" . #'casual-dired-search-replace-tmenu))
   :config
   (setq dired-dwim-target t)
   (setq denote-dired-directories
@@ -453,6 +451,15 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
   ;; (add-hook 'dired-mode-hook #'denote-dired-mode)
   )
+
+(use-package ibuffer
+  :straight nil
+  :ensure nil
+  :bind (
+         :map ibuffer-mode-map
+              ("C-o" . #'casual-ibuffer-tmenu)
+              ("F" . #'casual-ibuffer-filter-tmenu)
+              ("s" . #'casual-ibuffer-sortby-tmenu)))
 
 (pixel-scroll-precision-mode)
 
