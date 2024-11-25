@@ -429,6 +429,11 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   :config
   (spacious-padding-mode t))
 
+(use-package slime
+  :straight t
+  :config
+  (setq inferior-lisp-program "/opt/homebrew/bin/sbcl"))
+
 (use-package emacs
   :ensure nil
   :config
