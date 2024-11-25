@@ -365,7 +365,7 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
     ("8 t" . denote-journal-extras-new-or-existing-entry))
   
   :custom
-  ((denote-directory (expand-file-name "~/Library/CloudStorage/Dropbox/Denote"))
+  ((denote-directory "~/Library/CloudStorage/Dropbox/Denote")
    (denote-file-type 'org)
    (denote-known-keywords '("emacs" "macosx" "stephanie" "mikhaila" "sandiego" "financials" "programing"))
    (denote-date-prompt-use-org-read-date t)
@@ -404,7 +404,9 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
 
 (use-package elfeed-webkit
   :straight t
-  :after elfeed)
+  :after elfeed
+  :bind (:map elfeed-show-mode-map
+              ("%" . elfeed-webkit-toggle)))
 
 (use-package nov
   :straight t
@@ -437,13 +439,13 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   :straight nil
   :ensure nil
   :config
-  ;; (setq denote-dired-directories
-        ;; (list denote-directory
-              ;; (expand-file-name "~/Library/CloudStorage/Dropbox/Statements 2024")
-              ;; (expand-file-name "~/Desktop")
-              ;; (expand-file-name "~/Downloads")))
-  ;; (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
-  (add-hook 'dired-mode-hook #'denote-dired-mode)
+  (setq denote-dired-directories
+        '("~/Library/CloudStorage/Dropbox/Denote"
+          "~/Library/CloudStorage/Dropbox/Statements 2024"
+          "~/Desktop"
+          "~/Downloads"))
+  (add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
+  ;; (add-hook 'dired-mode-hook #'denote-dired-mode)
   )
 
 (pixel-scroll-precision-mode)
