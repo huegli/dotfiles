@@ -424,11 +424,32 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
 
 (use-package sly
   :straight t
+  :defer t
+    :bind (
+         :map xah-fly-leader-key-map
+              ("w ." . sly-eval-buffer)
+              ("w e" . sly-eval-defun)
+              ("w m" . sly-eval-last-expression)
+              ("w u" . sly-eval-region))
+  :custom
+  (inferior-lisp-program "/opt/homebrew/bin/sbcl --dynamic-space-size 4096")
+  (sly-auto-select-connection 'always)
+  (sly-kill-without-query-p t)
+  (sly-description-autofocus t) 
+  (sly-inhibit-pipelining nil)
+  (sly-load-failed-fasl 'always)
   :config
-  (setq inferior-lisp-program "/opt/homebrew/bin/sbcl"))
+  ;; This needs to be defined for lisp mode, not sly mode 
+  ;; (progn
+    ;; (define-prefix-command 'xah-org-leader-map)
+    ;; (define-key xah-org-leader-map (kbd "TAB") #'indent-for-tab-command)
+    ;; (define-key xah-org-leader-map (kbd "c") #'sly-compile-defun)
+    ;; (define-key xah-org-leader-map (kbd "e") #'sly-compile-and-load-file))
+  (add-hook 'sly-mrepl-mode-hook 'electric-pair-local-mode))
 
 (use-package hy-mode
-  :straight t)
+  :straight t
+  :defer t)
 
 (use-package emacs
   :ensure nil
