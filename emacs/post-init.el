@@ -422,30 +422,67 @@ e.g. \"TAB\" \"<f9>\" \"C-c\".")
   :config
   (spacious-padding-mode t))
 
-(use-package sly
+(use-package slime
   :straight t
   :defer t
-    :bind (
-         :map xah-fly-leader-key-map
-              ("w ." . sly-eval-buffer)
-              ("w e" . sly-eval-defun)
-              ("w m" . sly-eval-last-expression)
-              ("w u" . sly-eval-region))
-  :custom
-  (inferior-lisp-program "/opt/homebrew/bin/sbcl --dynamic-space-size 4096")
-  (sly-auto-select-connection 'always)
-  (sly-kill-without-query-p t)
-  (sly-description-autofocus t) 
-  (sly-inhibit-pipelining nil)
-  (sly-load-failed-fasl 'always)
+  :init
+  (progn
+    (require 'slime-autoloads)
+    (add-hook 'slime-mode-hook
+              (lambda ()
+                (unless (slime-connected-p)
+                  (save-excursion (slime))))))
   :config
-  ;; This needs to be defined for lisp mode, not sly mode 
-  ;; (progn
-    ;; (define-prefix-command 'xah-org-leader-map)
-    ;; (define-key xah-org-leader-map (kbd "TAB") #'indent-for-tab-command)
-    ;; (define-key xah-org-leader-map (kbd "c") #'sly-compile-defun)
-    ;; (define-key xah-org-leader-map (kbd "e") #'sly-compile-and-load-file))
-  (add-hook 'sly-mrepl-mode-hook 'electric-pair-local-mode))
+  (progn
+    (use-package slime-company
+      :straight t
+      :defer t)
+    ;; (setf inferior-lisp-program "/opt/homebrew/bin/sbcl --dynamic-space-size 4096")
+    (setf inferior-lisp-program "~/lw-console")
+    (slime-setup '(slime-fancy slime-company))
+    (setq slime-net-coding-system 'utf-8-unix)
+    (define-key lisp-mode-map (kbd "C-c C-q") 'slime-close-all-parens-in-sexp)
+    ;; (define-key slime-mode-indirect-map (kbd "M-_") 'paredit-convolute-sexp)
+    (define-key slime-repl-mode-map (kbd "C-c C-z") #'quit-window)
+    ;; (define-key slime-repl-mode-map (read-kbd-macro paredit-backward-delete-key) nil)
+    ))
+
+;; (use-package slime
+  ;; :straight t
+  ;; :defer t
+  ;; :bind (
+         ;; :map xah-fly-leader-key-map
+              ;; ("w ." slime-eval-buffer))
+  ;; :custom
+  ;; (inferior-lisp-program "/opt/homebrew/bin/sbcl --dynamic-space-size 4096")
+  ;; :config
+  (slime-setup '(slime-fancy slime-quicklisp slime-asdf))
+  ;; )
+
+;; (use-package sly
+;;   :straight t
+;;   :defer t
+;;     :bind (
+;;          :map xah-fly-leader-key-map
+;;               ("w ." . sly-eval-buffer)
+;;               ("w e" . sly-eval-defun)
+;;               ("w m" . sly-eval-last-expression)
+;;               ("w u" . sly-eval-region))
+;;   :custom
+;;   (inferior-lisp-program "/opt/homebrew/bin/sbcl --dynamic-space-size 4096")
+;;   (sly-auto-select-connection 'always)
+;;   (sly-kill-without-query-p t)
+;;   (sly-description-autofocus t) 
+;;   (sly-inhibit-pipelining nil)
+;;   (sly-load-failed-fasl 'always)
+;;   :config
+;;   ;; This needs to be defined for lisp mode, not sly mode 
+;;   ;; (progn
+;;     ;; (define-prefix-command 'xah-org-leader-map)
+;;     ;; (define-key xah-org-leader-map (kbd "TAB") #'indent-for-tab-command)
+;;     ;; (define-key xah-org-leader-map (kbd "c") #'sly-compile-defun)
+;;     ;; (define-key xah-org-leader-map (kbd "e") #'sly-compile-and-load-file))
+;;   (add-hook 'sly-mrepl-mode-hook 'electric-pair-local-mode))
 
 (use-package hy-mode
   :straight t
