@@ -37,3 +37,4 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Karabiner" manage=off
 yabai -m rule --add title="^Open$" manage=off
 yabai -m rule --add app="^UTM" manage=off
+yabai -m rule --add app="^Windows App" manage=off
