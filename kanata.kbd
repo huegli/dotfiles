@@ -1,0 +1,122 @@
+;; Comments are prefixed by double-semicolon. A single semicolon is parsed as the
+;; keyboard key. Comments are ignored for the configuration file.
+;;
+;; This configuration language is Lisp-like. If you're unfamiliar with Lisp,
+;; don't be alarmed. The maintainer jtroo is also unfamiliar with Lisp. You
+;; don't need to know Lisp in-depth to be able to configure kanata.
+;;
+;; If you follow along with the examples, you should be fine. Kanata should
+;; also hopefully have helpful error messages in case something goes wrong.
+;; If you need help, you are welcome to ask.
+
+;; This makes sure we don't use Kanata remapping for the ZSA Voyager
+(defcfg
+  macos-dev-names-exclude (
+    "Voyager"
+  )
+  process-unmapped-keys true
+)
+
+;; Only one defsrc is allowed.
+;;
+;; defsrc defines the keys that will be intercepted by kanata. The order of the
+;; keys matches with deflayer declarations and all deflayer declarations must
+;; have the same number of keys as defsrc. Any keys not listed in defsrc will
+;; be passed straight to the operating system.
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  fn   lctl lalt lmet           spc            rmet ralt ◀    ▲ ▼  ▶
+)
+
+;; The first layer defined is the layer that will be active by default when
+;; kanata starts up. This layer is the DVORAK layout except for the
+;; backtick/grave key (@grl) which is an alias for a tap-hold key.
+;; In addition there is
+;; another tap-hold key: @cap. This key retains caps lock functionality when
+;; quickly tapped but is read as left-control when held.
+
+(deflayer dvorak
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @grl 1    2    3    4    5    6    7    8    9    0    [    ]    _
+  tab  '    ,    .    p    y    f    g    c    r    l    /    =    _
+  esc  a    o    e    u    i    d    h    t    n    s    -    _
+  _    @;   @q   @j   @k   x    b    @m   @w   @v   @z   _
+  _    _    _    @bspc          @spc          @ret  _    _    _ _  _
+)
+
+;; Use the standard QWERTY as the alternate layer
+(deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  @grl 1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  fn   lctl lalt lmet           spc            rmet ralt ◀    ▲ ▼  ▶
+)
+
+;; This is the symbol & navication later
+(deflayer symnav
+  _    _    _    _    _     _    _    _    _    _    _    _    _
+  _    f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  _    _    _
+  _    _    home up   end   pgup S-;  [    ]    S-2  \    `    _    _
+  _    _    left down right pgdn S-1  S-9  S-0  S-'  S-8  '    _
+  _    _    _    _    _     _    _    _    _    _    _    _
+  _    _    _    _               _              _    _    _    _ _  _
+)
+
+;; defalias is used to declare a shortcut for a more complicated action to keep
+;; the deflayer declarations clean and aligned. The alignment in deflayers is not
+;; necessary, but is strongly recommended for ease of understanding visually.
+;;
+;; Aliases are referred to by `@<alias_name>`.
+
+(defvar
+  tap-time 150
+  hold-time 200
+)
+
+(defalias
+  ;; tap: backtick (grave), hold: toggle layer-switching layer while held
+  grl (tap-hold 150 200 grv (layer-toggle layers))
+
+  ;; tap: space, hold: toggle to symnav layer while held
+  spc (tap-hold-release $tap-time $hold-time spc (layer-while-held symnav))
+
+  dvk (layer-switch dvorak)
+  qwr (layer-switch qwerty)
+
+  ret (tap-hold-release $tap-time $hold-time ret (multi lmet lalt lsft lctl))
+  bspc (tap-hold-release $tap-time $hold-time bspc (multi lmet lalt lsft lctl))
+
+  ; (tap-hold-release $tap-time $hold-time ; lmet)
+  q (tap-hold-release $tap-time $hold-time q lalt)
+  j (tap-hold-release $tap-time $hold-time j lsft)
+  k (tap-hold-release $tap-time $hold-time k lctl)
+
+  m (tap-hold-release $tap-time $hold-time m rctl)
+  w (tap-hold-release $tap-time $hold-time w rsft)
+  v (tap-hold-release $tap-time $hold-time v ralt)
+  z (tap-hold-release $tap-time $hold-time z rmet)
+)
+
+;; The `lrld` action stands for "live reload". This will re-parse everything
+;; except for linux-dev, meaning you cannot live reload and switch keyboard
+;; devices.
+;;
+;; The keys 1 and 2 switch the base layer to qwerty and dvorak respectively.
+;;
+;; Apart from the layer switching and live reload, all other keys are the
+;; underscore _ which means "transparent". Transparent means the base layer
+;; behaviour is used when pressing that key.
+(deflayer layers
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @qwr @dvk lrld _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _ _  _
+)
