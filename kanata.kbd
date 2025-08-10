@@ -89,8 +89,8 @@
   dvk (layer-switch dvorak)
   qwr (layer-switch qwerty)
 
-  ret (tap-hold-release $tap-time $hold-time ret (multi lmet lalt lsft lctl))
-  bspc (tap-hold-release $tap-time $hold-time bspc (multi lmet lalt lsft lctl))
+  ret (tap-hold-release $tap-time $hold-time ret (multi lmet lalt lctl))
+  bspc (tap-hold-release $tap-time $hold-time bspc (multi lmet lalt lctl))
 
   ; (tap-hold-release $tap-time $hold-time ; lmet)
   q (tap-hold-release $tap-time $hold-time q lalt)
