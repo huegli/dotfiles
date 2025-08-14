@@ -92,15 +92,15 @@
   ret (tap-hold-release $tap-time $hold-time ret (multi lmet lalt lctl))
   bspc (tap-hold-release $tap-time $hold-time bspc (multi lmet lalt lctl))
 
-  ; (tap-hold-release $tap-time $hold-time ; lmet)
+  ; (tap-hold-release $tap-time $hold-time ; lsft)
   q (tap-hold-release $tap-time $hold-time q lalt)
-  j (tap-hold-release $tap-time $hold-time j lsft)
+  j (tap-hold-release $tap-time $hold-time j lmet)
   k (tap-hold-release $tap-time $hold-time k lctl)
 
   m (tap-hold-release $tap-time $hold-time m rctl)
-  w (tap-hold-release $tap-time $hold-time w rsft)
+  w (tap-hold-release $tap-time $hold-time w rmet)
   v (tap-hold-release $tap-time $hold-time v ralt)
-  z (tap-hold-release $tap-time $hold-time z rmet)
+  z (tap-hold-release $tap-time $hold-time z rsft)
 )
 
 ;; The `lrld` action stands for "live reload". This will re-parse everything
