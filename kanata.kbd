@@ -44,13 +44,22 @@
   _    _    _    @bspc          @spc           @ret _    _    _ _  _
 )
 
+(deflayer nomods
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  _    q    w    e    r    t    y    u    i    o    p    [    ]    \
+  esc  a    s    d    f    g    h    j    k    l    ;    '    ret
+  _    z    x    c    v    b    n    m    ,    .    /    _
+  _    _    _    bspc           spc            ret  _    _    _ _  _
+)
+
 ;; This is the symbol & navication later
 ;; See https://github.com/jtroo/kanata/issues/975#issuecomment-2155593193 for media keys
 (deflayer symnav
   _    brdn brup _    _     _    _    prev pp   next mute vold volu
   _    f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  _    _    _
-  _    _    home up   end   pgup S-;  [    ]    S-2  \    `    _    _
-  _    _    left down right pgdn S-1  S-9  S-0  S-'  S-8  '    _
+  _    _    home up   end   pgup S-z  -    =    S-2  \    _    _    _
+  _    _    left down right pgdn S-1  S-9  S-0  S-q  S-8  _    _
   _    _    _    _    _     _    _    _    _    _    _    _
   _    _    _    _               _              _    _    _    _ _  _
 )
@@ -63,25 +72,47 @@
 
 (defvar
   tap-time 200
-  hold-time 200
+  hold-time 150
+
+  long-tap 300
+  long-hold 250
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+
+(deffakekeys
+  to-base (layer-switch qwerty)
 )
 
 (defalias
   ;; tap: backtick (grave), hold: toggle layer-switching layer while held
   ;; grl (tap-hold 150 200 grv (layer-toggle layers))
 
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
   ;; tap: space, hold: toggle to symnav layer while held
-  spc (tap-hold-release $tap-time $hold-time spc (layer-while-held symnav))
+  spc (tap-hold-release $long-tap $long-hold spc (layer-while-held symnav))
   ret (tap-hold-release $tap-time $hold-time ret (multi lmet lalt lctl))
   bspc (tap-hold-release $tap-time $hold-time bspc (multi lmet lalt lctl))
 
-  z (tap-hold-release $tap-time $hold-time z lsft)
-  x (tap-hold-release $tap-time $hold-time x lalt)
-  c (tap-hold-release $tap-time $hold-time c lmet)
-  v (tap-hold-release $tap-time $hold-time v lctl)
+  z (tap-hold-release-keys $tap-time $hold-time (multi z @tap) lsft $left-hand-keys)
+  x (tap-hold-release-keys $tap-time $hold-time (multi x @tap) lalt $left-hand-keys)
+  c (tap-hold-release-keys $tap-time $hold-time (multi c @tap) lmet $left-hand-keys)
+  v (tap-hold-release-keys $tap-time $hold-time (multi v @tap) lctl $left-hand-keys)
 
-  m (tap-hold-release $tap-time $hold-time m rctl)
-  , (tap-hold-release $tap-time $hold-time , rmet)
-  . (tap-hold-release $tap-time $hold-time . ralt)
-  / (tap-hold-release $tap-time $hold-time / rsft)
+  m (tap-hold-release-keys $tap-time $hold-time (multi m @tap) rctl $right-hand-keys)
+  , (tap-hold-release-keys $tap-time $hold-time (multi , @tap) rmet $right-hand-keys)
+  . (tap-hold-release-keys $tap-time $hold-time (multi . @tap) ralt $right-hand-keys)
+  / (tap-hold-release-keys $tap-time $hold-time (multi / @tap) rsft $right-hand-keys)
 )
