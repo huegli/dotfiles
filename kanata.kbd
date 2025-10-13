@@ -58,7 +58,7 @@
 (deflayer symnav
   _    brdn brup _    _     _    _    prev pp   next mute vold volu
   _    f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  _    _    _
-  _    _    home up   end   pgup S-z  -    =    S-2  \    _    _    _
+  _    _    home up   end   pgup S-z  -    =    z    \    _    _    _
   _    _    left down right pgdn S-1  S-9  S-0  S-q  S-8  _    _
   _    _    _    _    _     _    _    _    _    _    _    _
   _    _    _    _               _              _    _    _    _ _  _
