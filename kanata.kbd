@@ -37,19 +37,19 @@
 ;; tap-hold-* keys to allow for home-row (-1) modifiers
 (deflayer dvorak
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    '    ,    .    p    y    f    g    c    r    l    _    _    _
-  _    a    o    e    u    i    d    h    t    n    s    _    _
-  _    lsft @q   @j   @k  @x    @b    @m  @w   @v   @z   _
-  _    _    _    @bspc          @spc           @ret _    _    _ _  _
+  _    _    _    _    _    _    _    _    _    _    _    [    _    _
+  _    '    ,    .    p    y    f    g    c    r    l    /    _    _
+  _    a    o    e    u    i    d    h    t    n    s    -    _
+  _    ;    @q   @j   @k   x    b    @m  @w   @v    z    _
+  _    _    _    @bspc          _             @ret _    _    _ _  _
 )
 
 (deflayer nomods
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    '    ,    .    p    y    f    g    c    r    l    _    _    _
-  _    a    o    e    u    i    d    h    t    n    s    _    _
-  _    _    q    j    k    x    b    m    w    v    z    _
+  _    _    _    _    _    _    _    _    _    _    _    [    _    _
+  _    ;    ,    .    p    y    f    g    c    r    l    /    _    _
+  _    a    o    e    u    i    d    h    t    n    s    -    _
+  _    '    q    j    k    x    b    m    w    v    z    _
   _    _    _    _              _              _    _    _    _ _  _
 )
 
@@ -57,19 +57,9 @@
 ;; See https://github.com/jtroo/kanata/issues/975#issuecomment-2155593193 for media keys
 (deflayer symnav
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    brup home up   end  pgup esc  /    ;    \    `    _    _    _
-  _    brdn left down right pgdn tab [    ]    =    -    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _              _              _    _    _    _ _  _
-)
-
-;; This is the numbers / function later
-(deflayer numsfn
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  _    _    _
-  _    1    2    3    4    5    6    7    8    9    0    _    _
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  ]   _    _
+  _    _    home up   end  pgup f11  f12  f13  f14  f15  \   _    _
+  _    _    left down right pgdn f16 f17  f18  f19  f20  =  _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _              _              _    _    _    _ _  _
 )
@@ -112,19 +102,14 @@
     (on-idle-fakekey to-base tap 20)
   )
   ;; tap: space, hold: toggle to symnav layer while held
-  spc (tap-hold-release $long-tap $long-hold spc (layer-while-held symnav))
-  ret (tap-hold-release $tap-time $hold-time ret (multi lmet lalt lctl))
-  bspc (tap-hold-release $tap-time $hold-time bspc (multi lmet lalt lctl))
+  ret (tap-hold-release $tap-time $hold-time ret (layer-while-held symnav))
+  bspc (tap-hold-release $tap-time $hold-time bspc (layer-while-held symnav))
 
-;;  z (tap-hold-release-keys $tap-time $hold-time (multi z @tap) lsft $left-hand-keys)
   q (tap-hold-release-keys $tap-time $hold-time (multi q @tap) lalt $left-hand-keys)
   j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) lmet $left-hand-keys)
   k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) lctl $left-hand-keys)
-  x (tap-hold-release $tap-time $long-hold x (layer-while-held numsfn))
 
-  b (tap-hold-release $tap-time $long-hold b (layer-while-held numsfn))
   m (tap-hold-release-keys $tap-time $hold-time (multi m @tap) rctl $right-hand-keys)
   w (tap-hold-release-keys $tap-time $hold-time (multi w @tap) rmet $right-hand-keys)
   v (tap-hold-release-keys $tap-time $hold-time (multi v @tap) ralt $right-hand-keys)
-  z (tap-hold-release-keys $tap-time $hold-time (multi z @tap) rsft $right-hand-keys)
 )
